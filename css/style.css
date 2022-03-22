@@ -236,6 +236,11 @@ footer {
   padding: 20px;
 }
 
+footer .logo {
+  padding: 0;
+  padding-top: 1.5rem;
+}
+
 footer .fa-brands {
   color: #a5eaf1;
   padding: 0 1rem;
@@ -316,10 +321,7 @@ footer li {
     display: flex;
     flex-direction: column;
     gap: 2rem;
-    align-items: center;
-  }
 
-  footer .heading-tertiary {
     text-align: center;
   }
 }
