@@ -1,10 +1,174 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title>My first website</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Rainydays</title>
+    <link href="css/style.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/16bf78a0e8.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
-    <h1>Hello world!</h1>
-    <p>Welcome to my first website.</p>
+    <header class="header">
+      <a href="index.html"
+        ><img class="logo" src="images/logo1.png" alt="Rainydays logo"
+      /></a>
+      <a href="#" class="mobile-navbar"><i class="fa-solid fa-bars"></i></a>
+      <nav class="navigation">
+        
+        <ul class="navigation-list">
+          <li>
+            <a class="navigation-list-link current" href="index.html">Home</a>
+          </li>
+          <li>
+            <a class="navigation-list-link" href="products.html">Jackets</a>
+          </li>
+          <li><a class="navigation-list-link" href="about.html">About</a></li>
+          <li>
+            <a class="navigation-list-link" href="contact.html">Contact Us</a>
+          </li>
+          <li>
+            <a class="navigation-list-link" href="cart"
+              >Cart<i class="fa-solid fa-cart-shopping"></i
+            ></a>
+          </li>
+      </nav>
+    </header>
+
+    <main>
+      <section class="section-hero">
+        <div class="hero-text-box">
+          <span class="hero-subheading">Rain Jackets for all activites</span>
+          <h1 class="heading-primary">Pushing the Confort Zone</h1>
+          <p class="hero-description">
+              Beat the rain in our stylish rain jackets. Build with a waterproof, breathable fabric, this 2 layers jackets offers protection through rain, showers in all outdoors activity.
+              
+          </p>
+          <div class="hero-btn-cta">
+            <a href="products.html" class="btn-cta">Buy now</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-products">
+        <div class="container">
+          <h1 class="heading-products">Our Jackets</h1>
+          <div class="product-cards">
+            
+            <div class="product">
+              <h2 class="heading-secondary">Man's</h2>
+              <img
+                class="img-products"
+                src="images/product-man.png"
+                alt="Man in a yellow raincoat"
+              />
+              <div class="rating-container">
+              <img class="rating-img" src="images/rating.png"/></div>
+              <div class="description-container">
+              <ul class="description-list">
+                <li><i class="fa-solid fa-cloud-rain"></i>waterproof</li>
+                <li><i class="fa-solid fa-wind"></i>windproof</li>
+              </ul>
+              <ul class="description-list">
+                <li><i class="fa-solid fa-recycle"></i>recycled material</li>
+                <li><i class="fa-solid fa-check"></i>all activities</li>
+              </ul>
+            </div>
+              <a href="#" class="btn-cta btn-products">View more</a>
+            </div>
+            <div class="product">
+              <h2 class="heading-secondary">Woman's</h2>
+              <img
+                class="img-products"
+                src="images/product-women.jpg"
+                alt="Man in a yellow raincoat"
+              />
+              <div class="rating-container">
+                <img class="rating-img" src="images/rating.png"/></div>
+                <div class="description-container">
+                  <ul class="description-list">
+                    <li><i class="fa-solid fa-cloud-rain"></i>waterproof</li>
+                    <li><i class="fa-solid fa-wind"></i>windproof</li>
+                  </ul>
+                  <ul class="description-list">
+                    <li><i class="fa-solid fa-recycle"></i>recycled material</li>
+                    <li><i class="fa-solid fa-check"></i>all activities</li>
+                  </ul>
+                </div>
+              <a href="#" class="btn-cta btn-products">View more</a>
+            </div>
+            <div class="product">
+              <h2 class="heading-secondary">Kid's</h2>
+              <img
+                class="img-products"
+                src="images/product-kid.jpeg"
+                alt="Man in a yellow raincoat"
+              />
+              <div class="rating-container">
+                <img class="rating-img" src="images/rating.png"/></div>
+                <div class="description-container">
+                  <ul class="description-list">
+                    <li><i class="fa-solid fa-cloud-rain"></i>waterproof</li>
+                    <li><i class="fa-solid fa-wind"></i>windproof</li>
+                  </ul>
+                  <ul class="description-list">
+                    <li><i class="fa-solid fa-recycle"></i>recycled material</li>
+                    <li><i class="fa-solid fa-check"></i>all activities</li>
+                  </ul>
+                </div>
+              <a href="#" class="btn-cta btn-products">View more</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-container">
+        <a  href="index.html"
+          ><img class="logo footer" src="images/RainyDays_Logo.png" alt="Rainydays logo" 
+        /></a>
+
+        <div >
+          <h3 class="heading-tertiary">Follow us</h3>
+          <div>
+            <i class="fa-brands fa-facebook-square fa-xl"></i>
+            <i class="fa-brands fa-instagram fa-xl"></i>
+            <i class="fa-brands fa-twitter-square fa-xl"></i>
+            <i class="fa-brands fa-youtube fa-xl"></i>
+          </div>
+        </div>
+
+        <div>
+          <h3 class="heading-tertiary">Support</h3>
+          <ul>
+            <li>Shipping & Return</li>
+            <li>Help & FAQ</li>
+            <li>Terms & Conditions</li>
+            <li>Privacy Policy</li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="heading-tertiary">Company</h3>
+          <ul>
+            <li>About</li>
+            <li>Contact</li>
+          </ul>
+        </div>
+      </div>
+      
+      <h4 class="coryright">Copyright &copy;2022</h4>
+      
+    </footer>
   </body>
 </html>
