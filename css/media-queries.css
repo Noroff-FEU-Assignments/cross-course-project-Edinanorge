@@ -1,0 +1,58 @@
+@media (min-width: 700px) {
+  .navigation {
+    display: inline-block;
+    position: static;
+  }
+  .hamburger-icon {
+    display: none;
+  }
+  .navigation a {
+    display: inline-block;
+  }
+
+  .header-navigation {
+    margin: 0;
+  }
+
+  .header-container {
+    margin: 0 auto;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  /* Hero section */
+  .hero-text-box {
+    bottom: 0;
+    max-width: 100%;
+    position: static;
+  }
+  .hero-subheading {
+    font-size: 1.2rem;
+  }
+  .hero-text-box h1 {
+    font-size: 2.4rem;
+  }
+
+  /* Products section */
+  .section-products {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr 1fr;
+    margin: 3rem;
+  }
+  .product {
+    margin: 2rem 4rem;
+  }
+
+  /* Footer */
+  .footer-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+  }
+
+  footer .heading-tertiary {
+    text-align: center;
+  }
+}
