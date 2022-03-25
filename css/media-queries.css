@@ -64,3 +64,9 @@
     text-align: center;
   }
 }
+
+@media (orientation: landscape) and (max-width: 1200px) {
+  .hero-text-box {
+    top: 0;
+  }
+}
