@@ -35,12 +35,13 @@ img {
   letter-spacing: 0.5px;
   padding: 1rem 2rem;
   border-radius: 4px;
-  transition: background-color 0.3s;
+  transition: all 0.3s;
 }
 
 .btn-cta:active,
 .btn-cta:hover {
   background-color: #038a99;
+  color: #e6f7f9;
 }
 
 /**** HEADER/NAVIGATION ****/
@@ -87,7 +88,7 @@ img {
   display: block;
   color: #111;
   text-decoration: none;
-  max-width: 500px;
+  /* max-width: 500px; */
 }
 
 .navigation i {
@@ -104,7 +105,7 @@ img {
 
 .navigation-link:hover,
 .navigation-link:active {
-  background-color: #038a99;
+  color: #e6f7f9;
 }
 
 .navigation-link.current {
@@ -136,9 +137,12 @@ img {
   border-radius: 4px;
 
   position: absolute;
-  max-width: 40%;
   top: 10rem;
   left: 50%;
+
+  display: grid;
+  grid-template-columns: 1fr auto;
+  max-width: 40%;
 }
 
 .hero-subheading {
@@ -146,35 +150,46 @@ img {
   font-size: 1.4rem;
   font-weight: 600;
   text-transform: uppercase;
+
+  grid-column: 1/-1;
 }
 
 .heading-primary {
   font-size: 3.2rem;
   font-weight: 600;
   margin-bottom: 1.6rem;
+
+  grid-column: 1/-1;
 }
 
 .hero-description {
   margin-bottom: 2.8rem;
+
+  grid-column: 1/-1;
 }
 
 .hero-btn-cta {
-  display: flex;
-  justify-content: right;
+  grid-column: 2/3;
 }
 
 /**** PRODUCT SECTION ****/
-
 .section-products {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
+  background-color: #e6f7f9;
   max-width: 100rem;
-  margin: 50px auto;
+  margin: 0 auto;
+  padding: 4rem;
+}
+
+.products-container {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: center;
+  gap: 2rem;
 }
 
 .section-products h1 {
-  grid-column: -1/1;
+  grid-column: 1/-1;
+  margin-bottom: 3rem;
 }
 
 .product {
@@ -184,9 +199,7 @@ img {
 
   box-shadow: 0 1rem 2rem 0 rgba(3, 138, 153, 0.3);
   border-radius: 4px;
-}
 
-.products-heading {
   margin-bottom: 3rem;
 }
 
@@ -221,8 +234,7 @@ img {
 
 .btn-products {
   grid-column: 2;
-  margin: 2rem;
-  margin-top: 0;
+  margin: 1.5rem;
 }
 
 /**** FOOTER ****/
@@ -267,10 +279,11 @@ img {
 
 /* **************** */
 /*About page*/
+
 main {
   background-color: #e6f7f9;
 }
-.section-products {
+.section-about {
   display: grid;
   gap: 3rem;
   row-gap: 3rem;
@@ -280,10 +293,10 @@ main {
   margin: 0 auto;
   padding: 4rem 0;
 }
-.section-products h1 {
+.section-about h1 {
   grid-column: 1/-1;
 }
-.product-img {
+.about-img {
   max-width: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -292,7 +305,7 @@ main {
   gap: 0.5rem;
 }
 
-.product-img img {
+.about-img img {
   border-radius: 2px;
 }
 .img1 {
