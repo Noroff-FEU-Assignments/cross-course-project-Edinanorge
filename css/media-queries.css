@@ -6,6 +6,7 @@
 }
 
 @media (min-width: 700px) {
+  /* navigation */
   .navigation {
     display: inline-block;
     position: static;
@@ -63,7 +64,9 @@
   .footer-container h3 {
     text-align: center;
   }
-}
+
+  /* about page */
+  
 
 @media (orientation: landscape) and (max-width: 1200px) {
   .hero-text-box {

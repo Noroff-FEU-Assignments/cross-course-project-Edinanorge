@@ -278,20 +278,21 @@ img {
 }
 
 /* **************** */
-/*About page*/
+/**** About page ****/
 
 main {
   background-color: #e6f7f9;
 }
+
 .section-about {
   display: grid;
   gap: 3rem;
-  row-gap: 3rem;
+  row-gap: 2rem;
   grid-template-columns: auto auto;
   align-items: center;
-
+  padding: 4rem;
   margin: 0 auto;
-  padding: 4rem 0;
+  max-width: 100rem;
 }
 .section-about h1 {
   grid-column: 1/-1;
