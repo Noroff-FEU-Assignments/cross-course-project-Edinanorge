@@ -5,6 +5,14 @@
     max-width: 100%;
     max-height: 100vh;
   }
+
+  /* About page */
+  .section-about {
+    display: block;
+  }
+  .section-about > * {
+    padding: 1rem;
+  }
 }
 
 @media (min-width: 700px) {
@@ -67,10 +75,8 @@
     text-align: center;
   }
 
-  .section-about {
+  /* about page */
+  .about-img {
     display: block;
-  }
-  .section-about > * {
-    padding: 1rem;
   }
 }
