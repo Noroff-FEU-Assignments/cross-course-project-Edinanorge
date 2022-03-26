@@ -1,7 +1,9 @@
-@media (max-width: 800px) {
-  .section-hero {
-    background-position-y: center;
-    background-position-x: center;
+@media (orientation: landscape) and (max-width: 800px) {
+  .hero-text-box {
+    top: 0;
+    left: 0;
+    max-width: 100%;
+    max-height: 100vh;
   }
 }
 
@@ -65,13 +67,10 @@
     text-align: center;
   }
 
-  /* about page */
-}
-@media (orientation: landscape) and (max-width: 800px) {
-  .hero-text-box {
-    top: 0;
-    left: 0;
-    max-width: 100%;
-    max-height: 100vh;
+  .section-about {
+    display: block;
+  }
+  .section-about > * {
+    padding: 1rem;
   }
 }

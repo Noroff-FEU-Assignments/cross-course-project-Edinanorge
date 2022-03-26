@@ -101,6 +101,7 @@ img {
   color: #111;
   font-size: 1.4rem;
   padding: 2rem;
+  transition: color 0.3s;
 }
 
 .navigation-link:hover,
@@ -286,9 +287,10 @@ main {
 
 .section-about {
   display: grid;
+  grid-template-columns: auto auto;
   gap: 3rem;
   row-gap: 2rem;
-  grid-template-columns: auto auto;
+
   align-items: center;
   padding: 4rem;
   margin: 0 auto;
