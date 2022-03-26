@@ -26,42 +26,55 @@
           <label for="mobile-menu" class="hamburger-icon"><i class="fa-solid fa-bars"></i></label>
           <input type="checkbox" id="mobile-menu" />
           <nav class="navigation">
-            <a class="navigation-link current" href="index.html">Home</a>
+            <a class="navigation-link" href="index.html">Home</a>
             <a class="navigation-link" href="products.html">Jackets</a>
             <a class="navigation-link" href="about.html">About</a>
-            <a class="navigation-link" href="contact.html">Contact Us</a>
+            <a class="navigation-link current" href="contact.html">Contact Us</a>
             <a class="navigation-link" href="cart.html">Cart<i class="fa-solid fa-cart-shopping"></i></a>
           </nav>
         </div>
       </div>
     </header>
     <main>
-      <div class="contact-info">
+      <section class="section-contact">
         <h1>Get in touch</h1>
-        <i class="fa-solid fa-location-dot"></i>
-        <p>Address</p>
-        <p>Konges gata 7</p>
-        <p>Oslo 768, Norway</p>
-        <i class="fa-solid fa-phone"></i>
-        <p>Phone number</p>
-        <p>+47 623839</p>
-        <i class="fa-solid fa-envelope"></i>
-        <p>E-mail address</p>
-        <p>rainydays@gmail.com</p>
-      </div>
-      <div>
-        <label for="name">Name</label>
-        <input type="name" id="name" />
-        <label for="email">E-mail address</label>
-        <input type="email" id="email" />
-        <label for="phone">Phone number</label>
-        <input type="tel" id="phone" name="phone" />
-        <label for="text"></label>
-        <input type="text" id="" name="" />
-      </div>
+
+        <section class="contact-info">
+          <div>
+            <i class="fa-solid fa-location-dot"></i>
+            <p><strong>Address</strong></p>
+            <p>Konges gata 7</p>
+            <p>Oslo 768, Norway</p>
+          </div>
+          <div>
+            <i class="fa-solid fa-envelope"></i>
+            <p><strong>E-mail address</strong></p>
+            <p>rainydays@gmail.com</p>
+          </div>
+          <div>
+            <i class="fa-solid fa-phone"></i>
+            <p><strong>Phone</strong></p>
+            <p>+47 623839</p>
+          </div>
+        </section>
+        <form method="POST">
+          <section class="contact-form">
+            <h1>Message us</h1>
+            <label for="name">Name</label>
+            <input type="name" id="name" name="name" />
+            <label for="email">E-mail address</label>
+            <input type="email" id="email" name="email" />
+            <label for="phone">Phone number</label>
+            <input type="tel" id="phone" name="phone" />
+            <label for="text">Message</label>
+            <textarea id="message" name="message"></textarea>
+            <input type="submit" value="Submit" class="btn-cta" />
+          </section>
+        </form>
+      </section>
     </main>
     <footer class="footer">
-      <span class="coryright">Copyright &copy;2022</span>
+      <h4 class="coryright">Copyright &copy;2022</h4>
     </footer>
   </body>
 </html>
