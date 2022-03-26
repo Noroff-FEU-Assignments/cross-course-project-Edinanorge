@@ -74,8 +74,18 @@
   .footer-container h3 {
     text-align: center;
   }
-
+  /* ********** */
   /* about page */
+
+  .section-about {
+    display: block;
+  }
+  .section-about > * {
+    padding: 1rem;
+  }
+  .section-about p {
+    font-size: 1.4rem;
+  }
   .about-img {
     display: block;
   }
