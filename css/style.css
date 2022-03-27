@@ -51,8 +51,8 @@ strong {
 /**** HEADER/NAVIGATION ****/
 
 .header-container {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr auto auto auto auto;
   align-items: center;
 
   background-color: #04adbf;
@@ -68,7 +68,11 @@ strong {
 .header-navigation {
   position: relative;
   background-color: #04adbf;
-  margin-right: 2rem;
+}
+
+.hamburger-icon {
+  font-size: 1.6rem;
+  padding: 1rem;
 }
 
 .navigation,
@@ -83,7 +87,7 @@ strong {
 .navigation {
   position: absolute;
   background-color: #04adbf;
-  top: 4rem;
+  top: 5rem;
   right: -2rem;
   z-index: 900;
 }
@@ -92,15 +96,18 @@ strong {
   display: block;
   color: #111;
   text-decoration: none;
-  /* max-width: 500px; */
 }
 
-.navigation i {
-  margin-right: 4rem;
+.header-container:last-child {
+  padding-right: 4rem;
 }
 
 .navigation-link:link,
-.navigation-link:visited {
+.navigation-link:visited,
+.search-link:link,
+.search-link:visited,
+.profil-link:link,
+.profil-link:visited {
   text-decoration: none;
   color: #111;
   font-size: 1.4rem;
@@ -109,17 +116,16 @@ strong {
 }
 
 .navigation-link:hover,
-.navigation-link:active {
+.navigation-link:active,
+.search-icon:hover,
+.search-icon:active,
+.profil-icon:hover,
+.profil-icon:active {
   color: #e6f7f9;
 }
 
 .navigation-link.current {
   text-decoration: underline;
-}
-
-.hamburger-icon {
-  font-size: 2.2rem;
-  margin: 2rem;
 }
 
 /**** HERO SECTION ****/
