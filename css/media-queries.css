@@ -39,6 +39,10 @@
 
 @media (max-width: 600px) {
   /* Hero section */
+  .section-hero {
+    background-position-y: center;
+    background-position-x: left;
+  }
 
   .hero-text-box {
     max-height: 100vh;
