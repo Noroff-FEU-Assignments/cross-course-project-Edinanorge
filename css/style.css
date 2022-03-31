@@ -58,6 +58,7 @@ strong {
   background-color: #04adbf;
   font-size: 1.4rem;
   font-weight: 500;
+  position: relative;
 }
 
 .header-logo {
@@ -273,6 +274,17 @@ strong {
   padding: 0 1rem;
 }
 
+.footer a:link,
+.footer a:visited {
+  color: #000;
+  text-decoration: none;
+}
+
+.footer a:active,
+.footer a:hover {
+  color: #fff;
+}
+
 .footer-container li {
   list-style: none;
 }
@@ -300,11 +312,10 @@ main {
 .section-about {
   display: grid;
   grid-template-columns: auto auto;
-  gap: 3rem;
-  row-gap: 2rem;
+  gap: 5rem;
+  row-gap: 10rem;
 
-  align-items: center;
-  padding: 4rem;
+  padding: 5rem 0;
   margin: 0 auto;
   max-width: 100rem;
 }
@@ -346,10 +357,9 @@ main {
   grid-template-columns: 1fr 1fr;
   column-gap: 6rem;
   align-items: center;
-
   max-width: 100rem;
   margin: 0 auto;
-  padding: 3rem;
+  padding: 5rem 0;
 }
 
 .section-contact h1 {
@@ -377,7 +387,7 @@ main {
 
   border: 1px solid #04adbf;
   border-radius: 0.4rem;
-  padding: 4rem 4rem;
+  padding: 4rem;
   margin: 0 4rem;
   background-color: #fff;
 }
@@ -398,4 +408,28 @@ textarea {
 .contact-form input:hover,
 textarea:hover {
   border: 1px solid #04adbf;
+}
+
+/* **************** */
+/**** Man-jacket page ****/
+main {
+  background-image: ;
+}
+
+.jacket-container {
+  margin: 0 auto;
+  max-width: 100rem;
+  padding: 4rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 3rem;
+}
+
+.jacket {
+  display: flex;
+  flex-direction: column;
+}
+
+.jacket img {
+  max-height: 50rem;
 }
