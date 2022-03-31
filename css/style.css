@@ -29,8 +29,8 @@ strong {
 }
 
 .btn-cta:link,
-.btn-cta:visited {
-  display: inline-block;
+.btn-cta:visited,
+.btn-submit {
   text-decoration: none;
   background-color: #04adbf;
   color: #111;
@@ -344,27 +344,31 @@ main {
 .section-contact {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-row: 1fr 1fr;
+  column-gap: 6rem;
   align-items: center;
 
   max-width: 100rem;
   margin: 0 auto;
-  /* padding: 3rem; */
+  padding: 3rem;
 }
 
 .section-contact h1 {
   grid-column: 1/-1;
 }
 
-.section-contact i {
+.contact-info {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 1rem;
+  row-gap: 6rem;
+
+  text-align: center;
+}
+
+.contact-info i {
   color: #04adbf;
   font-size: 2rem;
   margin-bottom: 1rem;
-}
-.contact-info {
-  display: flex;
-  text-align: center;
-  gap: 3rem;
 }
 
 .contact-form {
@@ -373,19 +377,25 @@ main {
 
   border: 1px solid #04adbf;
   border-radius: 0.4rem;
-  padding: 4rem;
-
-  max-width: 60%;
+  padding: 4rem 4rem;
+  margin: 0 4rem;
+  background-color: #fff;
 }
 .contact-form h1 {
+  grid-column: 1/-1;
   text-align: center;
-  margin-bottom: 1rem;
+  margin-bottom: 4rem;
 }
 
 .contact-form input,
 textarea {
-  padding: 0.5rem;
-  border: 1px solid #777;
+  padding: 0.8rem;
+  border: 1px solid rgb(124, 124, 124);
   border-radius: 4px;
   margin: 0.7rem 0;
+}
+
+.contact-form input:hover,
+textarea:hover {
+  border: 1px solid #04adbf;
 }
