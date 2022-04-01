@@ -412,8 +412,14 @@ textarea:hover {
 
 /* **************** */
 /**** Man-jacket page ****/
+
+.container {
+  max-width: 100rem;
+  margin: 0 auto;
+  padding: 5rem 0;
+}
+
 main {
-  background-image: ;
 }
 
 .jacket-container {
@@ -422,14 +428,44 @@ main {
   padding: 4rem;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  gap: 3rem;
+  gap: 4rem;
 }
 
 .jacket {
-  display: flex;
-  flex-direction: column;
+  background-color: #e6f7f9;
+  box-shadow: 0 1rem 2rem 0 rgba(3, 138, 153, 0.3);
+  border-radius: 4px;
+
+  display: grid;
+  grid-template-columns: 1fr auto;
+
+  justify-content: center;
 }
 
-.jacket img {
-  max-height: 50rem;
+.jacket-img,
+.jacket h2,
+.price {
+  grid-column: 1/-1;
+}
+
+.jacket-img {
+  /* max-width: 100%; */
+}
+
+.jacket h2 {
+  font-size: 1.6rem;
+  padding-left: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.price {
+  color: #025b64;
+  font-weight: 500;
+  font-size: 1.6rem;
+  padding-left: 1rem;
+}
+
+.btn-jackets {
+  grid-column: 2/-1;
+  margin: 3rem 1rem 1rem;
 }
