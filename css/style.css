@@ -20,6 +20,16 @@ body {
   color: #111;
 }
 
+main {
+  background-color: #e6f7f9;
+}
+
+section {
+  max-width: 100rem;
+  margin: 0 auto;
+  padding: 4rem;
+}
+
 img {
   max-width: 100%;
 }
@@ -28,6 +38,18 @@ strong {
   font-weight: 500;
 }
 
+.grid-4cols {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  align-items: center;
+  gap: 2rem;
+}
+
+h1 {
+  grid-column: 1/-1;
+}
+
+/**** LINKS ****/
 .btn-cta:link,
 .btn-cta:visited,
 .btn-submit {
@@ -46,6 +68,43 @@ strong {
 .btn-cta:active {
   background-color: #038a99;
   color: #e6f7f9;
+}
+
+.navigation-link:link,
+.navigation-link:visited,
+.search-link:link,
+.search-link:visited,
+.profil-link:link,
+.profil-link:visited {
+  text-decoration: none;
+  color: #111;
+  font-size: 1.4rem;
+  padding: 1rem;
+  transition: color 0.3s;
+}
+
+.navigation-link:hover,
+.navigation-link:active,
+.search-icon:hover,
+.search-icon:active,
+.profil-icon:hover,
+.profil-icon:active {
+  color: #e6f7f9;
+}
+
+.navigation-link.current {
+  text-decoration: underline;
+}
+
+.footer a:link,
+.footer a:visited {
+  color: #000;
+  text-decoration: none;
+}
+
+.footer a:active,
+.footer a:hover {
+  color: #fff;
 }
 
 /**** HEADER/NAVIGATION ****/
@@ -103,32 +162,6 @@ strong {
   padding-right: 4rem;
 }
 
-.navigation-link:link,
-.navigation-link:visited,
-.search-link:link,
-.search-link:visited,
-.profil-link:link,
-.profil-link:visited {
-  text-decoration: none;
-  color: #111;
-  font-size: 1.4rem;
-  padding: 1rem;
-  transition: color 0.3s;
-}
-
-.navigation-link:hover,
-.navigation-link:active,
-.search-icon:hover,
-.search-icon:active,
-.profil-icon:hover,
-.profil-icon:active {
-  color: #e6f7f9;
-}
-
-.navigation-link.current {
-  text-decoration: underline;
-}
-
 /**** HERO SECTION ****/
 
 .section-hero {
@@ -137,7 +170,8 @@ strong {
   background-repeat: no-repeat;
   background-position-y: center;
   background-position-x: right;
-  min-height: 90vh;
+  min-height: 100vh;
+  max-width: 100%;
 
   position: relative;
 }
@@ -185,24 +219,6 @@ strong {
 }
 
 /**** PRODUCT SECTION ****/
-.section-products {
-  background-color: #e6f7f9;
-  max-width: 100rem;
-  margin: 0 auto;
-  padding: 4rem;
-}
-
-.products-container {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  align-items: center;
-  gap: 2rem;
-}
-
-.section-products h1 {
-  grid-column: 1/-1;
-  margin-bottom: 3rem;
-}
 
 .product {
   display: grid;
@@ -211,8 +227,6 @@ strong {
 
   box-shadow: 0 1rem 2rem 0 rgba(3, 138, 153, 0.3);
   border-radius: 4px;
-
-  margin-bottom: 3rem;
 }
 
 .product h2 {
@@ -274,17 +288,6 @@ strong {
   padding: 0 1rem;
 }
 
-.footer a:link,
-.footer a:visited {
-  color: #000;
-  text-decoration: none;
-}
-
-.footer a:active,
-.footer a:hover {
-  color: #fff;
-}
-
 .footer-container li {
   list-style: none;
 }
@@ -299,67 +302,33 @@ strong {
   font-weight: 400;
   text-align: center;
   font-size: 1rem;
-  margin-top: 4rem;
+  margin-top: 3rem;
 }
 
 /* **************** */
 /**** About page ****/
-
-main {
-  background-color: #e6f7f9;
+.section-about .grid-4cols {
+  gap: 1rem;
+}
+.section-about .p1,
+.section-about .p3 {
+  grid-column: 1/3;
 }
 
-.section-about {
-  display: grid;
-  grid-template-columns: auto auto;
-  gap: 5rem;
-  row-gap: 10rem;
-
-  padding: 5rem 0;
-  margin: 0 auto;
-  max-width: 100rem;
-}
-.section-about h1 {
-  grid-column: 1/-1;
-}
-.about-img {
-  max-width: 100%;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-
-  text-align: center;
-  gap: 0.5rem;
+.section-about .p2 {
+  grid-column: 3/-1;
 }
 
-.about-img img {
-  border-radius: 2px;
+.section-about img {
+  border-radius: 0.4rem;
 }
-.img1 {
-  grid-column: 2/3;
-}
-.p2 {
-  grid-row: 3;
-  grid-column: 2/3;
-}
-.img2 {
-  grid-row: 3;
-}
-.img3 {
-  grid-row: 4;
-  grid-column: 2/3;
-}
-
 /* **************** */
 /**** Contact page ****/
 
 .section-contact {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  column-gap: 6rem;
   align-items: center;
-  max-width: 100rem;
-  margin: 0 auto;
-  padding: 5rem 0;
 }
 
 .section-contact h1 {
@@ -367,11 +336,9 @@ main {
 }
 
 .contact-info {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  column-gap: 1rem;
-  row-gap: 6rem;
-
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
   text-align: center;
 }
 
@@ -387,10 +354,10 @@ main {
 
   border: 1px solid #04adbf;
   border-radius: 0.4rem;
-  padding: 4rem;
   margin: 0 4rem;
   background-color: #fff;
 }
+
 .contact-form h1 {
   grid-column: 1/-1;
   text-align: center;
@@ -413,24 +380,6 @@ textarea:hover {
 /* **************** */
 /**** Man-jacket page ****/
 
-.container {
-  max-width: 100rem;
-  margin: 0 auto;
-  padding: 5rem 0;
-}
-
-main {
-}
-
-.jacket-container {
-  margin: 0 auto;
-  max-width: 100rem;
-  padding: 4rem;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  gap: 4rem;
-}
-
 .jacket {
   background-color: #e6f7f9;
   box-shadow: 0 1rem 2rem 0 rgba(3, 138, 153, 0.3);
@@ -448,8 +397,9 @@ main {
   grid-column: 1/-1;
 }
 
-.jacket-img {
-  /* max-width: 100%; */
+.jacket-container img {
+  max-height: 30rem;
+  object-fit: cover;
 }
 
 .jacket h2 {
