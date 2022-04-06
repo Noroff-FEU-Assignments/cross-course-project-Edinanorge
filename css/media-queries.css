@@ -7,38 +7,6 @@
   }
 
   /* About page */
-<<<<<<< Updated upstream
-  .section-about {
-    display: block;
-  }
-  .section-about > * {
-    padding: 1rem;
-  }
-}
-
-@media (min-width: 700px) {
-  /* navigation */
-  .navigation {
-    display: inline-block;
-    position: static;
-  }
-  .hamburger-icon {
-    display: none;
-  }
-  .navigation a {
-    display: inline-block;
-  }
-
-  .header-navigation {
-    margin: 0;
-  }
-
-  .header-container {
-    margin: 0 auto;
-  }
-}
-
-=======
 
   .section-about .grid-4cols {
     grid-template-columns: auto auto;
@@ -51,7 +19,6 @@
   /* contact page */
 }
 
->>>>>>> Stashed changes
 @media (max-width: 600px) {
   /* Hero section */
   .section-hero {

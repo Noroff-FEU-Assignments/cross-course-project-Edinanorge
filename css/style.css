@@ -28,8 +28,6 @@ strong {
   font-weight: 500;
 }
 
-<<<<<<< Updated upstream
-=======
 .grid-4cols {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -72,7 +70,6 @@ strong {
 }
 
 /**** LINKS ****/
->>>>>>> Stashed changes
 .btn-cta:link,
 .btn-cta:visited {
   display: inline-block;
@@ -322,15 +319,10 @@ main {
   margin: 0 auto;
   max-width: 100rem;
 }
-<<<<<<< Updated upstream
-.section-about h1 {
-  grid-column: 1/-1;
-=======
 
 .section-about .p1,
 .section-about .p3 {
   grid-column: 1/3;
->>>>>>> Stashed changes
 }
 .about-img {
   max-width: 100%;
@@ -354,13 +346,6 @@ main {
 .img2 {
   grid-row: 3;
 }
-<<<<<<< Updated upstream
-.img3 {
-  grid-row: 4;
-  grid-column: 2/3;
-}
-=======
->>>>>>> Stashed changes
 
 /* **************** */
 /**** Contact page ****/
@@ -380,9 +365,6 @@ main {
   grid-column: 1/-1;
 }
 
-<<<<<<< Updated upstream
-.section-contact i {
-=======
 .section-contact .heading-secondary {
   text-align: center;
 }
@@ -395,7 +377,6 @@ main {
 }
 
 .contact-info i {
->>>>>>> Stashed changes
   color: #04adbf;
   font-size: 2rem;
   margin-bottom: 1rem;
@@ -414,16 +395,6 @@ main {
   border-radius: 0.4rem;
   padding: 4rem;
 
-<<<<<<< Updated upstream
-  max-width: 60%;
-}
-.contact-form h1 {
-  text-align: center;
-  margin-bottom: 1rem;
-}
-
-=======
->>>>>>> Stashed changes
 .contact-form input,
 textarea {
   padding: 0.5rem;
@@ -431,8 +402,6 @@ textarea {
   border-radius: 4px;
   margin: 0.7rem 0;
 }
-<<<<<<< Updated upstream
-=======
 
 .contact-form input:hover,
 textarea:hover {
@@ -478,4 +447,3 @@ textarea:hover {
   grid-column: 2/-1;
   margin: 3rem 1rem 1rem;
 }
->>>>>>> Stashed changes
