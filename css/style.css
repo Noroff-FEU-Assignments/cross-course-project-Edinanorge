@@ -132,7 +132,7 @@ strong {
 }
 
 .navigation-link.current {
-  text-decoration: ;
+  text-decoration: underline;
 }
 
 .footer a:link,
@@ -227,7 +227,7 @@ strong {
 
   display: grid;
   grid-template-columns: 1fr auto;
-  max-width: 45%;
+  max-width: 40%;
 }
 
 .hero-description {
@@ -235,7 +235,7 @@ strong {
   grid-column: 1/-1;
 }
 
-.hero-btn-cta {
+.btn-hero {
   grid-column: 2/3;
 }
 
@@ -272,7 +272,14 @@ strong {
   margin: 1rem auto;
 }
 
-.btn-products {
+.btn-secondary {
+  text-decoration: none;
+  color: #038a99;
+  font-size: 1.4rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  padding: 1rem 2rem;
+
   grid-column: 2;
   margin: 1.5rem;
 }
@@ -311,4 +318,24 @@ strong {
   text-align: center;
   font-size: 1rem;
   margin-top: 3rem;
+}
+
+/**** jacet specific page ****/
+.images {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem;
+}
+.image-01 {
+  grid-column: 1/-1;
+}
+.extra-info {
+  display: flex;
+  justify-content: space-around;
+
+  opacity: 0.7;
+}
+.extra-info i {
+  padding-right: 1rem;
+  font-size: 2rem;
 }

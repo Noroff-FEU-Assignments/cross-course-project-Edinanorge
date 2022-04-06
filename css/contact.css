@@ -33,7 +33,7 @@
 .contact-form input,
 textarea {
   padding: 0.8rem;
-  border: 1px solid rgb(124, 124, 124);
+  border: 1px solid rgba(124, 124, 124, 0.4);
   border-radius: 4px;
   margin: 0.7rem 0;
 }
