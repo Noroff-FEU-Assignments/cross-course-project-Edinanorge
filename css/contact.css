@@ -2,18 +2,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-}
-
-.contact-info i {
-  color: #04adbf;
-  font-size: 2rem;
-  margin-bottom: 1rem;
-}
-
-.contact-info {
-  display: flex;
-  flex-direction: column;
-  gap: 3rem;
+  gap: 2rem;
   text-align: center;
 }
 
@@ -34,6 +23,11 @@
   background-color: #fff;
 
   padding: 4rem;
+}
+
+.contact-form .heading-secondary {
+  margin-top: 0;
+  text-align: center;
 }
 
 .contact-form input,

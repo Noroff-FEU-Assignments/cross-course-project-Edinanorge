@@ -39,41 +39,43 @@
       </div>
     </header>
     <main>
-      <section class="grid-2cols">
-        <h1 class="heading-primary">Get in touch</h1>
-        <div class="contact-info">
-          <div>
-            <i class="fa-solid fa-phone"></i>
-            <p><strong>Phone</strong></p>
-            <p>+47 623839</p>
-            <p>+47 623456</p>
+      <section>
+        <div class="grid-2cols">
+          <h1 class="heading-primary">Get in touch</h1>
+          <div class="contact-info">
+            <div>
+              <i class="fa-solid fa-phone"></i>
+              <p><strong>Phone</strong></p>
+              <p>+47 623839</p>
+              <p>+47 623456</p>
+            </div>
+            <div>
+              <i class="fa-solid fa-envelope"></i>
+              <p><strong>E-mail address</strong></p>
+              <p>rainydays@gmail.com</p>
+            </div>
+            <div>
+              <i class="fa-solid fa-location-dot"></i>
+              <p><strong>Address</strong></p>
+              <p>Konges gata 7</p>
+              <p>Oslo 768, Norway</p>
+            </div>
           </div>
-          <div>
-            <i class="fa-solid fa-envelope"></i>
-            <p><strong>E-mail address</strong></p>
-            <p>rainydays@gmail.com</p>
-          </div>
-          <div>
-            <i class="fa-solid fa-location-dot"></i>
-            <p><strong>Address</strong></p>
-            <p>Konges gata 7</p>
-            <p>Oslo 768, Norway</p>
-          </div>
+          <form method="POST">
+            <div class="contact-form">
+              <h2 class="heading-secondary">Message us</h2>
+              <label for="name">Name</label>
+              <input type="name" id="name" name="name" />
+              <label for="email">E-mail address</label>
+              <input type="email" id="email" name="email" />
+              <label for="phone">Phone number</label>
+              <input type="tel" id="phone" name="phone" />
+              <label for="text">Message</label>
+              <textarea id="message" name="message"></textarea>
+              <input type="submit" value="Submit" class="btn-cta btn-submit" />
+            </div>
+          </form>
         </div>
-        <form method="POST">
-          <div class="contact-form">
-            <h2 class="heading-secondary">Message us</h2>
-            <label for="name">Name</label>
-            <input type="name" id="name" name="name" />
-            <label for="email">E-mail address</label>
-            <input type="email" id="email" name="email" />
-            <label for="phone">Phone number</label>
-            <input type="tel" id="phone" name="phone" />
-            <label for="text">Message</label>
-            <textarea id="message" name="message"></textarea>
-            <input type="submit" value="Submit" class="btn-cta btn-submit" />
-          </div>
-        </form>
       </section>
     </main>
     <footer class="footer">

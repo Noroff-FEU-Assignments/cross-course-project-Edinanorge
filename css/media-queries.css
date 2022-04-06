@@ -32,6 +32,9 @@
 }
 
 @media (max-width: 600px) {
+  section {
+    padding: 2rem;
+  }
   .grid-4cols {
     grid-template-columns: 1fr;
   }
@@ -50,7 +53,7 @@
     align-items: center;
   }
 
-  .footer .heading-quaternary {
+  .footer {
     text-align: center;
   }
 
