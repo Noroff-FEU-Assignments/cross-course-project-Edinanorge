@@ -60,7 +60,7 @@
     flex-direction: column;
   }
   .contact-form {
-    max-width: 90%;
+    max-width: 100%;
   }
 }
 
