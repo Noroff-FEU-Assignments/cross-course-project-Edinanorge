@@ -28,6 +28,51 @@ strong {
   font-weight: 500;
 }
 
+<<<<<<< Updated upstream
+=======
+.grid-4cols {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  align-items: center;
+  gap: 2rem;
+}
+
+.heading-primary {
+  font-size: 2.8rem;
+  font-weight: 600;
+  margin-bottom: 1.6rem;
+}
+
+.heading-secondary {
+  margin: 2rem 0;
+  grid-column: 1/-1;
+}
+
+.heading-tertiary {
+  grid-column: -1/1;
+  text-align: center;
+  margin: 1rem;
+  font-size: 1.8rem;
+  font-weight: 500;
+}
+
+.heading-quaternary {
+  margin: 1rem 0;
+  font: 1.2rem;
+  font-weight: 400;
+}
+
+.subheading {
+  color: #04adbf;
+  font-size: 1.4rem;
+  font-weight: 600;
+  text-transform: uppercase;
+
+  grid-column: 1/-1;
+}
+
+/**** LINKS ****/
+>>>>>>> Stashed changes
 .btn-cta:link,
 .btn-cta:visited {
   display: inline-block;
@@ -153,29 +198,11 @@ strong {
 
   display: grid;
   grid-template-columns: 1fr auto;
-  max-width: 40%;
-}
-
-.hero-subheading {
-  color: #04adbf;
-  font-size: 1.4rem;
-  font-weight: 600;
-  text-transform: uppercase;
-
-  grid-column: 1/-1;
-}
-
-.heading-primary {
-  font-size: 3.2rem;
-  font-weight: 600;
-  margin-bottom: 1.6rem;
-
-  grid-column: 1/-1;
+  max-width: 45%;
 }
 
 .hero-description {
   margin-bottom: 2.8rem;
-
   grid-column: 1/-1;
 }
 
@@ -214,14 +241,6 @@ strong {
   margin-bottom: 3rem;
 }
 
-.product h2 {
-  grid-column: -1/1;
-  text-align: center;
-  margin: 1rem;
-  font-size: 2rem;
-  font-weight: 500;
-}
-
 .product-img,
 .rating-img,
 .product-description {
@@ -232,6 +251,7 @@ strong {
   list-style: none;
   margin: 0.5rem;
 }
+
 .description-list i {
   padding-left: 1.5rem;
   padding-right: 1rem;
@@ -277,12 +297,6 @@ strong {
   list-style: none;
 }
 
-.heading-tertiary {
-  padding: 1rem;
-  font: 1.2rem;
-  font-weight: 400;
-}
-
 .coryright {
   font-weight: 400;
   text-align: center;
@@ -308,8 +322,15 @@ main {
   margin: 0 auto;
   max-width: 100rem;
 }
+<<<<<<< Updated upstream
 .section-about h1 {
   grid-column: 1/-1;
+=======
+
+.section-about .p1,
+.section-about .p3 {
+  grid-column: 1/3;
+>>>>>>> Stashed changes
 }
 .about-img {
   max-width: 100%;
@@ -333,10 +354,13 @@ main {
 .img2 {
   grid-row: 3;
 }
+<<<<<<< Updated upstream
 .img3 {
   grid-row: 4;
   grid-column: 2/3;
 }
+=======
+>>>>>>> Stashed changes
 
 /* **************** */
 /**** Contact page ****/
@@ -352,11 +376,26 @@ main {
   /* padding: 3rem; */
 }
 
-.section-contact h1 {
+.section-contact .heading-primary {
   grid-column: 1/-1;
 }
 
+<<<<<<< Updated upstream
 .section-contact i {
+=======
+.section-contact .heading-secondary {
+  text-align: center;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  text-align: center;
+}
+
+.contact-info i {
+>>>>>>> Stashed changes
   color: #04adbf;
   font-size: 2rem;
   margin-bottom: 1rem;
@@ -375,6 +414,7 @@ main {
   border-radius: 0.4rem;
   padding: 4rem;
 
+<<<<<<< Updated upstream
   max-width: 60%;
 }
 .contact-form h1 {
@@ -382,6 +422,8 @@ main {
   margin-bottom: 1rem;
 }
 
+=======
+>>>>>>> Stashed changes
 .contact-form input,
 textarea {
   padding: 0.5rem;
@@ -389,3 +431,51 @@ textarea {
   border-radius: 4px;
   margin: 0.7rem 0;
 }
+<<<<<<< Updated upstream
+=======
+
+.contact-form input:hover,
+textarea:hover {
+  border: 1px solid #04adbf;
+}
+
+/* **************** */
+/**** Man-jacket page ****/
+
+.jacket {
+  background-color: #e6f7f9;
+  box-shadow: 0 1rem 2rem 0 rgba(3, 138, 153, 0.3);
+  border-radius: 4px;
+
+  display: grid;
+  grid-template-columns: 1fr auto;
+  justify-content: center;
+}
+
+.jacket .heading-tertiary {
+  text-align: left;
+  font-size: 1.4rem;
+}
+
+.jacket-img,
+.price {
+  grid-column: 1/-1;
+}
+
+.jacket-container img {
+  max-height: 30rem;
+  object-fit: cover;
+}
+
+.price {
+  color: #025b64;
+  font-weight: 500;
+  font-size: 1.6rem;
+  padding-left: 1rem;
+}
+
+.btn-jackets {
+  grid-column: 2/-1;
+  margin: 3rem 1rem 1rem;
+}
+>>>>>>> Stashed changes

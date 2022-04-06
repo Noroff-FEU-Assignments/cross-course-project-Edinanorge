@@ -7,6 +7,7 @@
   }
 
   /* About page */
+<<<<<<< Updated upstream
   .section-about {
     display: block;
   }
@@ -37,6 +38,20 @@
   }
 }
 
+=======
+
+  .section-about .grid-4cols {
+    grid-template-columns: auto auto;
+  }
+
+  .section-about .p1 {
+    grid-column: 1/-1;
+  }
+
+  /* contact page */
+}
+
+>>>>>>> Stashed changes
 @media (max-width: 600px) {
   /* Hero section */
   .section-hero {
@@ -75,7 +90,7 @@
     align-items: center;
   }
 
-  .footer-container h3 {
+  .footer .heading-quaternary {
     text-align: center;
   }
   /* ********** */
