@@ -1,4 +1,9 @@
-@media (orientation: landscape) and (max-width: 800px) {
+@media (max-width: 900px) {
+  .grid-4cols {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  /* Hero section */
   .hero-text-box {
     top: 0;
     left: 0;
@@ -7,6 +12,8 @@
   }
 
   /* About page */
+
+  /* contact page */
 
   .section-about .grid-4cols {
     grid-template-columns: auto auto;
@@ -20,33 +27,14 @@
 }
 
 @media (max-width: 600px) {
+  .grid-4cols {
+    grid-template-columns: 1fr;
+  }
+
   /* Hero section */
   .section-hero {
     background-position-y: center;
     background-position-x: left;
-  }
-
-  .hero-text-box {
-    max-height: 100vh;
-    max-width: 100%;
-    top: 0;
-    left: 0;
-  }
-  .hero-subheading {
-    font-size: 1.2rem;
-  }
-  .hero-text-box h1 {
-    font-size: 2.4rem;
-  }
-
-  /* Products section */
-  .products-container {
-    grid-template-columns: 1fr;
-  }
-
-  .product,
-  .btn-products {
-    margin: 2rem;
   }
 
   /* Footer */
@@ -60,19 +48,21 @@
   .footer .heading-quaternary {
     text-align: center;
   }
+
   /* ********** */
   /* about page */
+}
 
-  .section-about {
-    display: block;
+@media (min-width: 700px) {
+  /* navigation */
+  .navigation {
+    display: inline-block;
+    position: static;
   }
-  .section-about > * {
-    padding: 1rem;
+  .hamburger-icon {
+    display: none;
   }
-  .section-about p {
-    font-size: 1.4rem;
-  }
-  .about-img {
-    display: block;
+  .navigation a {
+    display: inline-block;
   }
 }
