@@ -23,8 +23,8 @@
   /* contact page */
   .contact-info {
     flex-direction: row;
-    /* margin: 0 auto; */
   }
+
   .contact-form {
     max-width: 60%;
     margin: 0 auto;
@@ -32,9 +32,6 @@
 }
 
 @media (max-width: 600px) {
-  section {
-    padding: 2rem;
-  }
   .grid-4cols {
     grid-template-columns: 1fr;
   }

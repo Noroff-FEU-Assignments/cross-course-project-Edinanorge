@@ -10,7 +10,7 @@
     />
     <title>Rainydays</title>
     <link href="css/style.css" rel="stylesheet" />
-    <link href="css/contact.css" rel="stylesheet" />
+    <link href="css/jacket-specific.css" rel="stylesheet" />
     <link href="css/media-queries.css" rel="stylesheet" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -28,12 +28,12 @@
           <input type="checkbox" id="mobile-menu" />
           <nav class="navigation">
             <a class="navigation-link" href="index.html">Home</a>
-            <a class="navigation-link" href="jackets.html">Jackets</a>
+            <a class="navigation-link current" href="jackets.html">Jackets</a>
             <a class="navigation-link" href="about.html">About</a>
-            <a class="navigation-link current" href="contact.html">Contact</a>
+            <a class="navigation-link" href="contact.html">Contact</a>
           </nav>
         </div>
-        <a class="navigation-link" href="#"><i class="fa-solid fa-cart-shopping cart-icon"></i></a>
+        <a class="cart-link" href="cart.html"><i class="fa-solid fa-cart-shopping cart-icon"></i></a>
         <a class="profil-link" href="#"><i class="fa-solid fa-user profil-icon"></i></a>
         <a class="search-link" href="#"><i class="fa-solid fa-magnifying-glass search-icon"></i></a>
       </div>
@@ -41,37 +41,47 @@
     <main>
       <section>
         <div class="grid-2cols">
-          <section class="images">
-            <img class="image-01" src="images/man's-hiking.png" alt="" />
+          <section class="images-container">
+            <img class="image-01" src="images/product-man.jpg" alt="" />
             <img src="images/product-man's-01.jpg" alt="" />
             <img src="images/product-man's-02.jpg" alt="" />
             <img src="images/product-man's-01.jpg" alt="" />
           </section>
-          <section class="text">
-            <a href="jackets.html"><i class="fa-solid fa-arrow-left-long"></i>Our products</a>
-            <h1>Jacket name</h1>
-            <ul class="description-list">
+          <section class="text-conatiner">
+            <a class="back-link" href="jackets.html"><i class="fa-solid fa-arrow-left back-icon"></i>Our products</a>
+            <h1 class="heading-primary">Jacket name</h1>
+            <ul class="description-list jacket-description-list">
               <li><i class="fa-solid fa-cloud-rain"></i>waterproof</li>
               <li><i class="fa-solid fa-wind"></i>windproof</li>
               <li><i class="fa-solid fa-recycle"></i>recycled material</li>
               <li><i class="fa-solid fa-check"></i>all activities</li>
             </ul>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam quibusdam aliquid ipsam, quos sit quis. Esse
-              sequi similique ullam, explicabo optio officia reiciendis aliquam voluptatem inventore? Possimus
-              laboriosam numquam cupiditate.
+            <p class="jacket-description">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam quibusdam aliquid ipsam, quos sit quis.
             </p>
-            <span>1988 kr</span>
-            <a href="#" class="btn-cta">Add to cart</a>
+            <div class="size">
+              <div>
+                <input type="radio" id="small" name="color" value="small" checked />
+                <label for="small">S</label>
+              </div>
 
-            <input type="radio" id="small" name="small" value="small" checked />
-            <label for="small">S</label>
-            <input type="radio" id="medium" name="medium" value="medium" />
-            <label for="medium">M</label>
-            <input type="radio" id="large" name="large" value="large" />
-            <label for="large">L</label>
-            <input type="radio" id="extra-large" name="extra-large" value="extra-large" />
-            <label for="extra-large">XL</label>
+              <div>
+                <input type="radio" id="medium" name="color" value="medium" />
+                <label for="medium">M</label>
+              </div>
+
+              <div>
+                <input type="radio" id="large" name="color" value="large" />
+                <label for="large">L</label>
+              </div>
+
+              <div>
+                <input type="radio" id="extra-large" name="color" value="extra-large" />
+                <label for="extra-large">XL</label>
+              </div>
+            </div>
+            <span class="price">1988 kr</span>
+            <a href="#" class="btn-cta btn-buy">Add to cart</a>
           </section>
         </div>
       </section>
