@@ -1,0 +1,46 @@
+.jacket {
+  background-color: #e6f7f9;
+  box-shadow: 0 1rem 2rem 0 rgba(3, 138, 153, 0.3);
+  border-radius: 4px;
+
+  display: grid;
+  grid-template-columns: 1fr auto;
+  justify-content: center;
+}
+
+.jacket-img,
+.jacket h2 {
+  justify-content: center;
+}
+
+.jacket .heading-tertiary {
+  text-align: left;
+  font-size: 1.4rem;
+}
+
+.jacket-img,
+.price {
+  grid-column: 1/-1;
+}
+
+.jacket-container img {
+  max-height: 30rem;
+  object-fit: cover;
+}
+
+.jacket h2 {
+  font-size: 1.6rem;
+  padding-left: 1rem;
+  margin-bottom: 0.5rem;
+}
+.price {
+  color: #025b64;
+  font-weight: 500;
+  font-size: 1.6rem;
+  padding-left: 1rem;
+}
+
+.btn-jackets {
+  grid-column: 2/-1;
+  margin: 3rem 1rem 1rem;
+}
