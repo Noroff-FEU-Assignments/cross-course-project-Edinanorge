@@ -3,6 +3,10 @@
     grid-template-columns: 1fr 1fr;
   }
 
+  .grid-2cols {
+    grid-template-columns: 1fr;
+  }
+
   /* Hero section */
   .hero-text-box {
     top: 0;
@@ -12,8 +16,19 @@
   }
 
   /* About page */
+  .p2 {
+    grid-row: 4;
+  }
 
   /* contact page */
+  .contact-info {
+    flex-direction: row;
+    /* margin: 0 auto; */
+  }
+  .contact-form {
+    max-width: 60%;
+    margin: 0 auto;
+  }
 }
 
 @media (max-width: 600px) {
@@ -41,6 +56,12 @@
 
   /* ********** */
   /* about page */
+  .contact-info {
+    flex-direction: column;
+  }
+  .contact-form {
+    max-width: 90%;
+  }
 }
 
 @media (min-width: 700px) {

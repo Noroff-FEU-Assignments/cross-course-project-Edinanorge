@@ -1,13 +1,3 @@
-.section-contact {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: center;
-}
-
-.section-contact .heading-primary {
-  grid-column: 1/-1;
-}
-
 .section-contact .heading-secondary {
   text-align: center;
 }
@@ -15,8 +5,7 @@
 .contact-info {
   display: flex;
   flex-direction: column;
-  gap: 3rem;
-  text-align: center;
+  justify-content: space-around;
 }
 
 .contact-info i {
