@@ -13,9 +13,20 @@
 
   /* About page */
 
+
   /* contact page */
 }
 
+  .section-about .grid-4cols {
+    grid-template-columns: auto auto;
+  }
+
+  .section-about .p1 {
+    grid-column: 1/-1;
+  }
+
+  /* contact page */
+}
 @media (max-width: 600px) {
   .grid-4cols {
     grid-template-columns: 1fr;
@@ -35,7 +46,7 @@
     align-items: center;
   }
 
-  .footer-container h3 {
+  .footer .heading-quaternary {
     text-align: center;
   }
 
