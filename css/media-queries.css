@@ -67,8 +67,11 @@
 @media (max-width: 400px) {
   /* contact page */
 
-  section {
+  .section-contact {
     padding: 1rem;
+  }
+  .section-contact h1 {
+    text-align: center;
   }
 }
 
