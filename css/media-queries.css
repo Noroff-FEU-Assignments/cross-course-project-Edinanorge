@@ -36,6 +36,11 @@
     grid-template-columns: 1fr;
   }
 
+  .form {
+    max-width: 100%;
+    margin: 0;
+  }
+
   /* Hero section */
   .section-hero {
     background-position-y: center;
@@ -59,19 +64,25 @@
   .contact-info {
     flex-direction: column;
   }
-  .contact-form {
-    max-width: 100%;
-    padding: 2rem;
-  }
-}
-@media (max-width: 400px) {
+
   /* contact page */
 
-  .section-contact {
-    padding: 1rem 0;
+  .section-contact,
+  .section-cart {
+    padding: 4rem 0;
   }
   .section-contact h1 {
     text-align: center;
+  }
+
+  /* jacket-specific page */
+  .jacket-description-list {
+    display: flex;
+    flex-direction: column;
+  }
+  .extra-info,
+  .extra-info i {
+    font-size: 0.8rem;
   }
 }
 
