@@ -25,7 +25,7 @@
     flex-direction: row;
   }
 
-  .contact-form {
+  .form {
     max-width: 60%;
     margin: 0 auto;
   }
@@ -38,7 +38,7 @@
 
   .form {
     max-width: 100%;
-    margin: 0;
+    margin: 1rem;
   }
 
   /* Hero section */
@@ -66,7 +66,6 @@
   }
 
   /* contact page */
-
   .section-contact,
   .section-cart {
     padding: 4rem 0;
