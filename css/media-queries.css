@@ -69,13 +69,14 @@
     flex-direction: column;
   }
 
-  /* contact page */
+  /* contact/cart page */
   .section-contact,
   .section-cart {
     padding: 4rem 1rem;
   }
 
-  .section-contact h1 {
+  .section-contact h1,
+  .section-cart h1 {
     text-align: center;
   }
 
@@ -84,9 +85,15 @@
     display: flex;
     flex-direction: column;
   }
+
+  .text-container {
+    padding: 4rem 1rem;
+  }
+
   .extra-info,
   .extra-info i {
     font-size: 0.8rem;
+    padding-right: 0.3rem;
   }
 }
 

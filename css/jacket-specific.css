@@ -9,13 +9,13 @@
   grid-column: 1/-1;
 }
 
-.text-conatiner {
+.text-container {
   display: grid;
   grid-template-columns: auto 1fr;
   gap: 1rem;
   justify-content: center;
 }
-.text-conatiner h1 {
+.text-container h1 {
   font-size: 2rem;
   margin: 0;
 }

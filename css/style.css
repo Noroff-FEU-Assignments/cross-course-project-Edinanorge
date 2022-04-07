@@ -359,6 +359,7 @@ textarea:hover {
 }
 
 /**** cart ****/
+
 .cart-specifics {
   display: grid;
   grid-template-columns: 1fr auto;
