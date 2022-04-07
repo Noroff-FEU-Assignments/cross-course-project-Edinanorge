@@ -88,6 +88,37 @@ strong {
   grid-column: 1/-1;
 }
 
+.form {
+  display: flex;
+  flex-direction: column;
+
+  border: 1px solid #04adbf;
+  border-radius: 0.4rem;
+
+  margin: 0 4rem;
+  background-color: #fff;
+
+  padding: 4rem;
+}
+
+.form .heading-secondary {
+  margin-top: 0;
+  text-align: center;
+}
+
+.form input,
+textarea {
+  padding: 0.8rem;
+  border: 1px solid rgba(124, 124, 124, 0.4);
+  border-radius: 4px;
+  margin: 0.7rem 0;
+}
+
+.form input:hover,
+textarea:hover {
+  border: 1px solid #04adbf;
+}
+
 /**** LINKS ****/
 .btn-cta:link,
 .btn-cta:visited,
@@ -321,4 +352,45 @@ strong {
   text-align: center;
   font-size: 1rem;
   margin-top: 3rem;
+}
+
+/**** cart ****/
+.cart-specifics {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 2rem;
+}
+input[type="date"] {
+  grid-column: 1;
+}
+label[for="cvc"] {
+  grid-row: 1;
+  grid-column: 2/3;
+}
+.price-details {
+  font-size: 1.2rem;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  row-gap: 0.5rem;
+  align-items: baseline;
+  margin: 2rem 0;
+}
+.line::before {
+  content: "";
+  background-color: #111;
+  display: block;
+  max-width: 100%;
+  height: 1px;
+  opacity: 0.3;
+}
+
+.cart-products {
+  border: 1px solid #038a99;
+  border-radius: 4px;
+  padding: 1rem;
+
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  gap: 3rem;
+  align-items: center;
 }

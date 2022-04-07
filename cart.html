@@ -35,25 +35,52 @@
         </div>
         <a class="cart-link" href="cart.html"><i class="fa-solid fa-cart-shopping cart-icon"></i></a>
         <a class="profil-link" href="#"><i class="fa-solid fa-user profil-icon"></i></a>
-        <a class="search-link" href="#"><i class="fa-solid fa-magnifying-glass search-icon"></i></a>
       </div>
     </header>
     <main>
       <section>
         <div class="grid-2cols">
-          <div>
-            <a class="back-link" href="jackets.html"><i class="fa-solid fa-arrow-left back-icon"></i>Our Products</a>
-            <h1 class="heading-primary">shopping cart</h1>
+          <a class="back-link" href="jackets.html"><i class="fa-solid fa-arrow-left back-icon"></i>Our Products</a>
+          <h1 class="heading-primary">Shopping cart</h1>
+          <div class="cart-products">
             <img src="images/product-man's-01.jpg" alt="">
-            <h2>Jacket name</h2>
-            <p>#3633839</p>
-            <span>1899,00 kr</span>
+            <div>
+              <p><strong>Jacket name</strong></p>
+              <p>#3633839</p>
+            </div>
+            <select name="quantity" id="quantity">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="0">0</option>
+            </select>
+            <p>1899,00 kr</p>
           </div>
-          <div>
-            <form action="Post">
-              
-            </form>
-          </div>
+          <form method="POST">
+            <div class="form">
+              <h2 class="heading-secondary">Checkout</h2>
+              <label for="name">Costumer Name</label>
+              <input type="name" id="name" name="name" />
+              <label for="cart-number">Cart number</label>
+              <input type="number" id="cart-number" name="cart-number" />
+              <div class="cart-specifics">
+              <label for="date">Exp. date</label>
+              <input type="date" id="date" name="date" />
+              <label for="cvc">C.V.C.</label>
+              <input type="number" name="cvc"></input>
+            </div>
+            <div class="price-details">
+              <p>Sum</p>
+              <p>1988.00 kr</p>
+              <p>Shipping charges</p>
+              <p>0 kr</p>
+              <p>Tax</p>
+              <p>2.00 kr</p>
+              <p class="line"><strong>Total</strong></p>
+              <p class="line"><strong>1990.00 kr</strong></p>
+            </div>
+            <input type="submit" value="Checkout" class="btn-cta btn-submit" />
+          </form>
         </div>
       </section>
     </main>
