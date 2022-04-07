@@ -64,6 +64,13 @@
     padding: 2rem;
   }
 }
+@media (max-width: 400px) {
+  /* contact page */
+
+  section {
+    padding: 1rem;
+  }
+}
 
 @media (min-width: 700px) {
   /* navigation */
