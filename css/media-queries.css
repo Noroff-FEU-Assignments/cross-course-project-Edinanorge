@@ -72,8 +72,9 @@
   /* contact page */
   .section-contact,
   .section-cart {
-    padding: 4rem 0;
+    padding: 4rem 1rem;
   }
+
   .section-contact h1 {
     text-align: center;
   }
