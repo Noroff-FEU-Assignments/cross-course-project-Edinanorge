@@ -364,9 +364,15 @@ textarea:hover {
   grid-template-columns: 1fr auto;
   column-gap: 2rem;
 }
+
 input[type="date"] {
   grid-column: 1;
 }
+
+input[id="cvc"] {
+  max-width: 7rem;
+}
+
 label[for="cvc"] {
   grid-row: 1;
   grid-column: 2/3;

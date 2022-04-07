@@ -36,6 +36,10 @@
     grid-template-columns: 1fr;
   }
 
+  .grid-2cols {
+    grid-template-columns: 1fr;
+  }
+
   .form {
     max-width: 100%;
     margin: 1rem;
