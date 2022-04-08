@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content=" Check out the Rainydays jacket sizes. You can find your size easlye. " />
     <title>Rainydays / Jacket specific page</title>
+    <link href="css/general.css" rel="stylesheet" />
     <link href="css/style.css" rel="stylesheet" />
-    <link href="css/jacket-specific.css" rel="stylesheet" />
     <link href="css/media-queries.css" rel="stylesheet" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -37,7 +37,7 @@
     <main>
       <section>
         <div class="grid-2cols">
-          <section class="images-container">
+          <div class="images-container">
             <img class="image-01" src="images/product-man.jpg" alt="Man in a yellow raincoat" />
             <img
               src="images/product-man's-01.jpg"
@@ -51,8 +51,8 @@
               src="images/product-man's-01.jpg"
               alt="Horizontal shot of pleased Caucasian man wears hat, yellow raincoat"
             />
-          </section>
-          <section class="text-container">
+          </div>
+          <div class="text-container">
             <a class="back-link" href="jackets.html"><i class="fa-solid fa-arrow-left back-icon"></i>Our products</a>
             <h1 class="heading-primary">Jacket name</h1>
             <ul class="description-list jacket-description-list">
@@ -67,38 +67,39 @@
             <div class="size">
               <div class="size-box">
                 <input type="radio" id="extra-small" name="color" value="extra-small" checked />
-                <label for="extra-small"><div class="jacket-size">xs</div></label>
+                <div class="jacket-size"><label for="extra-small"></label>xs</div>
               </div>
 
               <div class="size-box">
                 <input type="radio" id="small" name="color" value="small" />
-                <label for="small"><div class="jacket-size">s</div></label>
+                <div class="jacket-size"><label for="small"></label>s</div>
               </div>
 
               <div class="size-box">
                 <input type="radio" id="medium" name="color" value="medium" />
-                <label for="medium"><div class="jacket-size">m</div></label>
+                <div class="jacket-size"><label for="medium"></label>m</div>
               </div>
 
               <div class="size-box">
                 <input type="radio" id="large" name="color" value="large" />
-                <label for="large"><div class="jacket-size">l</div></label>
+                <div class="jacket-size"><label for="large"></label>l</div>
               </div>
 
               <div class="size-box">
                 <input type="radio" id="extra-large" name="color" value="extra-large" />
-                <label for="extra-large"><div class="jacket-size">xl</div></label>
+                <div class="jacket-size"><label for="extra-large"></label>xl</div>
               </div>
             </div>
             <span class="price">1988 kr</span>
             <a href="cart.html" class="btn-cta btn-buy">Add to cart</a>
-          </section>
+          </div>
         </div>
-      </section>
-      <section class="extra-info">
-        <p><i class="fa-solid fa-truck"></i>Free delivery</p>
-        <p><i class="fa-solid fa-arrow-right-arrow-left"></i>30 days free return</p>
-        <p><i class="fa-solid fa-money-bill-1"></i>Money-back guarantee</p>
+
+        <div class="extra-info">
+          <p><i class="fa-solid fa-truck"></i>Free delivery</p>
+          <p><i class="fa-solid fa-arrow-right-arrow-left"></i>30 days free return</p>
+          <p><i class="fa-solid fa-money-bill-1"></i>Money-back guarantee</p>
+        </div>
       </section>
     </main>
     <footer class="footer">
