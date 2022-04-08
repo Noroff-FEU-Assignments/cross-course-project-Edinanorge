@@ -218,3 +218,7 @@ label[for="cvc"] {
   gap: 3rem;
   align-items: center;
 }
+
+.btn-submit {
+  text-align: center;
+}
