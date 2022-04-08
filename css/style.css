@@ -19,54 +19,48 @@
   font-size: 2rem;
   margin-bottom: 1rem;
 }
+
 /* jacets.html  */
+.section-jackets a {
+  text-decoration: none;
+  color: #111;
+}
+
 .jacket {
   background-color: #e6f7f9;
   box-shadow: 0 1rem 2rem 0 rgba(3, 138, 153, 0.3);
   border-radius: 4px;
-
-  display: grid;
-  grid-template-columns: 1fr auto;
-  justify-content: center;
 }
 
-.jacket-img,
-.jacket h2 {
-  justify-content: center;
+.jacket-text {
+  padding: 1rem;
 }
 
-.jacket .heading-tertiary {
+.jacket h3 {
   text-align: left;
-  font-size: 1.4rem;
+  margin: 0;
+  font-size: 1.6rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.jacket-nr {
+  font-size: 1rem;
+  opacity: 0.6;
+  margin-bottom: 1rem;
+}
+
+.jacket .price {
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+
+.price.price-sale {
+  color: #a31717;
 }
 
 /* jacket-specific.html */
-.jacket-img,
-.price {
-  grid-column: 1/-1;
-}
-
-.jacket-container img {
-  max-height: 30rem;
-  object-fit: cover;
-}
-
-.jacket h2 {
-  font-size: 1.6rem;
-  padding-left: 1rem;
-  margin-bottom: 0.5rem;
-}
-.price {
-  color: #025b64;
-  font-weight: 500;
-  font-size: 1.6rem;
-  padding-left: 1rem;
-}
-
-.btn-jackets {
-  grid-column: 2/-1;
-  margin: 3rem 1rem 1rem;
-}
+/* img-box */
 
 .images-container {
   display: grid;
@@ -79,15 +73,34 @@
   grid-column: 1/-1;
 }
 
+/* text */
+.back-icon {
+  color: #038a99;
+  font-size: 2rem;
+  margin-right: 1rem;
+}
+
+.back-link {
+  grid-column: 1/-1;
+  text-decoration: none;
+  color: #111;
+  margin-bottom: 0.5rem;
+}
+
 .text-container {
   display: grid;
   grid-template-columns: auto 1fr;
-  gap: 1rem;
-  justify-content: center;
 }
+
 .text-container h1 {
   font-size: 2rem;
-  margin: 0;
+}
+
+.price {
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+  font-weight: 500;
+  color: #033f46;
 }
 
 .jacket-description-list,
@@ -97,28 +110,19 @@
   grid-column: 1/-1;
 }
 
-.back-icon {
-  color: #038a99;
-  font-size: 2rem;
-  margin-right: 1rem;
-}
-
-.back-link {
-  text-decoration: none;
-  color: #111;
-}
-.jacket-description {
-  margin-bottom: 3rem;
-}
-
 .jacket-description-list {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  margin-bottom: 0.5rem;
 }
+
+.jacket-description {
+  margin-bottom: 2rem;
+}
+
 .size {
   display: flex;
   gap: 1rem;
+  margin-bottom: 1rem;
 }
 
 /* Radio button redesign */
@@ -131,7 +135,7 @@ input[type="radio"] {
 input[type="radio"] {
   font-size: 2rem;
   width: 3.4rem;
-  height: 3rem;
+  height: 2.5rem;
   border: 1px solid #038a99;
 }
 
@@ -148,14 +152,8 @@ input[type="radio"]:checked {
   color: #111;
   position: absolute;
   font-size: 1.5rem;
-  top: 0.5rem;
+  top: 0.3rem;
   left: 0.8rem;
-}
-
-.price {
-  font-size: 2rem;
-  font-weight: 500;
-  color: #033f46;
 }
 
 .extra-info {
@@ -191,6 +189,7 @@ label[for="cvc"] {
   grid-row: 1;
   grid-column: 2/3;
 }
+
 .price-details {
   font-size: 1.2rem;
   display: grid;
@@ -199,6 +198,7 @@ label[for="cvc"] {
   align-items: baseline;
   margin: 2rem 0;
 }
+
 .line::before {
   content: "";
   background-color: #111;
@@ -214,11 +214,31 @@ label[for="cvc"] {
   padding: 1rem;
 
   display: grid;
-  grid-template-columns: 1fr auto auto 1fr;
+  grid-template-columns: 1fr 1fr auto auto;
   gap: 3rem;
   align-items: center;
 }
 
 .btn-submit {
   text-align: center;
+}
+
+/* checout-success.html */
+.section-success {
+  max-height: 100vh;
+}
+.section-success h1 {
+  margin: 3rem 0;
+  color: #033f46;
+  font-size: 3.2rem;
+  grid-column: 1/-1;
+}
+
+.section-success h2 {
+  margin-bottom: 2rem;
+}
+
+.delivery,
+.order {
+  margin-bottom: 3rem;
 }
