@@ -131,7 +131,8 @@ textarea:hover {
   letter-spacing: 0.5px;
   padding: 1rem 2rem;
   border-radius: 4px;
-  transition: all 0.3s;
+
+  transition: all 0.3s ease;
 }
 
 .btn-cta:hover,
