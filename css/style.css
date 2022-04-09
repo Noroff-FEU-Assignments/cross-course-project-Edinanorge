@@ -101,6 +101,7 @@
   font-size: 2rem;
   font-weight: 500;
   color: #033f46;
+  margin-bottom: 2rem;
 }
 
 .jacket-description-list,
@@ -113,16 +114,17 @@
 .jacket-description-list {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  margin-top: 2rem;
 }
 
 .jacket-description {
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
 }
 
 .size {
   display: flex;
   gap: 1rem;
-  margin-bottom: 1rem;
+  margin-bottom: 3rem;
 }
 
 /* Radio button redesign */
@@ -140,7 +142,7 @@ input[type="radio"] {
 }
 
 input[type="radio"]:checked {
-  background-color: #04adbf;
+  background-color: #4fc6d2;
 }
 
 .size-box {
@@ -224,9 +226,7 @@ label[for="cvc"] {
 }
 
 /* checout-success.html */
-.section-success {
-  max-height: 100vh;
-}
+
 .section-success h1 {
   margin: 3rem 0;
   color: #033f46;
