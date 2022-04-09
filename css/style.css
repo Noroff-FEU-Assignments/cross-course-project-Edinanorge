@@ -1,8 +1,18 @@
 /* about page */
-.img-flex {
-  display: flex;
-  max-width: 50%;
+.about-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
   gap: 0.5rem;
+}
+
+.about-img {
+  overflow: hidden;
+}
+.about-gallery img:hover {
+  transform: scale(1.2);
+}
+.about-text p {
+  margin-bottom: 4rem;
 }
 
 .section-about h2 {
