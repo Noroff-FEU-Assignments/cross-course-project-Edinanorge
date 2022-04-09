@@ -1,13 +1,17 @@
 /* about page */
 .about-gallery {
   display: grid;
-  grid-template-columns: repeat(2, auto);
+  grid-template-columns: repeat(2, 1fr);
   gap: 0.5rem;
 }
-
 .about-img {
   overflow: hidden;
 }
+.about-gallery img {
+  display: block;
+  transition: all 0.4s;
+}
+
 .about-gallery img:hover {
   transform: scale(1.2);
 }
@@ -46,6 +50,11 @@
   border-radius: 4px;
 }
 
+.jacket:hover {
+  /* transform: scale(1.05); */
+  box-shadow: 0 0.5rem 0.8rem 0 rgba(3, 138, 153, 0.3);
+}
+
 .jacket-text {
   padding: 1rem;
 }
@@ -71,11 +80,6 @@
 
 .price.price-sale {
   color: #a31717;
-}
-
-.jacket:hover {
-  /* transform: scale(1.05); */
-  box-shadow: 0 0.3rem 0.9rem 0 rgba(3, 138, 153, 0.8);
 }
 
 .jacket {
@@ -177,7 +181,8 @@ input[type="radio"] {
   border: 1px solid #038a99;
 }
 
-input[type="radio"]:checked {
+input[type="radio"]:checked,
+label:checked {
   background-color: #4fc6d2;
 }
 
