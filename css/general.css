@@ -160,8 +160,8 @@ textarea:hover {
 
 .navigation-link:link,
 .navigation-link:visited,
-.link-to-shoppingcart:link,
-.link-to-shoppingcart-link:visited {
+.way-to-shoppingcart:link,
+.way-to-shoppingcart-link:visited {
   text-decoration: none;
   color: #111;
   font-size: 1.4rem;
