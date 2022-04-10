@@ -155,7 +155,7 @@ textarea:hover {
 
 .btn-secondary:hover,
 .btn-secondary:hover {
-  color: #4fc6d2;
+  text-decoration: underline;
 }
 
 .navigation-link:link,
