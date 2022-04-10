@@ -153,6 +153,7 @@
 @media (min-width: 1400px) {
   section {
     max-width: 120rem;
+    padding: 8rem 4rem;
   }
 
   /* home page */
