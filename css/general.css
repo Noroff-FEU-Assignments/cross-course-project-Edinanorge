@@ -160,12 +160,8 @@ textarea:hover {
 
 .navigation-link:link,
 .navigation-link:visited,
-.search-link:link,
-.search-link:visited,
-.profil-page-link:link,
-.profil-page-link:visited,
-.shopping-cart-link:link,
-.shopping-cart-link:visited {
+.link-to-shoppingcart:link,
+.link-to-shoppingcart-link:visited {
   text-decoration: none;
   color: #111;
   font-size: 1.4rem;
@@ -175,12 +171,8 @@ textarea:hover {
 
 .navigation-link:hover,
 .navigation-link:active,
-.search-icon:hover,
-.search-icon:active,
-.profil-icon:hover,
-.profil-icon:active,
-.shopping-cart-link:hover,
-.shopping-cart-link:active {
+.link-to-shopping:hover,
+.link-shoppingcart:active {
   color: #e6f7f9;
 }
 
