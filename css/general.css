@@ -27,7 +27,7 @@ main {
 section {
   max-width: 100rem;
   margin: 0 auto;
-  padding: 4rem;
+  padding: 6rem 4rem;
 }
 
 img {
@@ -49,7 +49,7 @@ strong {
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
-  gap: 3rem;
+  column-gap: 4rem;
 }
 
 .heading-primary {
@@ -98,7 +98,7 @@ strong {
   margin: 0 4rem;
   background-color: #fff;
 
-  padding: 4rem;
+  padding: 8rem 4rem;
 }
 
 .form .heading-secondary {
@@ -199,7 +199,7 @@ textarea:hover {
   color: #fff;
 }
 
-/**** HEADER/NAVIGATION ****/
+/* Header/ Navigation */
 
 .header-container {
   display: grid;
@@ -252,115 +252,4 @@ textarea:hover {
 
 .header-container:last-child {
   padding-right: 4rem;
-}
-
-/**** HERO SECTION ****/
-
-.section-hero {
-  background-image: url(../images/img-hero.png);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position-y: center;
-  background-position-x: right;
-  min-height: 100vh;
-  max-width: 100%;
-
-  position: relative;
-}
-
-.hero-text-box {
-  background-color: rgba(3, 41, 48, 0.8);
-  color: #fff;
-  padding: 3rem;
-  border-radius: 4px;
-
-  position: absolute;
-  top: 10rem;
-  left: 50%;
-
-  display: grid;
-  grid-template-columns: 1fr auto;
-  max-width: 40%;
-}
-
-.hero-description {
-  margin-bottom: 2.8rem;
-  grid-column: 1/-1;
-}
-
-.btn-hero {
-  grid-column: 2/3;
-}
-
-/**** PRODUCT SECTION ****/
-
-.product {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  align-items: center;
-
-  box-shadow: 0 1rem 2rem 0 rgba(3, 138, 153, 0.3);
-  border-radius: 4px;
-}
-
-.product-img,
-.rating-img,
-.product-description {
-  grid-column: -1/1;
-}
-
-.description-list li {
-  list-style: none;
-  margin: 0.5rem;
-}
-
-.description-list i {
-  padding-left: 1.5rem;
-  padding-right: 1rem;
-  color: #038a99;
-}
-
-.rating-img {
-  max-width: 30%;
-  margin: 1rem auto;
-}
-
-/**** FOOTER ****/
-
-.footer {
-  font-size: 1.2rem;
-  background-color: #1db5c5;
-  color: #000;
-  padding: 3rem;
-  padding-bottom: 2rem;
-}
-
-.footer-container {
-  display: flex;
-  justify-content: space-evenly;
-}
-
-.footer-logo {
-  max-width: 15rem;
-  margin-top: 1.5rem;
-}
-
-.footer i {
-  color: #cdeff2;
-  padding: 1rem;
-}
-
-.footer i:hover {
-  transform: scale(1.3);
-}
-
-.footer-container li {
-  list-style: none;
-}
-
-.coryright {
-  font-weight: 400;
-  text-align: center;
-  font-size: 1rem;
-  margin-top: 3rem;
 }
