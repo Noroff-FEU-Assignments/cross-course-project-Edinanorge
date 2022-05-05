@@ -45,6 +45,7 @@
   display: grid;
   grid-template-columns: 1fr auto;
   align-items: center;
+  background-color: #fff;
 
   box-shadow: 0 1rem 2rem 0 rgba(3, 138, 153, 0.3);
   border-radius: 4px;
