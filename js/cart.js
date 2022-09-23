@@ -20,3 +20,12 @@ cartProducts.innerHTML += `<div class="cart-products">
                             </select>
                             <p><strong>${product.price} kr</strong></p>
                             </div>`;
+
+// const quantity = document.querySelectorAll("option");
+// for (let i = 0; i < quantity.length; i++) {
+//   console.log(quantity[i].value);
+
+//   if (quantity[i].value === 0) {
+//     cartProducts.innerHTML = "";
+//   }
+// }

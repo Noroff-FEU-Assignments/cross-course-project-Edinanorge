@@ -1,7 +1,7 @@
 const products = [
   {
     name: "Woman's Hiking Jacket",
-    image: "/RainyDays/images/Woman Hiking.png",
+    image: "/RainyDays/images/woman-hiking.png",
     id: 1,
     price: 999,
     product_code: "#457782625",
@@ -14,7 +14,7 @@ const products = [
   },
   {
     name: "Woman's Skiing Jacket",
-    image: "/RainyDays/images/Woman Skiing.png",
+    image: "/RainyDays/images/woman-skiing.png",
     id: 2,
     price: 1499,
     product_code: "#092882625",
@@ -27,7 +27,7 @@ const products = [
   },
   {
     name: "Woman's Canoeing Jacket",
-    image: "/RainyDays/images/Woman Canoeing.png",
+    image: "/RainyDays/images/woman-canoeing.png",
     id: 3,
     price: 1199,
     product_code: "#772882625",
@@ -41,7 +41,7 @@ const products = [
   },
   {
     name: "Woman's Camping Jacket",
-    image: "/RainyDays/images/Woman Camping.png",
+    image: "/RainyDays/images/woman-camping.png",
     id: 4,
     price: 1999,
     product_code: "#767882625",
@@ -55,7 +55,7 @@ const products = [
 
   {
     name: "Man's Hiking Jacket",
-    image: "/RainyDays/images/Man Hiking.png",
+    image: "/RainyDays/images/man-hiking.png",
     id: 5,
     price: 1699,
     product_code: "#889882625",
@@ -68,7 +68,7 @@ const products = [
   },
   {
     name: "Man's Skiing Jacket",
-    image: "/RainyDays/images/Man Skiing.png",
+    image: "/RainyDays/images/man-skiing.png",
     id: 6,
     price: 700,
     product_code: "#782882625",
@@ -81,7 +81,7 @@ const products = [
   },
   {
     name: "Man's Canoeing Jacket",
-    image: "/RainyDays/images/Man Canoeing.png",
+    image: "/RainyDays/images/man-canoeing.png",
     id: 7,
     price: 1700,
     product_code: "#777782625",
@@ -94,7 +94,7 @@ const products = [
   },
   {
     name: "Man's Camping Jacket",
-    image: "/RainyDays/images/Man Camping.png",
+    image: "/RainyDays/images/man-camping.png",
     id: 8,
     price: 1599,
     product_code: "#234882625",
@@ -108,7 +108,7 @@ const products = [
 
   {
     name: "Kid's Hiking Jacket",
-    image: "/RainyDays/images/Kid Hiking.png",
+    image: "/RainyDays/images/kid-hiking.png",
     id: 9,
     price: 899,
     product_code: "#972882625",
@@ -121,7 +121,7 @@ const products = [
   },
   {
     name: "Kid's Skiing Jacket",
-    image: "/RainyDays/images/Kid Skiing.png",
+    image: "/RainyDays/images/kid-skiing.png",
     id: 10,
     price: 1100,
     product_code: "#8982625",
@@ -134,7 +134,7 @@ const products = [
   },
   {
     name: "Kid's Canoeing Jacket",
-    image: "/RainyDays/images/Kid Canoeing.png",
+    image: "/RainyDays/images/kid-canoeing.png",
     id: 11,
     price: 399,
     product_code: "#772882625",
@@ -147,7 +147,7 @@ const products = [
   },
   {
     name: "Kid's Camping Jacket",
-    image: "/RainyDays/images/Kid Camping.png",
+    image: "/RainyDays/images/kid-camping.png",
     id: 12,
     price: 399,
     product_code: "#8s8882625",
