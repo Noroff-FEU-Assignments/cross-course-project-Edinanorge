@@ -36,10 +36,16 @@
 
   <body>
     <header>
+      <div class="search">
+        <label for="search"></label>
+        <input type="search" name="search" placeholder="Search for item" class="search-input" />
+        <button type="submit" id="search" class="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+      </div>
       <div class="header-container">
         <div class="header-logo">
           <a href="index.html"><img class="logo" src="images/logo2.png" alt="Rainydays logo" /></a>
         </div>
+
         <div class="header-navigation">
           <label for="mobile-menu" class="hamburger-icon"><i class="fa-solid fa-bars"></i></label>
           <input type="checkbox" id="mobile-menu" />
@@ -62,77 +68,13 @@
             Beat the rain in our stylish rain jackets. Build with a waterproof, breathable fabric, this 2 layers jackets
             offers protection through rain, showers in all outdoors activity.
           </p>
-          <a href="jackets.html" class="btn-cta btn-hero">Buy now</a>
+          <a href="jackets.html" class="btn-cta btn-hero">Wiew more</a>
         </div>
       </section>
       <section class="section-products">
-        <div class="grid-4cols">
-          <h2 class="heading-secondary">Our Jackets</h2>
-          <figure class="product">
-            <h3 class="heading-tertiary">Man's</h3>
-            <img class="product-img" src="images/product-man.png" alt="Man in a yellow raincoat" />
-            <img class="rating-img" src="images/rating.png" alt="Tre star rating image" />
-            <figcaption class="product-description">
-              <ul class="description-list">
-                <li><i class="fa-solid fa-cloud-rain"></i>waterproof</li>
-                <li><i class="fa-solid fa-wind"></i>windproof</li>
-                <li><i class="fa-solid fa-recycle"></i>recycled material</li>
-                <li><i class="fa-solid fa-check"></i>all activities</li>
-              </ul>
-            </figcaption>
-            <a href="jackets.html" class="btn-secondary">View more <i class="fa-solid fa-arrow-right"></i></a>
-          </figure>
-          <figure class="product">
-            <h3 class="heading-tertiary">Woman's</h3>
-            <img
-              class="product-img"
-              src="images/product-women.jpg"
-              alt="Happy young woman enjoys nature landscape, carries rucksack, wears yellow raincoat."
-            />
-            <img class="rating-img" src="images/rating.png" alt="Tre star rating image" />
-            <figcaption class="product-description">
-              <ul class="description-list">
-                <li><i class="fa-solid fa-cloud-rain"></i>waterproof</li>
-                <li><i class="fa-solid fa-wind"></i>windproof</li>
-                <li><i class="fa-solid fa-recycle"></i>recycled material</li>
-                <li><i class="fa-solid fa-check"></i>all activities</li>
-              </ul>
-            </figcaption>
-            <a href="jackets.html" class="btn-secondary">View more <i class="fa-solid fa-arrow-right"></i></a>
-          </figure>
-          <figure class="product">
-            <h3 class="heading-tertiary">Kid's</h3>
-            <img
-              class="product-img"
-              src="images/product-kid.jpeg"
-              alt="Little siblings walking in forest and wearing yellow raincoats"
-            />
-            <img class="rating-img" src="images/rating.png" alt="Tre star rating image" />
-            <figcaption class="product-description">
-              <ul class="description-list">
-                <li><i class="fa-solid fa-cloud-rain"></i>waterproof</li>
-                <li><i class="fa-solid fa-wind"></i>windproof</li>
-                <li><i class="fa-solid fa-recycle"></i>recycled material</li>
-                <li><i class="fa-solid fa-check"></i>all activities</li>
-              </ul>
-            </figcaption>
-            <a href="jackets.html" class="btn-secondary">View more <i class="fa-solid fa-arrow-right"></i></a>
-          </figure>
-          <figure class="product">
-            <h3 class="heading-tertiary">Sale</h3>
-            <img class="product-img" src="images/sale.jpg" alt="Sign od sale" />
-            <img class="rating-img" src="images/rating.png" alt="Tre star rating image" />
-            <figcaption class="product-description">
-              <ul class="description-list">
-                <li><i class="fa-solid fa-cloud-rain"></i>waterproof</li>
-                <li><i class="fa-solid fa-wind"></i>windproof</li>
-                <li><i class="fa-solid fa-recycle"></i>recycled material</li>
-                <li><i class="fa-solid fa-check"></i>all activities</li>
-              </ul>
-            </figcaption>
-            <a href="jackets.html" class="btn-secondary">View more <i class="fa-solid fa-arrow-right"></i></a>
-          </figure>
-        </div>
+        <h2 class="heading-secondary">Our Best Selling Products</h2>
+        <div class="products grid-4cols"></div>
+        <a href="jackets.html" class="btn-secondary">Wiew more <i class="fa-solid fa-arrow-right"></i></a>
       </section>
     </main>
 
@@ -167,5 +109,7 @@
       </div>
       <h4 class="coryright">Copyright &copy;2022 RainyDays</h4>
     </footer>
+    <script src="js/products.js"></script>
+    <script src="js/index.js"></script>
   </body>
 </html>

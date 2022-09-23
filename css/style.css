@@ -9,7 +9,7 @@
   background-repeat: no-repeat;
   background-position-y: center;
   background-position-x: right;
-  min-height: 100vh;
+  min-height: 90vh;
   max-width: 100%;
 
   position: relative;
@@ -22,7 +22,7 @@
   border-radius: 4px;
 
   position: absolute;
-  top: 10rem;
+  top: 1;
   left: 50%;
 
   display: grid;
@@ -42,35 +42,43 @@
 /*-product section*/
 
 .product {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  align-items: center;
   background-color: #fff;
 
   box-shadow: 0 1rem 2rem 0 rgba(3, 138, 153, 0.3);
   border-radius: 4px;
+  padding: 1rem;
+
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-rows: auto auto 1fr auto;
+
+  position: relative;
 }
 
-.product-img,
-.rating-img,
-.product-description {
-  grid-column: -1/1;
+.product-name,
+.product-rating,
+.product-img {
+  grid-column: 1/-1;
+}
+.product-code {
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
 }
 
-.description-list li {
-  list-style: none;
-  margin: 0.5rem;
+.product-img {
+  height: 240px;
+  width: 100%;
+  object-fit: cover;
+  padding: 1rem;
 }
 
-.description-list i {
-  padding-left: 1.5rem;
-  padding-right: 1rem;
-  color: #038a99;
+.product-rating {
+  margin-bottom: 3rem;
 }
 
-.rating-img {
-  max-width: 30%;
-  margin: 1rem auto;
+.product-price {
+  font-weight: 700;
+  text-align: left;
 }
 
 /*-footer*/
@@ -178,18 +186,6 @@
 /* ******************** */
 /* Jacket-specific page */
 
-/* -img-box */
-.section-jacket-specific .grid-2cols {
-  grid-template-columns: 60fr 40fr;
-}
-
-.images-container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 0.5rem;
-  padding: 0;
-}
-
 .image-01 {
   grid-column: 1/-1;
 }
@@ -235,7 +231,13 @@
 .jacket-description-list {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  margin-top: 2rem;
+  margin: 2rem 0;
+
+  list-style: none;
+}
+.jacket-description-list i {
+  color: #038a99;
+  padding-right: 1rem;
 }
 
 .jacket-description {
@@ -396,6 +398,7 @@ label[for="cvc"] {
 
 /* ******************** */
 /* Checkout-success page */
+
 .section-success {
   max-height: 100vh;
 }

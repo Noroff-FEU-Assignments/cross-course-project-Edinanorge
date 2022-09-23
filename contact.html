@@ -17,24 +17,24 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet" />
     <script src="https://kit.fontawesome.com/16bf78a0e8.js" crossorigin="anonymous"></script>
     <!-- Hotjar Tracking Code for https://happy-cray-ed1521.netlify.app -->
-    <script>
-      (function (h, o, t, j, a, r) {
-        h.hj =
-          h.hj ||
-          function () {
-            (h.hj.q = h.hj.q || []).push(arguments);
-          };
-        h._hjSettings = { hjid: 3162282, hjsv: 6 };
-        a = o.getElementsByTagName("head")[0];
-        r = o.createElement("script");
-        r.async = 1;
-        r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
-        a.appendChild(r);
-      })(window, document, "https://static.hotjar.com/c/hotjar-", ".js?sv=");
-    </script>
+<script>
+  (function(h,o,t,j,a,r){
+      h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+      h._hjSettings={hjid:3162282,hjsv:6};
+      a=o.getElementsByTagName('head')[0];
+      r=o.createElement('script');r.async=1;
+      r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+      a.appendChild(r);
+  })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
   </head>
   <body>
     <header>
+      <div class="search">
+        <label for="search"></label>
+        <input type="search" name="search" placeholder="Search for item" class="search-input" />
+        <button type="submit" id="search" class="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+      </div>
       <div class="header-container">
         <div class="header-logo">
           <a href="index.html"><img class="logo" src="images/logo2.png" alt="Rainydays logo" /></a>
@@ -75,7 +75,7 @@
               <p>Oslo 768, Norway</p>
             </div>
           </div>
-          <form method="POST">
+          <form method="POST" action="">
             <div class="form">
               <h2 class="heading-secondary">Message us</h2>
               <label for="fullname">Name</label>

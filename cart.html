@@ -32,6 +32,11 @@
   </head>
   <body>
     <header>
+      <div class="search">
+        <label for="search"></label>
+        <input type="search" name="search" placeholder="Search for item" class="search-input" />
+        <button type="submit" id="search" class="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+      </div>
       <div class="header-container">
         <div class="header-logo">
           <a href="index.html"><img class="logo" src="images/logo2.png" alt="Rainydays logo" /></a>
@@ -52,29 +57,13 @@
     <main>
       <section class="section-cart">
         <div class="grid-2cols">
-          <a class="back-link" href="jackets.html"
-            ><i class="fa-solid fa-arrow-left back-icon"></i>Back to our products</a
-          >
-          <h1 class="heading-primary">Shopping cart</h1>
-
-          <div class="cart-products">
-            <img
-              src="images/product-man's-01.jpg"
-              alt="Horizontal shot of pleased Caucasian man wears hat, yellow raincoat"
-            />
-            <div>
-              <p><strong>Jacket name</strong></p>
-              <p>#3633839</p>
-            </div>
-            <select name="quantity" id="quantity">
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="0">0</option>
-            </select>
-            <p><strong>1899,00 kr</strong></p>
+          <div>
+            <a class="back-link" href="jackets.html"><i class="fa-solid fa-arrow-left back-icon"></i>Our products</a>
+            <a class="back-link" href="javascript:history.back()">/ Back</a>
           </div>
-          <form method="POST">
+          <h1 class="heading-primary">Shopping cart</h1>
+          <div class="cart-product-container"></div>
+          <form method="POST" action="checkout-success.html">
             <div class="form">
               <h2 class="heading-secondary">Checkout</h2>
               <label for="fullname">Costumer Name</label>
@@ -135,5 +124,7 @@
       </div>
       <h4 class="coryright">Copyright &copy;2022 RainyDays</h4>
     </footer>
+    <script src="js/products.js"></script>
+    <script src="js/cart.js"></script>
   </body>
 </html>

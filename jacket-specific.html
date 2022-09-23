@@ -32,6 +32,11 @@
   </head>
   <body>
     <header>
+      <div class="search">
+        <label for="search"></label>
+        <input type="search" name="search" placeholder="Search for item" class="search-input" />
+        <button type="submit" id="search" class="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+      </div>
       <div class="header-container">
         <div class="header-logo">
           <a href="index.html"><img class="logo" src="images/logo2.png" alt="Rainydays logo" /></a>
@@ -50,76 +55,7 @@
       </div>
     </header>
     <main>
-      <section class="section-jacket-specific">
-        <div class="grid-2cols">
-          <div class="images-container">
-            <img class="image-01" src="images/product-man.jpg" alt="Man in a yellow raincoat" />
-            <img
-              src="images/product-man's-01.jpg"
-              alt="Horizontal shot of pleased Caucasian man wears hat, yellow raincoat"
-            />
-            <img
-              src="images/product-man's-02.jpg"
-              alt="Cropped image of satisfied Afro American man with dark skin, dreads, wears yellow raincoat, keeps eyes closed, imagines something nice"
-            />
-            <img
-              src="images/product-man's-01.jpg"
-              alt="Horizontal shot of pleased Caucasian man wears hat, yellow raincoat"
-            />
-          </div>
-          <div class="text-container">
-            <a class="back-link" href="jackets.html"
-              ><i class="fa-solid fa-arrow-left back-icon"></i>Back to our products</a
-            >
-            <h1 class="heading-primary">Man's hiking rain jacket</h1>
-            <h2 class="price">1988 kr</h2>
-            <ul class="description-list jacket-description-list">
-              <li><i class="fa-solid fa-cloud-rain"></i>waterproof</li>
-              <li><i class="fa-solid fa-wind"></i>windproof</li>
-              <li><i class="fa-solid fa-recycle"></i>recycled material</li>
-              <li><i class="fa-solid fa-check"></i>all activities</li>
-            </ul>
-            <p class="jacket-description">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam quibusdam aliquid ipsam, quos sit quis.
-            </p>
-            <p class="subheading">Size:</p>
-            <div class="size">
-              <div class="size-box">
-                <input type="radio" id="extra-small" name="color" value="extra-small" checked />
-                <div class="jacket-size"><label for="extra-small"></label>xs</div>
-              </div>
-
-              <div class="size-box">
-                <input type="radio" id="small" name="color" value="small" />
-                <div class="jacket-size"><label for="small"></label>s</div>
-              </div>
-
-              <div class="size-box">
-                <input type="radio" id="medium" name="color" value="medium" />
-                <div class="jacket-size"><label for="medium"></label>m</div>
-              </div>
-
-              <div class="size-box">
-                <input type="radio" id="large" name="color" value="large" />
-                <div class="jacket-size"><label for="large"></label>l</div>
-              </div>
-
-              <div class="size-box">
-                <input type="radio" id="extra-large" name="color" value="extra-large" />
-                <div class="jacket-size"><label for="extra-large"></label>xl</div>
-              </div>
-            </div>
-
-            <a href="cart.html" class="btn-cta btn-buy">Add to cart</a>
-          </div>
-        </div>
-
-        <div class="extra-info">
-          <p><i class="fa-solid fa-truck"></i>Free delivery</p>
-          <p><i class="fa-solid fa-arrow-right-arrow-left"></i>30 days free return</p>
-          <p><i class="fa-solid fa-money-bill-1"></i>Money-back guarantee</p>
-        </div>
-      </section>
+      <section class="section-jacket-specific"></section>
     </main>
     <footer class="footer">
       <div class="footer-container">
@@ -152,5 +88,7 @@
       </div>
       <h4 class="coryright">Copyright &copy;2022 RainyDays</h4>
     </footer>
+    <script src="js/products.js"></script>
+    <script src="js/jacket-specific.js"></script>
   </body>
 </html>
