@@ -81,6 +81,19 @@
   text-align: left;
 }
 
+.sale {
+  width: 60px;
+  height: 60px;
+  background-color: #db3220;
+  color: #fff;
+  padding-top: 15px;
+  margin-left: 1rem;
+
+  border-radius: 50%;
+  text-align: center;
+  font-weight: 700;
+  font-size: 2rem;
+}
 /*-footer*/
 
 .footer {

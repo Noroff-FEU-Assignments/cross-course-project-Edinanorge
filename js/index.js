@@ -3,6 +3,7 @@ const salesContainer = document.querySelector(".products");
 for (let i = 0; i < products.length; i++) {
   if (products[i].sale === true) {
     salesContainer.innerHTML += `<div class="product">
+                                    <div class="sale">${products[i].sale_nr}</div>
                                     <img class="product-img" src="${products[i].image}" alt="${products[i].name}" />
                                     <h3 class="product-name">${products[i].name}</h3>
                                     <p class="product-code">${products[i].product_code}</p>
