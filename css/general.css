@@ -39,7 +39,7 @@ header {
 }
 .grid-4cols {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(25rem, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(23rem, 1fr));
 
   gap: 2rem;
 }
@@ -48,6 +48,7 @@ header {
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
+  gap: 2rem;
 }
 
 .heading-primary {
