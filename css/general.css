@@ -151,8 +151,7 @@ textarea:hover {
   letter-spacing: 0.5px;
 
   margin-top: 4rem;
-
-  position: absolute;
+  text-align: end;
 }
 
 .btn-secondary:hover,
@@ -216,6 +215,7 @@ textarea:hover {
   text-align: right;
   padding: 1rem 4rem 0;
 }
+
 .search-input {
   border: none;
   padding: 0.5rem;
@@ -234,8 +234,8 @@ textarea:hover {
 }
 
 .header-navigation {
-  position: relative;
   background-color: #1db5c5;
+  text-align: center;
 }
 
 .hamburger-icon {
@@ -255,13 +255,12 @@ textarea:hover {
 .navigation {
   position: absolute;
   background-color: #1db5c5;
-  top: 5rem;
-  right: -2rem;
+
   z-index: 900;
 }
 
 .navigation a {
-  display: block;
+  display: inline-block;
   color: #111;
   text-decoration: none;
 }
