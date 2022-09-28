@@ -87,41 +87,11 @@ header {
   grid-column: 1/-1;
 }
 
-.form {
-  display: flex;
-  flex-direction: column;
-
-  border: 1px solid #04adbf;
-  border-radius: 0.4rem;
-
-  margin: 0 4rem;
-  background-color: #fff;
-
-  padding: 8rem 4rem;
-}
-
-.form .heading-secondary {
-  margin: 0 0 3rem 0;
-  text-align: center;
-}
-
-.form input,
-textarea {
-  padding: 0.8rem;
-  border: 1px solid rgba(124, 124, 124, 0.4);
-  border-radius: 4px;
-  margin: 0.7rem 0;
-}
-
-.form input:hover,
-textarea:hover {
-  border: 1px solid #04adbf;
-}
-
 /**** LINKS ****/
 .btn-cta:link,
 .btn-cta:visited,
 .btn-submit {
+  border: none;
   text-decoration: none;
   background-color: #4fc6d2;
   color: #111;
@@ -199,16 +169,15 @@ textarea:hover {
   grid-template-columns: 1fr auto auto auto auto;
   align-items: center;
 
-  background-color: #1db5c5;
   font-size: 1.4rem;
   font-weight: 500;
-  position: relative;
+
+  padding: 0 4rem 0 4rem;
 }
 
 .header-logo {
   max-width: 10rem;
-  margin-bottom: 2rem;
-  margin-left: 4rem;
+  margin-bottom: 3.5rem;
 }
 
 .search {
@@ -229,13 +198,9 @@ textarea:hover {
   margin-right: 1rem;
   padding-left: 0.5rem;
 }
+
 .search-btn:hover {
   color: #fff;
-}
-
-.header-navigation {
-  background-color: #1db5c5;
-  text-align: center;
 }
 
 .hamburger-icon {
@@ -263,8 +228,4 @@ textarea:hover {
   display: inline-block;
   color: #111;
   text-decoration: none;
-}
-
-.header-container:last-child {
-  padding-right: 4rem;
 }

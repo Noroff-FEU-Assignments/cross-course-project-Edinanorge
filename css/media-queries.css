@@ -105,13 +105,6 @@
     flex-direction: column;
   }
 
-  .cart-products {
-    display: grid;
-    grid-template-columns: 1fr auto;
-    gap: 3rem;
-    align-items: center;
-  }
-
   .cart-products img {
     grid-column: 1/-1;
   }
@@ -130,6 +123,11 @@
   .extra-info i {
     font-size: 0.8rem;
     padding-right: 0.3rem;
+  }
+}
+@media (max-width: 400px) {
+  .cart-products {
+    flex-direction: column;
   }
 }
 

@@ -10,6 +10,7 @@ const emailError = document.querySelector("#emailError");
 function validateForm(event) {
   event.preventDefault();
   formSuccess.innerText = "";
+  formSuccess.style.display = "none";
 
   if (checkLength(fullName.value, 0) === true) {
     fullNameError.style.display = "none";

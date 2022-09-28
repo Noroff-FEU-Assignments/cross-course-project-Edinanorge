@@ -376,58 +376,107 @@ label:checked {
   margin-bottom: 1rem;
 }
 
+.form {
+  border: 1px solid #04adbf;
+  border-radius: 0.4rem;
+
+  margin: 0 4rem;
+  background-color: #fff;
+
+  padding: 8rem 4rem;
+}
+
+.form-input {
+  display: flex;
+  flex-direction: column;
+}
+
+.form .heading-secondary {
+  margin: 0 0 3rem 0;
+  text-align: center;
+}
+
+.form input {
+  padding: 0.8rem;
+  border: 1px solid rgba(124, 124, 124, 0.4);
+  border-radius: 4px;
+}
+
+.form input:hover {
+  border: 1px solid #04adbf;
+}
+.form label {
+  margin-top: 1.8rem;
+}
+
+.form-error {
+  display: none;
+  color: red;
+}
+
+.form-success {
+  display: none;
+  background-color: green;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 0.4rem;
+  margin-bottom: 2rem;
+  font-weight: 500;
+}
+.form .btn-submit {
+  margin-top: 2rem;
+  display: inline;
+  width: 100%;
+}
+
 /**** Checkout/Cart page ****/
 
 .cart-products {
-  border: 1px solid #038a99;
-  border-radius: 4px;
-  padding: 1rem;
+  display: flex;
+  justify-content: space-evenly;
+  text-align: center;
+}
 
-  display: grid;
-  grid-template-columns: 1fr 1fr auto 1fr;
-  gap: 3rem;
-  align-items: center;
+.cart-products h2 {
+  margin: 4rem 0;
+  border-bottom: 2px solid #333;
+}
+
+.cart-products select {
+  background-color: #cdeff2;
+  border: 2px solid #038a99;
+  padding: 0.5rem;
+  border-radius: 0.4rem;
 }
 
 .cart-specifics {
   display: grid;
-  grid-template-columns: 1fr auto;
+  grid-template-columns: 70fr 30fr;
+  grid-template-rows: 1fr 1fr 1fr;
   column-gap: 2rem;
+  margin-bottom: 2rem;
 }
 
-input[type="date"] {
+.date-error input[type="date"] {
+  grid-column: 1;
+}
+
+#date-error {
+  grid-column: 1;
+}
+
+#cart-error {
   grid-column: 1;
 }
 
 input[id="cvc"] {
-  max-width: 7rem;
+  grid-column: 2;
+  grid-row: 2;
 }
 
 label[for="cvc"] {
   grid-row: 1;
   grid-column: 2/3;
-}
-
-.price-details {
-  font-size: 1.2rem;
-  display: grid;
-  grid-template-columns: 1fr auto;
-  row-gap: 0.5rem;
-  align-items: baseline;
-  margin: 2rem 0;
-}
-
-.line::before {
-  content: "";
-  background-color: #111;
-  display: block;
-  max-width: 100%;
-  height: 1px;
-  opacity: 0.3;
-}
-
-.btn-submit {
-  text-align: center;
 }
 
 /* ******************** */
