@@ -1,5 +1,6 @@
-const jacketsConatiner = document.querySelector(".jackets");
-const categoriBtn = document.querySelectorAll(".btn-category");
+import { products } from "./products.js";
+import { jacketsConatiner } from "./constans.js";
+import { categoriBtn } from "./constans.js";
 
 displayProduct(products);
 

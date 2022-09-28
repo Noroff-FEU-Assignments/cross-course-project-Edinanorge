@@ -1,9 +1,9 @@
-const jacketSpecificContainer = document.querySelector(".section-jacket-specific");
+import { products } from "./products.js";
+import { jacketSpecificContainer } from "./constans.js";
 
 const querySring = document.location.search;
 const prams = new URLSearchParams(querySring);
 const productId = prams.get("id");
-
 const product = products.find(({ id }) => id == productId);
 
 jacketSpecificContainer.innerHTML = `<div class="grid-2cols">
@@ -12,9 +12,7 @@ jacketSpecificContainer.innerHTML = `<div class="grid-2cols">
           </div>
 
           <div class="text-container">
-            <a class="back-link" href="jackets.html"
-              ><i class="fa-solid fa-arrow-left back-icon"></i>Back to our products</a
-            >
+            <a class="back-link" href="jackets.html"><i class="fa-solid fa-arrow-left back-icon"></i>Back to our products</a>
             <h1 class="heading-primary">${product.name}</h1>
             <h2 class="price">${product.price} kr</h2>
             <ul class="description-list jacket-description-list">
@@ -46,7 +44,6 @@ jacketSpecificContainer.innerHTML = `<div class="grid-2cols">
                 <div class="jacket-size"><label for="extra-large"></label>${product.size[3]}</div>
               </div>
 
-              
             </div>
 
             <a href="cart.html?id=${productId}" class="btn-cta btn-buy">Add to cart</a>

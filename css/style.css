@@ -457,12 +457,15 @@ label:checked {
   margin-bottom: 2rem;
 }
 
-.date-error input[type="date"] {
+input[type="date"] {
   grid-column: 1;
 }
 
 #date-error {
   grid-column: 1;
+}
+#cvcError {
+  grid-column: 2;
 }
 
 #cart-error {

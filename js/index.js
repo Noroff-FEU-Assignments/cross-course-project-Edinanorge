@@ -1,3 +1,5 @@
+import { products } from "./products.js";
+
 const salesContainer = document.querySelector(".products");
 
 for (let i = 0; i < products.length; i++) {

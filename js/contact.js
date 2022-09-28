@@ -1,11 +1,13 @@
-const form = document.querySelector("#form");
-const formSuccess = document.querySelector(".form-success");
-const fullName = document.querySelector("#fullName");
-const fullNameError = document.querySelector("#fullNameError");
-const message = document.querySelector("#message");
-const messageError = document.querySelector("#messageError");
-const email = document.querySelector("#email");
-const emailError = document.querySelector("#emailError");
+import { form } from "./constans.js";
+import { formSuccess } from "./constans.js";
+import { fullName } from "./constans.js";
+import { fullNameError } from "./constans.js";
+import { message } from "./constans.js";
+import { messageError } from "./constans.js";
+import { email } from "./constans.js";
+import { emailError } from "./constans.js";
+import { checkLength } from "./helperFunctions.js";
+import { validateEmail } from "./helperFunctions.js";
 
 function validateForm(event) {
   event.preventDefault();
@@ -42,17 +44,3 @@ function validateForm(event) {
 }
 
 form.addEventListener("submit", validateForm);
-
-function checkLength(value, len) {
-  if (value.trim().length > len) {
-    return true;
-  } else {
-    return false;
-  }
-}
-
-function validateEmail(email) {
-  const regEx = /\S+@\S+\.\S+/;
-  const patternMatches = regEx.test(email);
-  return patternMatches;
-}

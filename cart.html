@@ -64,7 +64,7 @@
           <h1 class="heading-primary">Shopping cart</h1>
           <div class="cart-product-container"></div>
 
-          <form id="form" class="form" action="">
+          <form id="form " class="form form-checkout" action="">
             <div class="form-success"></div>
             <h2 class="heading-secondary">Checkout</h2>
             <div class="form-input">
@@ -73,19 +73,19 @@
               <div class="form-error" id="fullNameError">Please enter your full name.</div>
             </div>
             <div class="form-input">
-              <label for="cart-number">Cart number</label>
-              <input type="number" id="cart-number" name="cart-number" />
-              <div class="form-error" id="cartError">Please enter your cart number.</div>
+              <label for="card-number">Cart number (16 number)</label>
+              <input type="number" id="cardNumber" name="card-number" />
+              <div class="form-error" id="cardError">Please enter your cart number.</div>
             </div>
             <div class="cart-specifics">
               <label for="date">Exp. date</label>
               <input type="date" id="date" name="date" />
               <div class="form-error" id="dateError">Please enter a valid date.</div>
-              <label for="cvc">C.V.C.</label>
+              <label for="cvc">C.V.C. (3 number)</label>
               <input type="number" id="cvc" name="cvc" />
-              <div class="form-error" id="cartError">C.V.C. number is required</div>
+              <div class="form-error" id="cvcError">C.V.C. number is required</div>
             </div>
-            <button class="btn-cta btn-submit">Checkout</button>
+            <button class="btn-cta btn-submit btn-checkout">Checkout</button>
           </form>
         </div>
       </section>
@@ -121,8 +121,6 @@
       </div>
       <h4 class="coryright">Copyright &copy;2022 RainyDays</h4>
     </footer>
-    <script src="js/products.js"></script>
-
-    <script src="js/cart.js"></script>
+    <script src="js/cart.js" type="module"></script>
   </body>
 </html>
