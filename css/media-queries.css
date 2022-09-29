@@ -1,4 +1,13 @@
 @media (max-width: 1000px) {
+  .hero-text-box {
+    bottom: auto;
+    top: 0;
+  }
+
+  .section-hero {
+    background-position-x: center;
+  }
+
   .section-cart .grid-2cols,
   .section-contact .grid-2cols {
     grid-template-columns: 1fr;
@@ -11,6 +20,11 @@
   .section-contact .form {
     max-width: 60%;
     margin: 4rem auto;
+  }
+
+  /* jacket-specific page */
+  .section-jacket-specific .grid-2cols {
+    grid-template-columns: 30fr 70fr;
   }
 }
 
@@ -30,10 +44,10 @@
 
   /* Hero section */
   .hero-text-box {
-    top: 0;
+    right: 0;
     left: 0;
     max-width: 100%;
-    max-height: 100vh;
+    bottom: auto;
   }
   .section-hero {
     background-position-y: center;
@@ -43,11 +57,6 @@
   /* contact page */
   .contact-info {
     flex-direction: row;
-  }
-
-  /* jacket-specific page */
-  .section-jacket-specific .grid-2cols {
-    grid-template-columns: 40fr 60fr;
   }
 }
 
@@ -65,6 +74,12 @@
 }
 
 @media (max-width: 600px) {
+  .hero-text-box {
+    max-width: 100%;
+    left: 0;
+    bottom: auto;
+  }
+
   .grid-4cols {
     grid-template-columns: 1fr;
   }
@@ -129,8 +144,16 @@
   .cart-products {
     flex-direction: column;
   }
-}
 
+  .cart-specifics {
+    display: block;
+  }
+
+  .cart-specifics label {
+    display: inline-block;
+    margin-top: 3rem;
+  }
+}
 @media (min-width: 700px) {
   /* navigation */
   .navigation {

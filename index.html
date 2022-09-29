@@ -36,11 +36,6 @@
 
   <body>
     <header>
-      <div class="search">
-        <label for="search"></label>
-        <input type="search" name="search" placeholder="Search for item" class="search-input" />
-        <button type="submit" id="search" class="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
-      </div>
       <div class="header-container">
         <div class="header-logo">
           <a href="index.html"><img class="logo" src="images/logo2.png" alt="Rainydays logo" /></a>
@@ -58,6 +53,12 @@
         </div>
         <a class="way-to-shoppingcart" href="cart.html"><i class="fa-solid fa-cart-shopping cart-icon"></i></a>
       </div>
+      <div class="search">
+        <label for="search"></label>
+        <input type="search" name="search" placeholder="Search for item" class="search-input" />
+        <button type="submit" id="search" class="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+        <div class="searched-products"></div>
+      </div>
     </header>
     <main>
       <section class="section-hero">
@@ -68,13 +69,29 @@
             Beat the rain in our stylish rain jackets. Build with a waterproof, breathable fabric, this 2 layers jackets
             offers protection through rain, showers in all outdoors activity.
           </p>
-          <a href="jackets.html" class="btn-cta btn-hero">View more</a>
+          <a href="jackets.html" class="btn-cta btn-hero">Our Sellection</a>
         </div>
       </section>
+
       <section class="section-products">
-        <h2 class="heading-secondary">Our Best Selling Products</h2>
+        <h2 class="heading-secondary">Sale</h2>
         <div class="products grid-4cols"></div>
         <a href="jackets.html" class="btn-secondary">View more <i class="fa-solid fa-arrow-right"></i></a>
+      </section>
+
+      <section class="section-gallery">
+        <img src="images/about-01.png" alt="Portrait of mid adult couple in raincoat in city park in rain." />
+        <img src="images/about-02.jpeg" alt="Little siblings walking in forest and wearing yellow raincoats." />
+        <img
+          src="images/about-03.jpeg"
+          alt="Autumn portrait little girl with colorful umbrella and wearing yellow raincoat"
+        />
+        <img src="images/about-04.jpg" alt="Beautiful woman with bicycle, wearing yelloe raincoat and red hat." />
+        <img
+          src="images/about-05.jpg"
+          alt="Alone man traveling on ship and looking at sunset sea and foggy mountain on skyline. Hipster traveler wearing yellow raincoat and red hat."
+        />
+        <img src="images/about-06.jpg" alt="Group of Hikers Walking in forest " />
       </section>
     </main>
 
@@ -91,7 +108,7 @@
           </div>
         </div>
         <div>
-          <h4 class="heading-quaternary">Support</h4>
+          <h4 class="heading-quaternary">Support:</h4>
           <ul>
             <li><a href="#">Shipping & Return</a></li>
             <li><a href="#">Help & FAQ</a></li>
@@ -100,7 +117,7 @@
           </ul>
         </div>
         <div>
-          <h4 class="heading-quaternary">Company</h4>
+          <h4 class="heading-quaternary">Company:</h4>
           <ul>
             <li><a href="about.html">About</a></li>
             <li><a href="contact.html">Contact</a></li>
@@ -109,6 +126,8 @@
       </div>
       <h4 class="coryright">Copyright &copy;2022 RainyDays</h4>
     </footer>
+
     <script src="js/index.js " type="module"></script>
+    <script src="js/search.js" type="module"></script>
   </body>
 </html>

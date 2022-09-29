@@ -22,7 +22,7 @@
   border-radius: 4px;
 
   position: absolute;
-  top: 1;
+  top: 10%;
   left: 50%;
 
   display: grid;
@@ -40,27 +40,18 @@
   grid-column: 2/3;
 }
 
-/*-product section*/
-
-.product {
-  background-color: #fff;
-
-  box-shadow: 0 1rem 2rem 0 rgba(3, 138, 153, 0.3);
-  border-radius: 4px;
-  padding: 1rem;
-
-  display: grid;
-  grid-template-columns: 1fr auto;
-  grid-template-rows: auto auto 1fr auto;
-
+/* -product section */
+.section-products {
   position: relative;
 }
 
-.product-name,
-.product-rating,
-.product-img {
-  grid-column: 1/-1;
+.section-products a {
+  display: inline-block;
+  text-decoration: none;
+  color: #333;
+  margin-bottom: 3rem;
 }
+
 .product-code {
   font-size: 1rem;
   margin-bottom: 1.5rem;
@@ -75,11 +66,14 @@
 
 .product-rating {
   margin-bottom: 3rem;
+  font-size: 1rem;
 }
 
 .product-price {
-  font-weight: 700;
-  text-align: left;
+  font-size: 1.6rem;
+  font-weight: 500;
+  text-align: center;
+  margin-bottom: 2rem;
 }
 
 .sale {
@@ -94,7 +88,19 @@
   text-align: center;
   font-weight: 500;
   font-size: 1.5rem;
+  position: absolute;
+  top: 1rem;
 }
+
+/* section-gallery */
+.section-gallery {
+  max-width: 100%;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  padding: 0;
+  margin-top: 6rem;
+}
+
 /*-footer*/
 
 .footer {
@@ -136,12 +142,13 @@
 }
 
 /* ************ */
-/* Jackets page */
+/* Jackets, product page */
 .category {
   display: flex;
   gap: 1rem;
   margin-bottom: 3rem;
 }
+
 .btn-category {
   background-color: #cdeff2;
   color: #333;
@@ -150,6 +157,7 @@
   border-radius: 4px;
   font-weight: 600;
   font-size: 1.5rem;
+  cursor: pointer;
 }
 
 .active {
@@ -163,9 +171,11 @@
 }
 
 .jacket {
-  background-color: #e6f7f9;
+  background-color: #fff;
   box-shadow: 0 1rem 2rem 0 rgba(3, 138, 153, 0.3);
   border-radius: 4px;
+
+  position: relative;
 }
 
 .jacket:hover {
@@ -180,7 +190,6 @@
   text-align: left;
   margin: 0;
   font-size: 1.6rem;
-  font-weight: 500;
   margin-bottom: 0.5rem;
 }
 
@@ -193,10 +202,6 @@
 .jacket .price {
   font-size: 1.6rem;
   font-weight: 600;
-}
-
-.price.price-sale {
-  color: #a31717;
 }
 
 .jacket {
@@ -242,6 +247,14 @@
   grid-template-columns: auto 1fr;
 }
 
+#size {
+  width: min-content;
+  margin-right: 3rem;
+  background-color: #fff;
+  border: 1px solid #04adbf;
+  border-radius: 0.4rem;
+}
+
 .text-container h1 {
   font-size: 2rem;
 }
@@ -276,44 +289,6 @@
 
 .jacket-description {
   margin-bottom: 3rem;
-}
-
-.size {
-  display: flex;
-  gap: 1rem;
-  margin-bottom: 3rem;
-}
-
-/* Radio button redesign */
-input[type="radio"] {
-  -webkit-appearance: none;
-  appearance: none;
-  margin: 0;
-}
-
-input[type="radio"] {
-  font-size: 2rem;
-  width: 3.4rem;
-  height: 2.5rem;
-  border: 1px solid #038a99;
-}
-
-input[type="radio"]:checked,
-label:checked {
-  background-color: #4fc6d2;
-}
-
-.size-box {
-  position: relative;
-}
-
-.jacket-size {
-  text-transform: uppercase;
-  color: #111;
-  position: absolute;
-  font-size: 1.5rem;
-  top: 0.3rem;
-  left: 0.8rem;
 }
 
 .extra-info {
@@ -376,8 +351,10 @@ label:checked {
   margin-bottom: 1rem;
 }
 
+/* -contact page form */
+
 .form {
-  border: 1px solid #04adbf;
+  /* border: 1px solid #04adbf; */
   border-radius: 0.4rem;
 
   margin: 0 4rem;
@@ -405,6 +382,7 @@ label:checked {
 .form input:hover {
   border: 1px solid #04adbf;
 }
+
 .form label {
   margin-top: 1.8rem;
 }
@@ -416,20 +394,21 @@ label:checked {
 
 .form-success {
   display: none;
-  background-color: green;
-  color: #fff;
+  color: green;
+
   padding: 0.5rem 1rem;
-  border-radius: 0.4rem;
+
   margin-bottom: 2rem;
-  font-weight: 500;
+  font-weight: 700;
 }
+
 .form .btn-submit {
   margin-top: 2rem;
   display: inline;
   width: 100%;
 }
 
-/**** Checkout/Cart page ****/
+/**** Cart page ****/
 
 .cart-products {
   display: flex;
@@ -439,37 +418,36 @@ label:checked {
 
 .cart-products h2 {
   margin: 4rem 0;
-  border-bottom: 2px solid #333;
+  border-bottom: 1px solid rgb(136, 136, 136);
+  text-align: left;
 }
 
-.cart-products select {
-  background-color: #cdeff2;
-  border: 2px solid #038a99;
+.cart-products input {
+  width: 25%;
+  text-align: center;
+  background-color: #fff;
+  border: 1px solid #038a99;
   padding: 0.5rem;
   border-radius: 0.4rem;
 }
 
+/* checkout form */
 .cart-specifics {
   display: grid;
   grid-template-columns: 70fr 30fr;
   grid-template-rows: 1fr 1fr 1fr;
-  column-gap: 2rem;
+  column-gap: 1rem;
   margin-bottom: 2rem;
 }
 
+#date-error,
+#cart-error,
 input[type="date"] {
   grid-column: 1;
 }
 
-#date-error {
-  grid-column: 1;
-}
 #cvcError {
   grid-column: 2;
-}
-
-#cart-error {
-  grid-column: 1;
 }
 
 input[id="cvc"] {
@@ -480,26 +458,4 @@ input[id="cvc"] {
 label[for="cvc"] {
   grid-row: 1;
   grid-column: 2/3;
-}
-
-/* ******************** */
-/* Checkout-success page */
-
-.section-success {
-  max-height: 100vh;
-}
-.section-success h1 {
-  margin: 3rem 0;
-  color: #033f46;
-  font-size: 3.2rem;
-  grid-column: 1/-1;
-}
-
-.section-success h2 {
-  margin-bottom: 2rem;
-}
-
-.delivery,
-.order {
-  margin-bottom: 3rem;
 }

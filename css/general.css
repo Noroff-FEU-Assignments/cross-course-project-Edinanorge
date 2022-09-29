@@ -65,11 +65,12 @@ header {
 }
 
 .heading-tertiary {
+  font-weight: 700;
   grid-column: -1/1;
   text-align: center;
   margin: 1rem;
   font-size: 1.8rem;
-  font-weight: 500;
+  color: #033f46;
 }
 
 .heading-quaternary {
@@ -91,6 +92,7 @@ header {
 .btn-cta:link,
 .btn-cta:visited,
 .btn-submit {
+  display: inline-block;
   border: none;
   text-decoration: none;
   background-color: #4fc6d2;
@@ -100,6 +102,7 @@ header {
   letter-spacing: 0.5px;
   padding: 1rem 2rem;
   border-radius: 4px;
+  width: fit-content;
 
   transition: all 0.3s ease;
 }
@@ -113,6 +116,9 @@ header {
 .btn-secondary:link,
 .btn-secondary:visited {
   display: inline-block;
+  border: 1px solid #124145;
+  padding: 1rem 2rem;
+  border-radius: 4px;
 
   text-decoration: none;
   color: #124145;
@@ -120,13 +126,14 @@ header {
   font-weight: 600;
   letter-spacing: 0.5px;
 
-  margin-top: 4rem;
-  text-align: end;
+  transition: all 0.3s ease;
+  position: absolute;
+  right: 3%;
 }
 
 .btn-secondary:hover,
 .btn-secondary:hover {
-  text-decoration: underline;
+  background-color: #fff;
 }
 
 .navigation-link:link,
@@ -137,6 +144,7 @@ header {
   color: #111;
   font-size: 1.4rem;
   padding: 1rem;
+
   transition: color 0.3s;
 }
 
@@ -177,12 +185,12 @@ header {
 
 .header-logo {
   max-width: 10rem;
-  margin-bottom: 3.5rem;
+  margin-top: 3.5rem;
 }
 
 .search {
   text-align: right;
-  padding: 1rem 4rem 0;
+  padding: 0 4rem 1rem 0;
 }
 
 .search-input {
@@ -194,6 +202,7 @@ header {
 .search-btn {
   border: none;
   background-color: #1db5c5;
+  color: #444;
   font-size: 1.4rem;
   margin-right: 1rem;
   padding-left: 0.5rem;
@@ -201,6 +210,15 @@ header {
 
 .search-btn:hover {
   color: #fff;
+}
+
+.searched-products {
+  z-index: 999;
+  background-color: #e6f7f9;
+  width: 100%;
+  height: inherit;
+  position: absolute;
+  top: 28%;
 }
 
 .hamburger-icon {

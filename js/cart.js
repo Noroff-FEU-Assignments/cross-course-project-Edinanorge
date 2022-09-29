@@ -1,5 +1,5 @@
 import { products } from "./products.js";
-import { cartProducts } from "./constans.js";
+import { cartProducts, form } from "./constans.js";
 import { formChekout } from "./constans.js";
 import { cardNumber } from "./constans.js";
 import { cardError } from "./constans.js";
@@ -20,6 +20,9 @@ const product = products.find(({ id }) => id == productId);
 if (!product) {
   cartProducts.innerHTML = displayMessage("Your cart is currently empty.");
   checkoutButton.disabled = true;
+  form.addEventListener("click", function (e) {
+    e.preventDefault;
+  });
 } else {
   cartProducts.innerHTML += `<div class="cart-products">
                               <div>
@@ -32,28 +35,31 @@ if (!product) {
                               </div>
                               <div>
                                 <h2>QUANTITY</h2>
-                                <select name="quantity" id="quantity">
-                                  <option value="1">1</option>
-                                  <option value="2">2</option>
-                                  <option value="3">3</option>
-                                  <option value="0">0</option>
-                                </select>
+                                <input class="cart-quantity-input" min="1" type="number" value="1">
                               </div>
                               <div>
                                 <h2>PRICE</h2>
-                                <h3>${product.price} kr</h3>
+                                <p class="cart-item-price price">${product.price} kr</p>
                               </div>`;
 }
 
-// const quantity = document.querySelectorAll("option");
-// for (let i = 0; i < quantity.length; i++) {
-//   console.log(quantity[i].value);
+// cart item quantity change
+const cartQuantityInputs = document.getElementsByClassName("cart-quantity-input");
 
-//   if (quantity[i].value === 0) {
-//     cartProducts.innerHTML = "";
-//   }
-// }
+for (let i = 0; i < cartQuantityInputs.length; i++) {
+  cartQuantityInputs[i].addEventListener("change", quantityChanged);
+}
 
+function quantityChanged(event) {
+  const quantityInput = event.target;
+  if (isNaN(quantityInput.value) || quantityInput.value <= 0) {
+    quantityInput.value = 1;
+  }
+  const price = document.querySelector(".cart-item-price");
+  price.innerHTML = `<p class="cart-item-price price">${product.price * quantityInput.value} kr</p>`;
+}
+
+// checkout form validation
 formChekout.addEventListener("click", validateFormCheckout);
 
 function validateFormCheckout(event) {
