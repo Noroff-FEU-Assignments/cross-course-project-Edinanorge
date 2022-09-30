@@ -59,8 +59,8 @@
 
 .product-img {
   height: 240px;
-  width: 100%;
-  object-fit: cover;
+  width: auto;
+  margin: 0 auto;
   padding: 1rem;
 }
 
@@ -174,6 +174,7 @@
   background-color: #fff;
   box-shadow: 0 1rem 2rem 0 rgba(3, 138, 153, 0.3);
   border-radius: 4px;
+  text-align: center;
 
   position: relative;
 }
@@ -202,6 +203,7 @@
   font-size: 1rem;
   opacity: 0.6;
   margin-bottom: 1rem;
+  text-align: left;
 }
 
 .jacket .product-price {
@@ -217,6 +219,7 @@
 .jacket .product-rating {
   margin-bottom: 0;
   grid-row: 3;
+  text-align: left;
 }
 
 .jacket {
@@ -239,9 +242,11 @@
 /* ******************** */
 /* Jacket-specific page */
 .jacket-specific-img {
-  max-height: 400px;
+  height: 500px;
+  width: 100%;
+  object-fit: cover;
+  margin: 0 auto;
 }
-
 /* -text */
 .back-icon {
   color: #038a99;
@@ -368,10 +373,8 @@
 /* -contact page form */
 
 .form {
-  /* border: 1px solid #04adbf; */
   border-radius: 0.4rem;
-
-  margin: 0 4rem;
+  width: 100%;
   background-color: #fff;
 
   padding: 8rem 4rem;
@@ -393,6 +396,9 @@
   border-radius: 4px;
 }
 
+.message input {
+  height: 7rem;
+}
 .form input:hover {
   border: 1px solid #04adbf;
 }

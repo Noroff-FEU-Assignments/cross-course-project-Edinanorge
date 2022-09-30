@@ -13,5 +13,5 @@ export function validateEmail(email) {
 }
 
 export function displayMessage(message) {
-  return `<h1 class="heading-primary">${message}</h1>`;
+  return `<h2 class="heading-secondary">${message}</h2>`;
 }
