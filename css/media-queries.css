@@ -164,10 +164,6 @@
   }
 }
 @media (max-width: 500px) {
-  .jacket .product-price {
-    font-size: 1rem;
-    font-weight: 500;
-  }
   .jacket h3 {
     font-size: 1.4rem;
   }
@@ -209,6 +205,9 @@
 
 @media (min-width: 700px) {
   /* navigation */
+  .jacket {
+    max-height: 350px;
+  }
   .navigation {
     display: inline-block;
     position: static;
@@ -219,6 +218,8 @@
   .navigation a {
     display: inline-block;
   }
+}
+@media (min-width: 800px) {
 }
 
 @media (min-width: 1400px) {

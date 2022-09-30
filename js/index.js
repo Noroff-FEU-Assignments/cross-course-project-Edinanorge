@@ -9,11 +9,10 @@ for (let i = 0; i < products.length; i++) {
                                     <div class="sale">${products[i].sale_nr}</div>
                                       <img class="product-img" src="${products[i].image}" alt="${products[i].name}"/>
                                     <figcaption class="jacket-text">
-                                      <h3 class="heading-tertiary">${products[i].name}</h3>
                                       <p class="jacket-nr">${products[i].product_code}</p>
-                                      <p class="product-price">${products[i].price} kr</p>
+                                      <h3 class="heading-tertiary">${products[i].name}</h3>
                                       <span class="product-rating">${products[i].rating} (${products[i].id}) </span>
-                                      
+                                      <p class="product-price">${products[i].price} <strong>kr</strong></p>
                                     </figcaption>
                                     </figure>
                                   </a>`;
