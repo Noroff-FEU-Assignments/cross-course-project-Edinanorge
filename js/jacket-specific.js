@@ -7,7 +7,7 @@ const productId = prams.get("id");
 const product = products.find(({ id }) => id == productId);
 
 jacketSpecificContainer.innerHTML = `<div class="grid-2cols">
-                                        <img  src="${product.image}" alt="${product.name}"/>
+                                        <img  class="jacket-specific-img"src="${product.image}" alt="${product.name}"/>
                                         <div class="text-container">
                                           <a class="back-link" href="jackets.html"><i class="fa-solid fa-arrow-left back-icon"></i>Back to our products</a>
                                           <h1 class="heading-primary">${product.name}</h1>

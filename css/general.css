@@ -37,9 +37,10 @@ strong {
 header {
   background-color: #1db5c5;
 }
+
 .grid-4cols {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(23rem, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(22rem, 1fr));
 
   gap: 2rem;
 }
@@ -185,7 +186,7 @@ header {
 
 .header-logo {
   max-width: 10rem;
-  margin-top: 3.5rem;
+  margin-top: 2rem;
 }
 
 .search {

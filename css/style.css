@@ -184,6 +184,9 @@
 
 .jacket-text {
   padding: 1rem;
+  display: grid;
+  grid-template-rows: 1fr auto auto;
+  grid-template-columns: 1fr auto;
 }
 
 .jacket h3 {
@@ -191,6 +194,8 @@
   margin: 0;
   font-size: 1.6rem;
   margin-bottom: 0.5rem;
+
+  grid-template-rows: 1/-1;
 }
 
 .jacket-nr {
@@ -199,9 +204,19 @@
   margin-bottom: 1rem;
 }
 
-.jacket .price {
+.jacket .product-price {
   font-size: 1.6rem;
-  font-weight: 600;
+  font-weight: 500;
+  margin-bottom: 0;
+  color: #0c4950;
+
+  grid-column: 2;
+  grid-row: 3;
+}
+
+.jacket .product-rating {
+  margin-bottom: 0;
+  grid-row: 3;
 }
 
 .jacket {
@@ -223,9 +238,8 @@
 
 /* ******************** */
 /* Jacket-specific page */
-
-.image-01 {
-  grid-column: 1/-1;
+.jacket-specific-img {
+  max-height: 400px;
 }
 
 /* -text */
