@@ -5,11 +5,14 @@ import { cardNumber } from "./constans.js";
 import { cardError } from "./constans.js";
 import { fullName } from "./constans.js";
 import { fullNameError } from "./constans.js";
+import { date } from "./constans.js";
+import { dateError } from "./constans.js";
 import { cvc } from "./constans.js";
 import { cvcError } from "./constans.js";
 import { checkoutButton } from "./constans.js";
 import { checkLength } from "./helperFunctions.js";
 import { displayMessage } from "./helperFunctions.js";
+const cartItem = document.querySelector(".cart-item");
 
 const querySring = document.location.search;
 const prams = new URLSearchParams(querySring);
@@ -24,23 +27,16 @@ if (!product) {
     e.preventDefault;
   });
 } else {
-  cartProducts.innerHTML += `<div class="cart-products">
-                              <div>
-                                <h2>ITEM</h2>
-                                <img src="${product.image}" alt="${product.name}" width=100px height=auto/>
-                              
-                                
-                                <h4>${product.name}</h4>
-                                <p>${product.product_code}</p>
-                              </div>
-                              <div>
-                                <h2>QUANTITY</h2>
-                                <input class="cart-quantity-input" min="1" type="number" value="1">
-                              </div>
-                              <div>
-                                <h2>PRICE</h2>
-                                <p class="cart-item-price price">${product.price} kr</p>
-                              </div>`;
+  cartItem.innerHTML += `<div class="cart-image">
+                              <img src="${product.image}" alt="${product.name}" width=100px height=auto/>
+                              <h4>${product.name}</h4>
+                              <p>${product.product_code}</p>
+                            </div>
+                            <p class="cart-item-price">${product.price} kr</p>
+                            <div class="cart-quantity" >
+                              <input class="cart-quantity-input" min="1" type="number" value="1">
+                              <button class="btn-delete" type="button"><i class="fa-solid fa-trash"></i></button>
+                            </div>`;
 }
 
 // cart item quantity change
@@ -55,9 +51,15 @@ function quantityChanged(event) {
   if (isNaN(quantityInput.value) || quantityInput.value <= 0) {
     quantityInput.value = 1;
   }
-  const price = document.querySelector(".cart-item-price");
-  price.innerHTML = `<p class="cart-item-price price">${product.price * quantityInput.value} kr</p>`;
+  const price = document.querySelector(".cart-total-price");
+  price.innerHTML = ` <h2>Total</h2>
+                      <span class="cart-tolal">${product.price * quantityInput.value} kr</span>`;
 }
+// cart item remove
+const btnDelete = document.querySelector(".btn-delete");
+btnDelete.addEventListener("click", function () {
+  cartItem.innerHTML = "";
+});
 
 // checkout form validation
 formChekout.addEventListener("click", validateFormCheckout);
@@ -74,12 +76,17 @@ function validateFormCheckout(event) {
   } else {
     cardError.style.display = "block";
   }
+  if (!date) {
+    dateError.style.display = "block";
+  } else {
+    dateError.style.display = "none";
+  }
   if (checkLength(cvc.value, 2) === true) {
     cvcError.style.display = "none";
   } else {
     cvcError.style.display = "block";
   }
-  if (checkLength(fullName.value, 0) && checkLength(cardNumber.value, 15) && checkLength(cvc.value, 2)) {
+  if (checkLength(fullName.value, 0) && checkLength(cardNumber.value, 15) && checkLength(cvc.value, 2) && date) {
     formChekout.reset();
     cartProducts.innerHTML = displayMessage("Thank you for your order!");
     checkoutButton.disabled = true;

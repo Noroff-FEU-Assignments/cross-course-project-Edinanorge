@@ -151,6 +151,10 @@
   .jacket h3 {
     font-size: 1.4rem;
   }
+
+  .grid-4cols {
+    gap: 1rem;
+  }
 }
 
 @media (max-width: 400px) {
@@ -159,6 +163,7 @@
     padding-right: 1rem;
     padding-left: 1rem;
   }
+
   .search-input {
     width: 70%;
   }

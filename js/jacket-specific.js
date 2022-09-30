@@ -26,7 +26,7 @@ jacketSpecificContainer.innerHTML = `<div class="grid-2cols">
                                             <option value="${product.size[2]}">${product.size[2]}</option>
                                             <option value="${product.size[3]}">${product.size[3]}</option>
                                           </select>
-                                          <a href="cart.html?id=${productId}" class="btn-cta btn-buy">Add to cart</a>
+                                          <a href="cart.html?id=${productId}"  class="btn-cta btn-buy">Add to cart</a>
                                         </div>
                                       </div> 
                                       <div class="extra-info">

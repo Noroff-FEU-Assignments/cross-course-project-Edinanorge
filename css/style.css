@@ -206,7 +206,7 @@
 
 .jacket .product-price {
   font-size: 1.6rem;
-  font-weight: 500;
+  font-weight: 600;
   margin-bottom: 0;
   color: #0c4950;
 
@@ -424,25 +424,66 @@
 
 /**** Cart page ****/
 
-.cart-products {
+.cart-column {
   display: flex;
-  justify-content: space-evenly;
-  text-align: center;
+  justify-content: start;
+  gap: 1rem;
+  align-items: center;
+  border-bottom: 1px solid black;
+
+  padding-bottom: 10px;
 }
 
-.cart-products h2 {
-  margin: 4rem 0;
-  border-bottom: 1px solid rgb(136, 136, 136);
+.cart-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.cart-image {
+  width: 30%;
+}
+
+.cart-quantity {
+  width: 40%;
+  text-align: right;
+}
+
+.cart-quantity-input {
+  height: 34px;
+  width: 50px;
+  border-radius: 5px;
+  border: 1px solid #1db5c5;
+  background-color: #eee;
+  color: #333;
+  padding: 0;
+  text-align: center;
+  font-size: 1.2em;
+  margin-right: 25px;
+}
+
+.btn-delete {
+  border: none;
+  color: #db3220;
+  font-weight: 600;
+  font-size: 2rem;
+  text-align: right;
+  margin-left: 4rem;
+
+  cursor: pointer;
+}
+
+.btn-delete:hover {
+  color: #033f46;
+}
+
+.cart-item-price {
+  width: 20%;
   text-align: left;
+  font-size: 1.6rem;
 }
-
-.cart-products input {
-  width: 25%;
-  text-align: center;
-  background-color: #fff;
-  border: 1px solid #038a99;
-  padding: 0.5rem;
-  border-radius: 0.4rem;
+.cart-total-price {
+  font-size: 1.5rem;
+  text-align: right;
 }
 
 /* checkout form */
