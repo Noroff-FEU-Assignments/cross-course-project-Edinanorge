@@ -41,6 +41,10 @@ if (!product) {
 
 // cart item quantity change
 const cartQuantityInputs = document.getElementsByClassName("cart-quantity-input");
+const totalPrice = document.querySelector(".cart-total-price");
+
+totalPrice.innerHTML = ` <h2>Total</h2>
+                          <span class="cart-tolal">${product.price} kr</span>`;
 
 for (let i = 0; i < cartQuantityInputs.length; i++) {
   cartQuantityInputs[i].addEventListener("change", quantityChanged);
@@ -51,9 +55,8 @@ function quantityChanged(event) {
   if (isNaN(quantityInput.value) || quantityInput.value <= 0) {
     quantityInput.value = 1;
   }
-  const price = document.querySelector(".cart-total-price");
-  price.innerHTML = ` <h2>Total</h2>
-                      <span class="cart-tolal">${product.price * quantityInput.value} kr</span>`;
+  totalPrice.innerHTML = ` <h2>Total</h2>
+                            <span class="cart-tolal">${product.price * quantityInput.value} kr</span>`;
 }
 // cart item remove
 const btnDelete = document.querySelector(".btn-delete");
@@ -76,17 +79,12 @@ function validateFormCheckout(event) {
   } else {
     cardError.style.display = "block";
   }
-  if (!date) {
-    dateError.style.display = "block";
-  } else {
-    dateError.style.display = "none";
-  }
   if (checkLength(cvc.value, 2) === true) {
     cvcError.style.display = "none";
   } else {
     cvcError.style.display = "block";
   }
-  if (checkLength(fullName.value, 0) && checkLength(cardNumber.value, 15) && checkLength(cvc.value, 2) && date) {
+  if (checkLength(fullName.value, 0) && checkLength(cardNumber.value, 15) && checkLength(cvc.value, 2)) {
     formChekout.reset();
     cartProducts.innerHTML = displayMessage("Thank you for your order!");
     checkoutButton.disabled = true;
