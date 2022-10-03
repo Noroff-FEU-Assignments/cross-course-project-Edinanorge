@@ -38,22 +38,10 @@ export const products = [
     rating: "&#11088; &#11088; &#11088; &#11088; &#11088;",
     category: "woman",
   },
-  {
-    name: "Woman's Running Jacket",
-    image: "/images/woman.png",
-    id: 4,
-    price: 999,
-    product_code: "#457782625",
-    description:
-      "The Woman's Running Jacket is a Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-    size: ["S", "M", "L", "XL"],
-    sale: false,
-    rating: "&#11088; &#11088; &#11088; &#11088; &#11088;",
-    category: "woman",
-  },
+
   {
     name: "Woman's Snowboard Jacket",
-    image: "/images/woman-hiking.png",
+    image: "/images/woman-snowboard.png",
     id: 5,
     price: 999,
     product_code: "#457782625",
@@ -103,6 +91,20 @@ export const products = [
     size: ["S", "M", "L", "XL"],
     sale: false,
     rating: "&#11088; &#11088; &#11088; &#11088;",
+    category: "woman",
+  },
+
+  {
+    name: "Woman's Running Jacket",
+    image: "/images/woman-running.png",
+    id: 4,
+    price: 999,
+    product_code: "#457782625",
+    description:
+      "The Woman's Running Jacket is a Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    size: ["S", "M", "L", "XL"],
+    sale: false,
+    rating: "&#11088; &#11088; &#11088; &#11088; &#11088;",
     category: "woman",
   },
 
@@ -187,8 +189,8 @@ export const products = [
     category: "man",
   },
   {
-    name: "Man's Rain Jacket",
-    image: "/images/man-rain.png",
+    name: "Man's Snowboard Jacket",
+    image: "/images/man-snowboard.png",
     id: 15,
     price: 1599,
     product_code: "#234882625",

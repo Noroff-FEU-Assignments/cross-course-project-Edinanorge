@@ -18,6 +18,4 @@ export const dateError = document.querySelector("#dateError");
 export const cvc = document.querySelector("#cvc");
 export const cvcError = document.querySelector("#cvcError");
 export const checkoutButton = document.querySelector(".btn-checkout");
-
-
 export const addToCartButton = document.querySelector(".btn-buy");

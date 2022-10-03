@@ -26,7 +26,7 @@ jacketSpecificContainer.innerHTML = `<div class="grid-2cols">
                                             <option value="${product.size[2]}">${product.size[2]}</option>
                                             <option value="${product.size[3]}">${product.size[3]}</option>
                                           </select>
-                                          <a href="cart.html?id=${productId}"  class="btn-cta btn-buy">Add to cart</a>
+                                         <a href="cart.html?id=${productId}" class="btn-cta btn-buy">Add to cart</a>
                                         </div>
                                       </div> 
                                       <div class="extra-info">
@@ -34,3 +34,14 @@ jacketSpecificContainer.innerHTML = `<div class="grid-2cols">
                                         <p><i class="fa-solid fa-arrow-right-arrow-left"></i>30 days free return</p>
                                         <p><i class="fa-solid fa-money-bill-1"></i>Money-back guarantee</p>
                                       </div>`;
+
+// href="cart.html?id=${productId}"
+const btnAddToCart = document.querySelector(".btn-buy");
+
+btnAddToCart.addEventListener("click", saveProduct(product.name, product));
+
+function saveProduct(key, value) {
+  console.log(btnAddToCart);
+  let productStringify = JSON.stringify(value);
+  return localStorage.setItem(key, productStringify);
+}

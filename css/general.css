@@ -153,17 +153,17 @@ header {
 .navigation-link:active,
 .way-to-shoppingcart:hover,
 .way-to-shoppingcart:active {
-  color: #e6f7f9;
+  text-decoration: underline;
 }
 
 .navigation-link.current {
-  text-decoration: underline;
+  color: #e6f7f9;
 }
 
 .footer a:link,
 .footer a:visited {
   color: #000;
-  text-decoration: none;
+  text-decoration: underline;
 }
 
 .footer a:active,

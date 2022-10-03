@@ -1,17 +1,13 @@
 import { products } from "./products.js";
 import { cartProducts, form } from "./constans.js";
 import { formChekout } from "./constans.js";
-import { cardNumber } from "./constans.js";
-import { cardError } from "./constans.js";
-import { fullName } from "./constans.js";
-import { fullNameError } from "./constans.js";
-import { date } from "./constans.js";
-import { dateError } from "./constans.js";
-import { cvc } from "./constans.js";
-import { cvcError } from "./constans.js";
 import { checkoutButton } from "./constans.js";
-import { checkLength } from "./helperFunctions.js";
 import { displayMessage } from "./helperFunctions.js";
+import { validateFormCheckout } from "./formValidation.js";
+
+const cartQuantityInputs = document.getElementsByClassName("cart-quantity-input");
+const totalPrice = document.querySelector(".cart-total-price");
+
 const cartItem = document.querySelector(".cart-item");
 
 const querySring = document.location.search;
@@ -23,7 +19,7 @@ const product = products.find(({ id }) => id == productId);
 if (!product) {
   cartProducts.innerHTML = displayMessage("Your cart is currently empty.");
   checkoutButton.disabled = true;
-  form.addEventListener("click", function (e) {
+  form.addEventListener("submit", function (e) {
     e.preventDefault;
   });
 } else {
@@ -40,8 +36,6 @@ if (!product) {
 }
 
 // cart item quantity change
-const cartQuantityInputs = document.getElementsByClassName("cart-quantity-input");
-const totalPrice = document.querySelector(".cart-total-price");
 
 totalPrice.innerHTML = ` <h2>Total</h2>
                           <span class="cart-tolal">${product.price} kr</span>`;
@@ -58,35 +52,14 @@ function quantityChanged(event) {
   totalPrice.innerHTML = ` <h2>Total</h2>
                             <span class="cart-tolal">${product.price * quantityInput.value} kr</span>`;
 }
+
 // cart item remove
 const btnDelete = document.querySelector(".btn-delete");
 btnDelete.addEventListener("click", function () {
   cartItem.innerHTML = "";
+  totalPrice.innerHTML = ` <h2>Total</h2>
+                          <span class="cart-tolal">0 kr</span>`;
 });
 
 // checkout form validation
-formChekout.addEventListener("click", validateFormCheckout);
-
-function validateFormCheckout(event) {
-  event.preventDefault();
-  if (checkLength(fullName.value, 0) === true) {
-    fullNameError.style.display = "none";
-  } else {
-    fullNameError.style.display = "block";
-  }
-  if (checkLength(cardNumber.value, 15) === true) {
-    cardError.style.display = "none";
-  } else {
-    cardError.style.display = "block";
-  }
-  if (checkLength(cvc.value, 2) === true) {
-    cvcError.style.display = "none";
-  } else {
-    cvcError.style.display = "block";
-  }
-  if (checkLength(fullName.value, 0) && checkLength(cardNumber.value, 15) && checkLength(cvc.value, 2)) {
-    formChekout.reset();
-    cartProducts.innerHTML = displayMessage("Thank you for your order!");
-    checkoutButton.disabled = true;
-  }
-}
+formChekout.addEventListener("submit", validateFormCheckout);

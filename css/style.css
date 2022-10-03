@@ -365,7 +365,8 @@
 
 .form {
   border-radius: 0.4rem;
-  width: 100%;
+  width: 90%;
+  margin: 0 auto;
   background-color: #fff;
 
   padding: 8rem 4rem;
@@ -486,7 +487,7 @@
 /* checkout form */
 .cart-specifics {
   display: grid;
-  grid-template-columns: 70fr 30fr;
+  grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
   column-gap: 1rem;
   margin-bottom: 2rem;
@@ -510,4 +511,9 @@ input[id="cvc"] {
 label[for="cvc"] {
   grid-row: 1;
   grid-column: 2/3;
+}
+
+.btn-submit:disabled {
+  background-color: rgb(189, 187, 187);
+  color: #fff;
 }
