@@ -1,8 +1,13 @@
 import { products } from "./products.js";
 import { jacketsConatiner } from "./constans.js";
 import { categoriBtn } from "./constans.js";
+import { displayMessage } from "./helperFunctions.js";
 
-displayProduct(products);
+if (!products) {
+  jacketsConatiner.innerHTML = displayMessage("An error has occurred", "error");
+} else {
+  displayProduct(products);
+}
 
 for (let i = 0; i < categoriBtn.length; i++) {
   categoriBtn[i].addEventListener("click", filterProducts.bind(this, categoriBtn[i]));

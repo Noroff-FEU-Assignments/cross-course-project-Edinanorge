@@ -54,7 +54,7 @@
       <div class="search">
         <label for="search"></label>
         <input type="search" name="search" placeholder="Search for item" class="search-input" />
-        <button type="submit" id="search" class="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+        <button type="submit" id="search" class="search-btn">Search</button>
       </div>
     </header>
     <main>
@@ -66,7 +66,12 @@
           <button class="btn-category btn-woman" id="woman">Woman</button>
           <button class="btn-category btn-kid" id="kid">Kid</button>
         </div>
-        <div class="jackets grid-4cols"></div>
+        <div class="jackets grid-4cols">
+          <div class="spinner">
+            <div></div>
+            <div></div>
+          </div>
+        </div>
       </section>
     </main>
     <footer class="footer">
@@ -100,6 +105,7 @@
       </div>
       <h4 class="coryright">Copyright &copy;2022 RainyDays</h4>
     </footer>
+    <script src="js/components/cartFunctionality.js" type="module"></script>
     <script src="js/jackets.js" type="module"></script>
   </body>
 </html>

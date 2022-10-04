@@ -1,16 +1,16 @@
-import { checkLength } from "./helperFunctions.js";
-import { formChekout } from "./constans.js";
-import { cartProducts } from "./constans.js";
-import { checkoutButton } from "./constans.js";
-import { displayMessage } from "./helperFunctions.js";
-import { formSuccess } from "./constans.js";
-import { fullName } from "./constans.js";
-import { fullNameError } from "./constans.js";
-import { message } from "./constans.js";
-import { messageError } from "./constans.js";
-import { email } from "./constans.js";
-import { emailError } from "./constans.js";
-import { validateEmail } from "./helperFunctions.js";
+import { checkLength, displayMessage, validateEmail } from "../helperFunctions.js";
+import {
+  formChekout,
+  productsInCart,
+  checkoutButton,
+  formSuccess,
+  fullName,
+  fullNameError,
+  message,
+  messageError,
+  email,
+  emailError,
+} from "../constans.js";
 
 export function validateFormCheckout(event) {
   event.preventDefault();
@@ -42,7 +42,7 @@ export function validateFormCheckout(event) {
     checkLength(date.value, 0)
   ) {
     formChekout.reset();
-    cartProducts.innerHTML = displayMessage("Thank you for your order!");
+    productsInCart.innerHTML = displayMessage("Thank you for your order!");
     checkoutButton.disabled = true;
     checkoutButton.classList.add("disabled");
   }

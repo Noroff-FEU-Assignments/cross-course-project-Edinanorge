@@ -12,6 +12,6 @@ export function validateEmail(email) {
   return patternMatches;
 }
 
-export function displayMessage(message) {
-  return `<h2 class="heading-secondary">${message}</h2>`;
+export function displayMessage(message, style) {
+  return `<h2 class="heading-secondary ${style}">${message}</h2>`;
 }

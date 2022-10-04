@@ -16,6 +16,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet" />
     <script src="https://kit.fontawesome.com/16bf78a0e8.js" crossorigin="anonymous"></script>
+
     <!-- Hotjar Tracking Code for https://happy-cray-ed1521.netlify.app -->
     <script>
       (function (h, o, t, j, a, r) {
@@ -56,7 +57,7 @@
       <div class="search">
         <label for="search"></label>
         <input type="search" name="search" placeholder="Search for item" class="search-input" />
-        <button type="submit" id="search" class="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+        <button type="submit" id="search" class="search-btn">Search</button>
         <div class="searched-products"></div>
       </div>
     </header>
@@ -75,8 +76,13 @@
 
       <section class="section-products">
         <h2 class="heading-secondary">Sale</h2>
-        <div class="products grid-4cols"></div>
-        <a href="jackets.html" class="btn-secondary">View more <i class="fa-solid fa-arrow-right"></i></a>
+        <div class="products grid-4cols">
+          <div class="spinner">
+            <div></div>
+            <div></div>
+          </div>
+        </div>
+        <a href="jackets.html" class="btn-secondary">View More <i class="fa-solid fa-arrow-right"></i></a>
       </section>
 
       <section class="section-gallery">
@@ -126,6 +132,7 @@
       </div>
       <h4 class="coryright">Copyright &copy;2022 RainyDays</h4>
     </footer>
+    <script src="js/components/cartFunctionality.js" type="module"></script>
 
     <script src="js/index.js " type="module"></script>
     <script src="js/search.js" type="module"></script>

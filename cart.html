@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="VIEW SHOPPING CART CONTINUE SHOPPING" />
+    <meta name="description" content="VIEW SHOPPING CART" />
     <title>Rainydays / Shopping cart</title>
     <link href="css/general.css" rel="stylesheet" />
     <link href="css/style.css" rel="stylesheet" />
@@ -51,7 +51,7 @@
       <div class="search">
         <label for="search"></label>
         <input type="search" name="search" placeholder="Search for item" class="search-input" />
-        <button type="submit" id="search" class="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+        <button type="submit" id="search" class="search-btn">Search</button>
       </div>
     </header>
     <main>
@@ -68,7 +68,7 @@
               <h2 class="cart-price heading-secondary cart-column">PRICE</h2>
               <h2 class="cart-quantity heading-secondary cart-column">QUANTITY</h2>
             </div>
-            <div class="cart-item cart-column"></div>
+            <div class="cart-item"></div>
             <div class="cart-total-price">
               <h2>Total</h2>
               <span class="cart-tolal">0 kr</span>
@@ -84,9 +84,9 @@
               <div class="form-error" id="fullNameError">Please enter your full name.</div>
             </div>
             <div class="form-input">
-              <label for="card-number">Cart number (16 number)</label>
+              <label for="card-number">Card number (16 number)</label>
               <input type="number" id="cardNumber" name="card-number" />
-              <div class="form-error" id="cardError">Please enter your cart number.</div>
+              <div class="form-error" id="cardError">Please enter your card number.</div>
             </div>
             <div class="cart-specifics">
               <label for="date">Exp. date</label>
@@ -132,6 +132,10 @@
       </div>
       <h4 class="coryright">Copyright &copy;2022 RainyDays</h4>
     </footer>
-    <script src="js/cart.js" type="module"></script>
+
+    <script src="js/components/cartFunctionality.js" type="module"></script>
+    <script src="js/components/formValidation.js" type="module"></script>
+
+    <script src="js/checkout.js" type="module"></script>
   </body>
 </html>

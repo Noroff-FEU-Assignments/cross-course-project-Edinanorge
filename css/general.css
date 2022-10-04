@@ -48,7 +48,7 @@ header {
 .grid-2cols {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  align-items: center;
+  align-items: start;
   gap: 2rem;
 }
 
@@ -90,9 +90,11 @@ header {
 }
 
 /**** LINKS ****/
+
 .btn-cta:link,
 .btn-cta:visited,
-.btn-submit {
+.btn-submit,
+.btn-cta {
   display: inline-block;
   border: none;
   text-decoration: none;
@@ -128,8 +130,6 @@ header {
   letter-spacing: 0.5px;
 
   transition: all 0.3s ease;
-  position: absolute;
-  right: 3%;
 }
 
 .btn-secondary:hover,
@@ -203,10 +203,11 @@ header {
 .search-btn {
   border: none;
   background-color: #1db5c5;
-  color: #444;
+  color: #191919;
   font-size: 1.4rem;
   margin-right: 1rem;
   padding-left: 0.5rem;
+  cursor: pointer;
 }
 
 .search-btn:hover {
@@ -247,4 +248,43 @@ header {
   display: inline-block;
   color: #111;
   text-decoration: none;
+}
+
+/* loading indicator */
+.spinner {
+  width: 100px;
+  height: 100px;
+  position: relative;
+
+  grid-column: 1/-1;
+  justify-self: center;
+}
+
+.spinner div {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 15px solid #038a99;
+  border-top-color: #4fc6d2;
+  border-bottom-color: #4fc6d2;
+
+  animation: spinnerOne 1s infinite;
+}
+
+@keyframes spinnerOne {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.error {
+  color: red;
+}
+.success {
+  color: #033f46;
 }
