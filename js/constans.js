@@ -22,19 +22,3 @@ export const addToCartButton = document.querySelector(".btn-buy");
 export const cartItem = document.querySelector(".cart-item");
 
 export const cartIconAffterElement = document.createElement("style");
-
-cartIconAffterElement.innerHTML = `.cart-icon:after {
-  content: "0";
-  width: 8px;
-  height: 8px;
-  border-radius: 80%;
-  background-color: #cdeff2;
-  padding: 0.4rem;
-  font-size: 1rem;
-  text-align: center;
-
-  position: absolute;
-  top: 0;
-  right: 0;
-}`;
-document.head.appendChild(cartIconAffterElement);

@@ -42,7 +42,7 @@ export function validateFormCheckout(event) {
     checkLength(date.value, 0)
   ) {
     formChekout.reset();
-    productsInCart.innerHTML = displayMessage("Thank you for your order!");
+    productsInCart.innerHTML = displayMessage("Thank you for your order!", "success");
     checkoutButton.disabled = true;
     checkoutButton.classList.add("disabled");
   }

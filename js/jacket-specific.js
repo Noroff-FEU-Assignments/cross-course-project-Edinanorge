@@ -1,7 +1,5 @@
 import { products } from "./products.js";
 import { jacketSpecificContainer } from "./constans.js";
-import { getExistingCart } from "./components/cartFunctionality.js";
-import { saveToCart } from "./components/cartFunctionality.js";
 
 const querySring = document.location.search;
 const prams = new URLSearchParams(querySring);
@@ -11,27 +9,9 @@ const product = products.find(({ id }) => id == productId);
 // display single product
 displayProductDetails(product);
 
-// save product to cart
+// click event to Add To Cart button
 const btnAddToCart = document.querySelector(".btn-buy");
-
-btnAddToCart.addEventListener("click", handleCart);
-
-function handleCart() {
-  const currentCart = getExistingCart();
-
-  const cartExists = currentCart.find((item) => item.id === product.id);
-
-  if (!cartExists) {
-    const productToCart = product;
-
-    currentCart.push(productToCart);
-
-    saveToCart(currentCart);
-  } else {
-    const newCart = currentCart.filter((item) => item.id !== product.id);
-    saveToCart(newCart);
-  }
-}
+btnAddToCart.addEventListener("click", saveProdactsToLocal);
 
 function displayProductDetails(product) {
   jacketSpecificContainer.innerHTML = `<div class="grid-2cols">
@@ -62,4 +42,29 @@ function displayProductDetails(product) {
                                           <p><i class="fa-solid fa-arrow-right-arrow-left"></i>30 days free return</p>
                                           <p><i class="fa-solid fa-money-bill-1"></i>Money-back guarantee</p>
                                         </div>`;
+}
+// save product to cart
+function saveProdactsToLocal() {
+  const existingCartProducts = getExistingProducts();
+
+  const cartProduct = existingCartProducts.find((item) => item.id === product.id);
+
+  if (!cartProduct) {
+    existingCartProducts.push(product);
+    localStorage.setItem("cartProducts", JSON.stringify(existingCartProducts));
+  } else {
+    const newCartProducts = existingCartProducts.filter((item) => item.id !== product.id);
+    localStorage.setItem("cartProducts", JSON.stringify(newCartProducts));
+  }
+}
+
+// Get products from local
+function getExistingProducts() {
+  const cartProducts = localStorage.getItem("cartProducts");
+
+  if (!cartProducts) {
+    return [];
+  } else {
+    return JSON.parse(cartProducts);
+  }
 }
