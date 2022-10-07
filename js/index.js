@@ -17,9 +17,9 @@ function displaySaleProducts(products) {
   
                                           <figcaption class="jacket-text">
                                           <p class="jacket-nr">${products[i].product_code}</p>
-                                          <h3 class="heading-tertiary">${products[i].name}</h3>
+                                          <h2 class="heading-tertiary">${products[i].name}</h2>
                                           <span class="product-rating">${products[i].rating} (${products[i].id}) </span>
-                                          <p class="product-price">${products[i].price} <strong>kr</strong></p>
+                                          <p class="product-price">${products[i].price} kr</p>
                                         </figcaption>
                                         </figure>
                                     </a>`;

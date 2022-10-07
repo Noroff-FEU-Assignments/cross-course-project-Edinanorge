@@ -19,7 +19,7 @@ function displayProductDetails(product) {
                                           <div class="text-container">
                                             <a class="back-link" href="jackets.html"><i class="fa-solid fa-arrow-left back-icon"></i>Back to our products</a>
                                             <h1 class="heading-primary">${product.name}</h1>
-                                            <h2 class="price">${product.price} kr</h2>
+                                            <h2 class="product-price">${product.price} kr</h2>
                                             <ul class="description-list jacket-description-list">
                                               <li><i class="fa-solid fa-cloud-rain"></i>waterproof</li>
                                               <li><i class="fa-solid fa-wind"></i>windproof</li>

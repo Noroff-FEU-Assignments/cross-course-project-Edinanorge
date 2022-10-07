@@ -39,6 +39,9 @@
 .btn-hero {
   grid-column: 2/3;
 }
+.btn-hero:hover {
+  box-shadow: 0px 0px 1px 1px #e6f7f9 inset;
+}
 
 /* -product section */
 .section-products {
@@ -70,6 +73,9 @@
 }
 
 .product-price {
+  background-color: #555;
+  padding: 0.5rem;
+  color: #fff;
   font-size: 1.6rem;
   text-align: center;
 }
@@ -107,7 +113,7 @@
 /*-footer*/
 
 .footer {
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   background-color: #1db5c5;
   color: #000;
   padding: 3rem;
@@ -140,7 +146,7 @@
 .coryright {
   font-weight: 400;
   text-align: center;
-  font-size: 1rem;
+  font-size: 1.2rem;
   margin-top: 3rem;
 }
 
@@ -189,7 +195,7 @@
   box-shadow: 0 0.5rem 0.8rem 0 rgba(3, 138, 153, 0.3);
 }
 
-.jacket h3 {
+.jacket h2 {
   text-align: left;
   margin: 0;
   font-size: 1.6rem;
@@ -201,13 +207,8 @@
 }
 
 .jacket .product-price {
-  background-color: #555;
-  padding: 0.5rem;
-  color: #fff;
-  margin-top: 2rem;
-
   position: absolute;
-  top: 50%;
+  top: 60%;
   right: 1rem;
 }
 
@@ -272,14 +273,6 @@
 
 .text-container h1 {
   font-size: 2rem;
-}
-
-.price {
-  margin-bottom: 1.5rem;
-  font-size: 2rem;
-  font-weight: 500;
-  color: #033f46;
-  margin-bottom: 2rem;
 }
 
 .jacket-description-list,
@@ -476,9 +469,11 @@
 
 .btn-delete {
   border: none;
-  color: #db3220;
-  font-weight: 600;
-  font-size: 2rem;
+  color: #fff;
+  background-color: #8a0000;
+  font-weight: 500;
+  padding: 0.5rem;
+  font-size: 1.5rem;
   text-align: right;
   margin-left: 4rem;
 
@@ -486,7 +481,8 @@
 }
 
 .btn-delete:hover {
-  color: #033f46;
+  color: #8a0000;
+  background-color: #fff;
 }
 
 .cart-item-price {
@@ -537,7 +533,7 @@ label[for="cvc"] {
 
 .section-success {
   max-width: 83%;
-  margin: 4rem auto;
+  margin: 20rem auto;
 }
 
 .section-success .heading-secondary {
@@ -545,7 +541,7 @@ label[for="cvc"] {
 }
 
 .section-success .btn-cta {
-  margin-left: 2rem;
+  margin-right: 2rem;
 }
 
 .success-icon {

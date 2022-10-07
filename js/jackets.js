@@ -7,10 +7,10 @@ if (!products) {
   jacketsConatiner.innerHTML = displayMessage("An error has occurred", "error");
 } else {
   displayProduct(products);
-}
 
-for (let i = 0; i < categoriBtn.length; i++) {
-  categoriBtn[i].addEventListener("click", filterProducts.bind(this, categoriBtn[i]));
+  for (let i = 0; i < categoriBtn.length; i++) {
+    categoriBtn[i].addEventListener("click", filterProducts.bind(this, categoriBtn[i]));
+  }
 }
 
 function filterProducts(item) {
@@ -41,7 +41,7 @@ function displayProduct(products) {
                                       <img class="product-img" src="${products[i].image}" alt="${products[i].name}"/>
                                     <figcaption class="jacket-text">
                                       <p class="jacket-nr">${products[i].product_code}</p>
-                                      <h3 class="heading-tertiary">${products[i].name}</h3>
+                                      <h2 class="heading-tertiary">${products[i].name}</h2>
                                       <span class="product-rating">${products[i].rating} (${products[i].id}) </span>
                                       <p class="product-price">${products[i].price} kr</p>
                                       

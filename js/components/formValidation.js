@@ -10,6 +10,12 @@ import {
   messageError,
   email,
   emailError,
+  address,
+  addressError,
+  date,
+  dateError,
+  cvc,
+  cvcError,
 } from "../constans.js";
 
 export function validateFormCheckout(event) {
@@ -19,17 +25,22 @@ export function validateFormCheckout(event) {
   } else {
     fullNameError.style.display = "block";
   }
-  if (checkLength(cardNumber.value, 15) === true) {
+  if (checkLength(cardNumber.value, 15)) {
     cardError.style.display = "none";
   } else {
     cardError.style.display = "block";
   }
-  if (checkLength(date.value, 0)) {
+  if (checkLength(address.value, 0)) {
+    addressError.style.display = "none";
+  } else {
+    addressError.style.display = "block";
+  }
+  if (date.value) {
     dateError.style.display = "none";
   } else {
     dateError.style.display = "block";
   }
-  if (checkLength(cvc.value, 2) === true) {
+  if (checkLength(cvc.value, 2)) {
     cvcError.style.display = "none";
   } else {
     cvcError.style.display = "block";
@@ -37,9 +48,10 @@ export function validateFormCheckout(event) {
   if (
     checkLength(fullName.value, 0) &&
     isNaN(fullName.value) &&
+    checkLength(address.value, 0) &&
     checkLength(cardNumber.value, 15) &&
     checkLength(cvc.value, 2) &&
-    checkLength(date.value, 0)
+    date.value
   ) {
     formChekout.reset();
     productsInCart.innerHTML = displayMessage("Thank you for your order!", "success");
@@ -74,8 +86,8 @@ export function validateForm(event) {
   if (
     checkLength(fullName.value, 0) &&
     isNaN(fullName.value) &&
-    validateEmail(email.value) === true &&
-    checkLength(message.value, 25) === true
+    validateEmail(email.value) &&
+    checkLength(message.value, 25)
   ) {
     form.reset();
     formSuccess.style.display = "block";
