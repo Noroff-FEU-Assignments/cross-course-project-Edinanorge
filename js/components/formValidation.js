@@ -1,6 +1,6 @@
 import { checkLength, displayMessage, validateEmail } from "../helperFunctions.js";
 import {
-  formChekout,
+  formCheckout,
   productsInCart,
   checkoutButton,
   formSuccess,

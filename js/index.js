@@ -1,10 +1,9 @@
 import { products } from "./products.js";
 
-const salesContainer = document.querySelector(".products");
-
 displaySaleProducts(products);
 
 function displaySaleProducts(products) {
+  const salesContainer = document.querySelector(".products");
   salesContainer.innerHTML = "";
 
   for (let i = 0; i < products.length; i++) {

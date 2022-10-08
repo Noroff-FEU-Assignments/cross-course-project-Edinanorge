@@ -1,13 +1,16 @@
 import { products } from "./products.js";
-import { jacketsConatiner } from "./constans.js";
-import { categoriBtn } from "./constans.js";
 import { displayMessage } from "./helperFunctions.js";
+
+const jacketsConatiner = document.querySelector(".jackets");
 
 if (!products) {
   jacketsConatiner.innerHTML = displayMessage("An error has occurred", "error");
 } else {
+  // display the product
   displayProduct(products);
 
+  // add event listener to category buttons
+  const categoriBtn = document.querySelectorAll(".btn-category");
   for (let i = 0; i < categoriBtn.length; i++) {
     categoriBtn[i].addEventListener("click", filterProducts.bind(this, categoriBtn[i]));
   }

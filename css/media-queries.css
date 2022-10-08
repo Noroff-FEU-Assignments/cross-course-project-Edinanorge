@@ -25,12 +25,12 @@
     margin: 0 auto;
   }
   /* cart */
-  .cart-item {
+  /* .cart-item {
     width: 100%;
   }
   .cart-quantity {
     text-align: center;
-  }
+  } */
 
   /* success */
   .section-success {
@@ -281,9 +281,4 @@
     top: 20%;
     left: 50%;
   }
-
-  /* jacket-specific page */
-  .section-jacket-specific .grid-2cols {
-    grid-template-columns: 1fr 1fr;
-  }
-}
+} 

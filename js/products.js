@@ -202,7 +202,7 @@ export const products = [
     category: "man",
   },
   {
-    name: "Man's Jacket",
+    name: "Man's Running Jacket",
     image: "/images/man.png",
     id: 16,
     price: 1599,

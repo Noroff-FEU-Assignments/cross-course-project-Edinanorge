@@ -1,18 +1,25 @@
+import { displayMessage } from "./helperFunctions.js";
 import { products } from "./products.js";
-import { jacketSpecificContainer } from "./constans.js";
+
+const jacketSpecificContainer = document.querySelector(".section-jacket-specific");
 
 const querySring = document.location.search;
 const prams = new URLSearchParams(querySring);
 const productId = prams.get("id");
 const product = products.find(({ id }) => id == productId);
 
-// display single product
-displayProductDetails(product);
+if (!product) {
+  jacketSpecificContainer.innerHTML = displayMessage("Something went wrong", "error");
+} else {
+  // display single product
+  displayProductDetails(product);
 
-// click event to Add To Cart button
-const btnAddToCart = document.querySelector(".btn-buy");
-btnAddToCart.addEventListener("click", saveProdactsToLocal);
+  // click event to Add To Cart button
+  const btnAddToCart = document.querySelector(".btn-buy");
+  btnAddToCart.addEventListener("click", saveProdactsToLocal);
+}
 
+// display HTML
 function displayProductDetails(product) {
   jacketSpecificContainer.innerHTML = `<div class="grid-2cols">
                                           <img  class="jacket-specific-img"src="${product.image}" alt="${product.name}"/>
@@ -43,7 +50,8 @@ function displayProductDetails(product) {
                                           <p><i class="fa-solid fa-money-bill-1"></i>Money-back guarantee</p>
                                         </div>`;
 }
-// save product to cart
+
+// save product to local
 function saveProdactsToLocal() {
   const existingCartProducts = getExistingProducts();
 

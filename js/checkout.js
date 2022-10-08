@@ -1,13 +1,11 @@
-import { products } from "./products.js";
-import { productsInCart, form } from "./constans.js";
-import { formChekout } from "./constans.js";
-import { checkoutButton, cartItem } from "./constans.js";
+import { formCheckout, checkoutButton } from "./constans.js";
+
 import { displayMessage } from "./helperFunctions.js";
 import { validateFormCheckout } from "./components/formValidation.js";
 
 const cartProductsContainer = document.querySelector(".cart-product-container");
 
-// geting product from cart
+// geting product from local sorage
 let cartItems = localStorage.getItem("cartProducts");
 if (!cartItems) {
   cartItems = [];
@@ -17,74 +15,91 @@ if (!cartItems) {
 
 //  if no product in cart
 if (cartItems.length == 0) {
+  // display message that the cart is emty
   cartProductsContainer.innerHTML = displayMessage("Your cart is currently empty.", "success");
+  // make the form button diabled
   checkoutButton.disabled = true;
-  formChekout.addEventListener("submit", function (e) {
+  // stop submiting the form
+  formCheckout.addEventListener("submit", function (e) {
     e.preventDefault;
   });
 } else {
-  formChekout.addEventListener("submit", validateFormCheckout);
-  // dispaly product
+  // validat the form
+  formCheckout.addEventListener("submit", validateFormCheckout);
+  // dispaly products
   displayHtml(cartItems);
+  // update the total price
+  updateTotalPrice();
+  // add event listener to delete buttons
+  const btnDelete = document.querySelectorAll(".btn-delete");
+  for (let i = 0; i < btnDelete.length; i++) {
+    btnDelete[i].addEventListener("click", removeProduct);
+  }
+  //add event listener to quantity inputs
+  const quantityInputs = document.querySelectorAll(".cart-quantity-input");
+  for (let i = 0; i < quantityInputs.length; i++) {
+    quantityInputs[i].addEventListener("change", changeQuantity);
+  }
 }
-//display html
+
 function displayHtml(product) {
   for (let i = 0; i < product.length; i++) {
-    cartItem.innerHTML += `<div class="cart-column ">
-                          <div class="cart-image">
-                            <img src="${product[i].image}" alt="${product[i].name}" width=100px height=auto/>
-                               <h4>${product[i].name}</h4>
+    const cartItem = document.querySelector(".cart-item");
+    cartItem.innerHTML += `<div class="cart-column cart-row">
+                            <div class="cart-image">
+                              <img src="${product[i].image}" alt="${product[i].name}" width=100px height=auto/>
+                              <h4 class="cart-item-name">${product[i].name}</h4>
                               <p>${product[i].product_code}</p>
-                           </div>
+                            </div>
                             <p class="cart-item-price">${product[i].price} kr</p>
                             <div class="cart-quantity" >
                               <input class="cart-quantity-input" min="1" type="number" value="1">
                               <button class="btn-delete" type="button">DELETE</button>
-                             </div>
-                            </div>`;
+                            </div>
+                          </div>`;
   }
-}
-//<i class="fa-solid fa-trash"></i>
-// cart item remove
-const btnDelete = document.querySelectorAll(".btn-delete");
-for (let i = 0; i < btnDelete.length; i++) {
-  btnDelete[i].addEventListener("click", removeProduct);
 }
 
 function removeProduct(event) {
   const btnClicked = event.target;
-  btnClicked.parentElement.parentElement.remove();
+  const clickedItem = btnClicked.parentElement.parentElement;
+  clickedItem.remove();
+
+  //repalcing the local sorage hvit the array which don't contains the deleted item
+  const clickedItemName = clickedItem.getElementsByClassName("cart-item-name")[0].innerText;
+  const remainingItem = cartItems.filter((item) => item.name !== clickedItemName);
+
+  localStorage.setItem("cartProducts", JSON.stringify(remainingItem));
+
+  updateTotalPrice();
 }
-// remove from local storage
 
-// changing the total price
-// const productPrice = document.querySelectorAll(".cart-item-price");
-// for (let i = 0; i < productPrice.length; i++) {}
+function changeQuantity() {
+  const quantityInput = event.target;
+  if (isNaN(quantityInput.value) || quantityInput.value == 0) {
+    quantityInput.value = 1;
+  }
+  updateTotalPrice();
+}
 
-// const cartQuantityInputs = document.querySelectorAll("cart-quantity-input");
+function updateTotalPrice() {
+  const cartItemsContainer = document.getElementsByClassName("cart-item")[0];
+  const cartRows = cartItemsContainer.getElementsByClassName("cart-row");
 
-// for (let i = 0; i < cartQuantityInputs.length; i++) {
-//   cartQuantityInputs[i].addEventListener("change", quantityChanged);
-// }
+  let total = 0;
+  for (let i = 0; i < cartRows.length; i++) {
+    // getting the elements whitch has the class names
+    const cartPriceElement = cartRows[i].getElementsByClassName("cart-item-price")[0];
 
-// function quantityChanged(event) {
-//   const quantityInput = event.target;
-//   console.log(quantityInput.value);
-//   if (isNaN(quantityInput.value) || quantityInput.value <= 0) {
-//     quantityInput.value = 1;
-//   }
+    const cartQuantityElement = cartRows[i].getElementsByClassName("cart-quantity-input")[0];
 
-//   totalPrice.innerHTML = ` <h2>Total</h2>
-// <span class="cart-tolal">${product.price * quantityInput.value} kr</span>`;
-// }
+    // getting the information from the cartPriceElements, and cartQuantityElement:
+    //replacing the kr to "" and converting to number
+    const price = parseFloat(cartPriceElement.innerText.replace("kr", ""));
+    const quantity = cartQuantityElement.value;
 
-// const cartItem = document.querySelector(".cart-item");
-
-// cart item quantity change
-
-//   totalPrice.innerHTML = ` <h2>Total</h2>
-//                             <span class="cart-tolal">${product.price} kr</span>`;
-
-// checkout form validation
-
-// }
+    total = total + price * quantity;
+  }
+  document.getElementsByClassName("cart-total-price")[0].innerHTML = `<h2>Total</h2> 
+                                                                        <span class="cart-tolal"><strong>${total}</strong> kr</span>`;
+}
