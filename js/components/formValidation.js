@@ -53,7 +53,7 @@ export function validateFormCheckout(event) {
     checkLength(cvc.value, 2) &&
     date.value
   ) {
-    formChekout.reset();
+    formCheckout.reset();
     productsInCart.innerHTML = displayMessage("Thank you for your order!", "success");
     checkoutButton.disabled = true;
     checkoutButton.classList.add("disabled");

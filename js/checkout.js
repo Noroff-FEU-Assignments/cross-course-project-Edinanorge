@@ -65,7 +65,7 @@ function removeProduct(event) {
   const clickedItem = btnClicked.parentElement.parentElement;
   clickedItem.remove();
 
-  //repalcing the local sorage hvit the array which don't contains the deleted item
+  //repalcing the local sorage whit the array which don't contains the deleted item
   const clickedItemName = clickedItem.getElementsByClassName("cart-item-name")[0].innerText;
   const remainingItem = cartItems.filter((item) => item.name !== clickedItemName);
 
