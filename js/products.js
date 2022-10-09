@@ -40,7 +40,7 @@ export const products = [
   },
 
   {
-    name: "Woman's Snowboard Jacket",
+    name: "Woman's Snowboard ",
     image: "/images/woman-snowboard.png",
     id: 5,
     price: 999,
@@ -67,7 +67,7 @@ export const products = [
     category: "woman",
   },
   {
-    name: "Woman's Canoeing Jacket",
+    name: "Woman's Canoeing ",
     image: "/images/woman-canoeing.png",
     id: 7,
     price: 1199,
@@ -189,7 +189,7 @@ export const products = [
     category: "man",
   },
   {
-    name: "Man's Snowboard Jacket",
+    name: "Man's Snowboard ",
     image: "/images/man-snowboard.png",
     id: 15,
     price: 1599,
