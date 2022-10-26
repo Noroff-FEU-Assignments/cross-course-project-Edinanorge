@@ -34,6 +34,7 @@ img {
 strong {
   font-weight: 500;
 }
+
 header {
   background-color: #1db5c5;
 }
@@ -48,7 +49,7 @@ header {
 .grid-2cols {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  align-items: start;
+  align-items: center;
   gap: 2rem;
 }
 
@@ -256,6 +257,10 @@ header {
   color: #111;
   text-decoration: none;
   margin: 1rem;
+}
+
+.cart-icon {
+  position: relative;
 }
 
 /* loading indicator */

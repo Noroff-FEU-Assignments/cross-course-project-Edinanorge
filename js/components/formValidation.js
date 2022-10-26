@@ -1,22 +1,27 @@
-import { checkLength, displayMessage, validateEmail } from "../helperFunctions.js";
-import {
-  formCheckout,
-  productsInCart,
-  checkoutButton,
-  formSuccess,
-  fullName,
-  fullNameError,
-  message,
-  messageError,
-  email,
-  emailError,
-  address,
-  addressError,
-  date,
-  dateError,
-  cvc,
-  cvcError,
-} from "../constans.js";
+import { checkLength, validateEmail, displayMessage } from "./helperFunctions.js";
+
+// contact form
+export const form = document.querySelector("#form");
+const formSuccess = document.querySelector(".form-success");
+const fullName = document.querySelector("#fullName");
+const fullNameError = document.querySelector("#fullNameError");
+const message = document.querySelector("#message");
+const messageError = document.querySelector("#messageError");
+const email = document.querySelector("#email");
+const emailError = document.querySelector("#emailError");
+
+// checkot form
+export const formCheckout = document.querySelector(".form-checkout");
+const cardNumber = document.querySelector("#cardNumber");
+const cardError = document.querySelector("#cardError");
+const date = document.querySelector("#date");
+const dateError = document.querySelector("#dateError");
+const address = document.querySelector("#address");
+const addressError = document.querySelector("#addressError");
+const cvc = document.querySelector("#cvc");
+const cvcError = document.querySelector("#cvcError");
+export const checkoutButton = document.querySelector(".btn-checkout");
+const productsInCart = document.querySelector(".cart-product-container");
 
 export function validateFormCheckout(event) {
   event.preventDefault();
@@ -54,9 +59,13 @@ export function validateFormCheckout(event) {
     date.value
   ) {
     formCheckout.reset();
-    productsInCart.innerHTML = displayMessage("Thank you for your order!", "success");
+    productsInCart.innerHTML = displayMessage(
+      `<i class="fa-solid fa-thumbs-up"></i> Thank you for your order!`,
+      "success"
+    );
     checkoutButton.disabled = true;
     checkoutButton.classList.add("disabled");
+    localStorage.clear();
   }
 }
 

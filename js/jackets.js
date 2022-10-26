@@ -1,33 +1,32 @@
-import { products } from "./products.js";
-import { displayMessage } from "./helperFunctions.js";
+import { displayMessage } from "./components/helperFunctions.js";
+import { url, per_page } from "./config.js";
 
 const jacketsConatiner = document.querySelector(".jackets");
 const categoriBtn = document.querySelectorAll(".btn-category");
 
-if (!products) {
-  jacketsConatiner.innerHTML = displayMessage("An error has occurred", "error");
-} else {
-  // display the product
-  displayProduct(products);
-
-  // add event listener to category buttons
-
-  for (let i = 0; i < categoriBtn.length; i++) {
-    categoriBtn[i].addEventListener("click", filterProducts.bind(this, categoriBtn[i]));
-  }
-}
-
-function filterProducts(item) {
-  changeAvtiveStyle(item);
-  console.log(item.attributes.id.value);
-
-  if (item.attributes.id.value == "all") {
+async function getProduct(url) {
+  try {
+    const respons = await fetch(url);
+    const products = await respons.json();
     displayProduct(products);
-  } else {
-    const filterdProduct = products.filter(({ category }) => category == item.attributes.id.value);
-    displayProduct(filterdProduct);
+  } catch (error) {
+    jacketsConatiner.innerHTML = displayMessage("An error has occurred", "error");
   }
 }
+getProduct(url);
+
+categoriBtn.forEach((category) => {
+  category.onclick = (event) => {
+    changeAvtiveStyle(category);
+    const categoryChosen = event.target.value;
+
+    console.log(categoryChosen);
+    jacketsConatiner.innerHTML = "";
+    const newUrl = `https://edinaisztojka.store/rainydays/wp-json/wc/v3/products?category=${categoryChosen}&per_page=${per_page}&consumer_key=ck_f07b7741347d56ee139639a72347557cdc7abcb8&consumer_secret=cs_e18ec68d36df4889d53332ac9359abcd504d98e3`;
+
+    getProduct(newUrl);
+  };
+});
 
 function changeAvtiveStyle(activeItem) {
   const categoriBtn = document.querySelectorAll(".btn-category");
@@ -43,13 +42,13 @@ function displayProduct(products) {
   for (let i = 0; i < products.length; i++) {
     jacketsConatiner.innerHTML += `<a href="jacket-specific.html?id=${products[i].id}" >
                                     <figure class="jacket">
-                                      <img class="product-img" src="${products[i].image}" alt="${products[i].name}"/>
+                                      <img class="product-img" src="${products[i].images[0].src}" alt="${products[i].name}"/>
                                     <figcaption class="jacket-text">
-                                      <p class="jacket-nr">${products[i].product_code}</p>
+                                      <p class="jacket-nr">${products[i].short_description}</p>
                                       <h2 class="heading-tertiary">${products[i].name}</h2>
-                                      <span class="product-rating">${products[i].rating} (${products[i].id}) </span>
+                                      <span class="product-rating">&#11088; &#11088; &#11088; &#11088; (${products[i].id}) </span>
                                       <p class="product-price">${products[i].price} kr</p>
-                                      
+
                                     </figcaption>
                                     </figure>
                                   </a>`;

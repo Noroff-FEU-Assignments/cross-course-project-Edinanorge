@@ -1,22 +1,16 @@
-import { formCheckout, checkoutButton } from "./constans.js";
-
-import { displayMessage } from "./helperFunctions.js";
-import { validateFormCheckout } from "./components/formValidation.js";
+import { formCheckout, checkoutButton, validateFormCheckout } from "./components/formValidation.js";
+import { displayMessage } from "./components/helperFunctions.js";
 
 const cartProductsContainer = document.querySelector(".cart-product-container");
 
 // geting product from local sorage
-let cartItems = localStorage.getItem("cartProducts");
-if (!cartItems) {
-  cartItems = [];
-} else {
-  cartItems = JSON.parse(cartItems);
-}
+
+let cartItems = JSON.parse(localStorage.getItem("cartProducts")) || [];
 
 //  if no product in cart
 if (cartItems.length == 0) {
   // display message that the cart is emty
-  cartProductsContainer.innerHTML = displayMessage("Your cart is currently empty.", "success");
+  cartProductsContainer.innerHTML = displayMessage("Your cart is currently empty.", "error");
   // make the form button diabled
   checkoutButton.disabled = true;
   // stop submiting the form
@@ -47,9 +41,11 @@ function displayHtml(product) {
     const cartItem = document.querySelector(".cart-item");
     cartItem.innerHTML += `<div class="cart-column cart-row">
                             <div class="cart-image">
-                              <img src="${product[i].image}" alt="${product[i].name}" width=100px height=auto/>
+                              <img src="${product[i].images.map((image) => image.src)}" alt="${
+      product[i].name
+    }" width=100px height=auto/>
                               <h4 class="cart-item-name">${product[i].name}</h4>
-                              <p>${product[i].product_code}</p>
+                              <p>${product[i].short_description}</p>
                             </div>
                             <p class="cart-item-price">${product[i].price} kr</p>
                             <div class="cart-quantity" >
@@ -74,7 +70,7 @@ function removeProduct(event) {
   updateTotalPrice();
 }
 
-function changeQuantity() {
+function changeQuantity(event) {
   const quantityInput = event.target;
   if (isNaN(quantityInput.value) || quantityInput.value == 0) {
     quantityInput.value = 1;
@@ -94,7 +90,7 @@ function updateTotalPrice() {
     const cartQuantityElement = cartRows[i].getElementsByClassName("cart-quantity-input")[0];
 
     // getting the information from the cartPriceElements, and cartQuantityElement:
-    //replacing the kr to "" and converting to number
+    // replacing the kr to "" and converting to number
     const price = parseFloat(cartPriceElement.innerText.replace("kr", ""));
     const quantity = cartQuantityElement.value;
 

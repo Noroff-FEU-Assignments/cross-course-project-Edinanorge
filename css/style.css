@@ -43,7 +43,7 @@
   box-shadow: 0px 0px 1px 1px #e6f7f9 inset;
 }
 
-/* -product section */
+/* -Sale section */
 .section-products {
   position: relative;
 }
@@ -73,6 +73,7 @@
 }
 
 .product-price {
+  display: inline-block;
   background-color: #555;
   padding: 0.5rem;
   color: #fff;
@@ -258,11 +259,6 @@
   margin-bottom: 2rem;
 }
 
-.text-container {
-  display: grid;
-  grid-template-columns: auto 1fr;
-}
-
 #size {
   width: min-content;
   margin-right: 3rem;
@@ -275,13 +271,9 @@
   font-size: 2rem;
 }
 
-.jacket-description-list,
-.jacket-description,
-.size,
-.price {
-  grid-column: 1/-1;
+.text-container .subheading {
+  margin-top: 4rem;
 }
-
 .jacket-description-list {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -295,10 +287,10 @@
   padding-right: 1rem;
 }
 
-.jacket-description {
-  margin-bottom: 3rem;
+.btn-cta.btn-buy {
+  display: block;
+  margin-top: 2rem;
 }
-
 .extra-info {
   margin-top: 12rem;
   display: flex;
@@ -405,11 +397,10 @@
 .form-success {
   display: none;
   color: green;
-
-  padding: 0.5rem 1rem;
-
-  margin-bottom: 2rem;
   font-weight: 700;
+  font-size: 1.5rem;
+  padding: 1rem;
+  margin: 2rem 2rem 0 2rem;
 }
 
 .form .btn-submit {
@@ -548,9 +539,4 @@ label[for="cvc"] {
   text-align: center;
   font-size: 15rem;
   color: #04adbf;
-}
-
-/* shoping cart */
-.way-to-shoppingcart {
-  position: relative;
 }
