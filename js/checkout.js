@@ -1,9 +1,8 @@
 import { formCheckout, checkoutButton, validateFormCheckout } from "./components/formValidation.js";
+import { cartIconIndicator } from "./components/cartItemsCounter.js";
 import { displayMessage } from "./components/helperFunctions.js";
 
 const cartProductsContainer = document.querySelector(".cart-product-container");
-
-// geting product from local sorage
 
 let cartItems = JSON.parse(localStorage.getItem("cartProducts")) || [];
 
@@ -21,7 +20,7 @@ if (cartItems.length == 0) {
   // validat the form
   formCheckout.addEventListener("submit", validateFormCheckout);
   // dispaly products
-  displayHtml(cartItems);
+  displayProductsInCart(cartItems);
   // update the total price
   updateTotalPrice();
   // add event listener to delete buttons
@@ -36,27 +35,28 @@ if (cartItems.length == 0) {
   }
 }
 
-function displayHtml(product) {
+function displayProductsInCart(product) {
   for (let i = 0; i < product.length; i++) {
     const cartItem = document.querySelector(".cart-item");
-    cartItem.innerHTML += `<div class="cart-column cart-row">
-                            <div class="cart-image">
-                              <img src="${product[i].images.map((image) => image.src)}" alt="${
-      product[i].name
-    }" width=100px height=auto/>
-                              <h4 class="cart-item-name">${product[i].name}</h4>
-                              <p>${product[i].short_description}</p>
-                            </div>
-                            <p class="cart-item-price">${product[i].price} kr</p>
-                            <div class="cart-quantity" >
-                              <input class="cart-quantity-input" min="1" type="number" value="1">
-                              <button class="btn-delete" type="button">DELETE</button>
-                            </div>
-                          </div>`;
+    let html = `<div class="cart-column cart-row">
+                <div class="cart-image">
+                  <img src="${product[i].images.map((image) => image.src)}" 
+                      alt="${product[i].name}" width=100px height=auto/>
+                  <h4 class="cart-item-name">${product[i].name}</h4>
+                  <p>${product[i].short_description}</p>
+                </div>
+                <p class="cart-item-price">${product[i].price} kr</p>
+                <div class="cart-quantity" >
+                  <input class="cart-quantity-input" min="1" type="number" value="1">
+                  <button class="btn-delete" type="button">DELETE</button>
+                </div>
+              </div>`;
+    cartItem.innerHTML += html;
   }
 }
 
 function removeProduct(event) {
+  cartIconIndicator();
   const btnClicked = event.target;
   const clickedItem = btnClicked.parentElement.parentElement;
   clickedItem.remove();

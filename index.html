@@ -35,13 +35,21 @@
             <a class="navigation-link" href="contact.html">Contact</a>
           </nav>
         </div>
-        <a class="way-to-shoppingcart" href="cart.html"><i class="fa-solid fa-cart-shopping cart-icon"></i></a>
+        <div class="shopping-cart">
+          <a class="way-to-shoppingcart" href="cart.html"><i class="fa-solid fa-cart-shopping cart-icon"></i></a>
+          <span class="cart-icon-indicator"></span>
+        </div>
       </div>
       <div class="search">
         <label for="search"></label>
         <input type="search" name="search" placeholder="Search for item" class="search-input" />
         <button type="submit" id="search" class="search-btn">Search</button>
-        <div class="searched-products"></div>
+      </div>
+      <div class="searched-products grid-4cols">
+        <div class="spinner">
+          <div></div>
+          <div></div>
+        </div>
       </div>
     </header>
     <main>

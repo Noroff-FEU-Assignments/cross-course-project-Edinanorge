@@ -218,12 +218,18 @@ header {
 }
 
 .searched-products {
+  opacity: 0;
+  padding: 4rem;
   z-index: 999;
-  background-color: #e6f7f9;
+  background-color: #70cfda;
+  box-shadow: 0 1rem 2rem 0 rgba(3, 138, 153, 0.3);
   width: 100%;
-  height: inherit;
   position: absolute;
-  top: 28%;
+}
+
+.searched-products a {
+  text-decoration: none;
+  color: #013f46;
 }
 
 .hamburger-icon {
@@ -259,8 +265,22 @@ header {
   margin: 1rem;
 }
 
-.cart-icon {
+.shopping-cart {
   position: relative;
+}
+
+.cart-icon-indicator {
+  width: 20px;
+  height: 20px;
+  background-color: #fff;
+  color: #000;
+  border-radius: 50%;
+  text-align: center;
+  padding-top: 1px;
+
+  position: absolute;
+  top: -15px;
+  left: 23px;
 }
 
 /* loading indicator */

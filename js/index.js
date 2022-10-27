@@ -1,5 +1,7 @@
 import { displayMessage } from "./components/helperFunctions.js";
+import { cartIconIndicator } from "./components/cartItemsCounter.js";
 import { url } from "./config.js";
+
 const salesContainer = document.querySelector(".products");
 
 async function getProducts(url) {
@@ -18,8 +20,6 @@ getProducts(url);
 function displayProductsOnSale(products) {
   for (let i = 1; i < products.length; i++) {
     if (products[i].featured) {
-      console.log(products[i]);
-
       salesContainer.innerHTML += `<a href="jacket-specific.html?id=${products[i].id}" >
                                             <figure class="jacket product">
                                               <div class="sale">SALE</div>

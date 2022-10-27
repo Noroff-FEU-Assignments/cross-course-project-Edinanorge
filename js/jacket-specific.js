@@ -1,4 +1,5 @@
 import { displayMessage } from "./components/helperFunctions.js";
+import { cartIconIndicator } from "./components/cartItemsCounter.js";
 import { url } from "./config.js";
 
 const jacketSpecificContainer = document.querySelector(".section-jacket-specific");
@@ -31,34 +32,35 @@ getProduct(url);
 
 // display HTML
 function displayProductDetails(product) {
-  jacketSpecificContainer.innerHTML = `<div class="grid-2cols">
-                                          <img  class="jacket-specific-img"src="${product.images[0].src}" alt="${product.name}"/>
-                                          <div class="text-container">
-                                            <a class="back-link" href="jackets.html"><i class="fa-solid fa-arrow-left back-icon"></i>Back to our products</a>
-                                            <h1 class="heading-primary">${product.name}</h1>
-                                            <h2 class="product-price">${product.price} kr</h2>
-                                            <ul class="description-list jacket-description-list">
-                                              <li><i class="fa-solid fa-cloud-rain"></i>waterproof</li>
-                                              <li><i class="fa-solid fa-wind"></i>windproof</li>
-                                              <li><i class="fa-solid fa-recycle"></i>recycled material</li>
-                                              <li><i class="fa-solid fa-check"></i>all activities</li>
-                                            </ul>
-                                            <p class="jacket-description">${product.description}</p>
-                                            <p class="subheading">Size:</p>
-                                            <select name="size" id="size" >
-                                              <option value=""></option>
-                                              <option value=""></option>
-                                              <option value=""></option>
-                                              <option value=""></option>
-                                            </select>
-                                          <a href="success.html" class="btn-cta btn-buy">Add To Cart</a>
-                                          </div>
-                                        </div>
-                                        <div class="extra-info">
-                                          <p><i class="fa-solid fa-truck"></i>Free delivery</p>
-                                          <p><i class="fa-solid fa-arrow-right-arrow-left"></i>30 days free return</p>
-                                          <p><i class="fa-solid fa-money-bill-1"></i>Money-back guarantee</p>
-                                        </div>`;
+  let html = `<div class="grid-2cols">
+            <img  class="jacket-specific-img"src="${product.images[0].src}" alt="${product.name}"/>
+            <div class="text-container">
+              <a class="back-link" href="jackets.html"><i class="fa-solid fa-arrow-left back-icon"></i>Back to our products</a>
+              <h1 class="heading-primary">${product.name}</h1>
+              <h2 class="product-price">${product.price} kr</h2>
+              <ul class="description-list jacket-description-list">
+                <li><i class="fa-solid fa-cloud-rain"></i>waterproof</li>
+                <li><i class="fa-solid fa-wind"></i>windproof</li>
+                <li><i class="fa-solid fa-recycle"></i>recycled material</li>
+                <li><i class="fa-solid fa-check"></i>all activities</li>
+              </ul>
+              <p class="jacket-description">${product.description}</p>
+              <p class="subheading">Size:</p>
+              <select name="size" id="size" >
+                <option value=""></option>
+                <option value=""></option>
+                <option value=""></option>
+                <option value=""></option>
+              </select>
+              <a href="success.html" class="btn-cta btn-buy">Add To Cart</a>
+            </div>
+          </div>
+          <div class="extra-info">
+            <p><i class="fa-solid fa-truck"></i>Free delivery</p>
+            <p><i class="fa-solid fa-arrow-right-arrow-left"></i>30 days free return</p>
+            <p><i class="fa-solid fa-money-bill-1"></i>Money-back guarantee</p>
+          </div>`;
+  jacketSpecificContainer.innerHTML = html;
 }
 
 // save product to local
