@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="VIEW SHOPPING CART" />
+    <title>Rainydays / Shopping cart</title>
+    <link href="css/general.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+    <link href="css/media-queries.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/16bf78a0e8.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <header>
+      <div class="header-container">
+        <div class="header-logo">
+          <a href="index.html"><img class="logo" src="images/logo2.png" alt="Rainydays logo" /></a>
+        </div>
+        <div class="header-navigation">
+          <label for="mobile-menu" class="hamburger-icon"><i class="fa-solid fa-bars"></i></label>
+          <input type="checkbox" id="mobile-menu" />
+          <nav class="navigation">
+            <a class="navigation-link" href="index.html">Home</a>
+            <a class="navigation-link" href="jackets.html">Jackets</a>
+            <a class="navigation-link" href="about.html">About</a>
+            <a class="navigation-link" href="contact.html">Contact</a>
+          </nav>
+        </div>
+        <div class="shopping-cart">
+          <a class="way-to-shoppingcart" href="cart.html"><i class="fa-solid fa-cart-shopping cart-icon"></i></a>
+          <span class="cart-icon-indicator"></span>
+        </div>
+      </div>
+      <div class="search">
+        <label for="search"></label>
+        <input type="search" name="search" placeholder="Search for item" class="search-input" />
+        <button type="submit" id="search" class="search-btn">Search</button>
+      </div>
+      <div class="searched-products grid-4cols">
+        <div class="spinner">
+          <div></div>
+          <div></div>
+        </div>
+      </div>
+    </header>
+    <main>
+      <section class="section-cart">
+        <div class="grid-2cols">
+          <div>
+            <a class="back-link" href="jackets.html"><i class="fa-solid fa-arrow-left back-icon"></i>Our products</a>
+            <a class="back-link" href="javascript:history.back()">/ Back</a>
+          </div>
+          <h1 class="heading-primary">Shopping cart</h1>
+          <div class="cart-product-container">
+            <div class="cart-row">
+              <h2 class="heading-secondary cart-column">ITEM</h2>
+              <h2 class="cart-price heading-secondary cart-column">PRICE</h2>
+              <h2 class="cart-quantity heading-secondary cart-column">QUANTITY</h2>
+            </div>
+            <div class="cart-item"></div>
+            <div class="cart-total-price">
+              <h2>Total</h2>
+              <span class="cart-tolal">0 kr</span>
+            </div>
+          </div>
+
+          <form id="form" class="form form-checkout">
+            <div class="form-success"></div>
+            <h2 class="heading-secondary">Checkout</h2>
+            <div class="form-input">
+              <label for="fullName">Costumer name (required)</label>
+              <input name="fullName" id="fullName" />
+              <div class="form-error" id="fullNameError">Please enter your full name.</div>
+            </div>
+            <div class="form-input">
+              <label for="address">Delivery address (required)</label>
+              <input type="address" id="address" name="address" />
+              <div class="form-error" id="addressError">Please enter your address.</div>
+            </div>
+            <div class="form-input">
+              <label for="cardNumber">Card number (16 number)</label>
+              <input type="number" id="cardNumber" name="card-number" />
+              <div class="form-error" id="cardError">Please enter your card number.</div>
+            </div>
+            <div class="cart-specifics">
+              <label for="date">Exp. date</label>
+              <input type="date" id="date" name="date" min="2022-10-01" />
+              <div class="form-error" id="dateError">Date is required.</div>
+              <label for="cvc">C.V.C. (3 number)</label>
+              <input type="number" id="cvc" name="cvc" />
+              <div class="form-error" id="cvcError">C.V.C. number is required</div>
+            </div>
+            <button class="btn-cta btn-submit btn-checkout">Checkout</button>
+          </form>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="footer-container">
+        <a href="index.html"><img class="footer-logo" src="images/RainyDays_Logo.png" alt="Rainydays logo" /></a>
+        <div>
+          <h4 class="heading-quaternary">Follow us</h4>
+          <div>
+            <i class="fa-brands fa-facebook-square fa-xl"></i>
+            <i class="fa-brands fa-instagram fa-xl"></i>
+            <i class="fa-brands fa-twitter-square fa-xl"></i>
+            <i class="fa-brands fa-youtube fa-xl"></i>
+          </div>
+        </div>
+        <div>
+          <h4 class="heading-quaternary">Support:</h4>
+          <ul>
+            <li><a href="#">Shipping & Return</a></li>
+            <li><a href="#">Help & FAQ</a></li>
+            <li><a href="#">Terms & Conditions</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="heading-quaternary">Company:</h4>
+          <ul>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      <h4 class="coryright">Copyright &copy;2022 RainyDays</h4>
+    </footer>
+    <script src="js/components/formValidation.js" type="module"></script>
+    <script src="js/checkout.js" type="module"></script>
+    <script src="js/components/search.js" type="module"></script>
+  </body>
+</html>

@@ -1,0 +1,276 @@
+@media (max-width: 1000px) {
+  .hero-text-box {
+    bottom: auto;
+  }
+
+  .section-hero {
+    background-position-x: center;
+  }
+
+  .section-cart .grid-2cols,
+  .section-contact .grid-2cols {
+    grid-template-columns: 1fr;
+  }
+
+  /* contact page */
+  .contact-info {
+    margin-bottom: 6rem;
+  }
+  .section-cart h1 {
+    text-align: center;
+  }
+
+  .form {
+    max-width: 70%;
+    margin: 0 auto;
+  }
+  /* cart */
+  /* .cart-item {
+    width: 100%;
+  }
+  .cart-quantity {
+    text-align: center;
+  } */
+}
+
+@media (max-width: 900px) {
+  .section-hero {
+    background-position-y: center;
+    background-position-x: left;
+  }
+
+  /* contact page */
+  .contact-info {
+    flex-direction: row;
+  }
+
+  /* success */
+  .section-success {
+    display: block;
+    /* width: 80%;
+    margin: 0 auto; */
+  }
+
+  .success-icon {
+    font-size: 10rem;
+    margin-bottom: 6rem;
+  }
+
+  .section-success .btn-cta {
+    margin-right: 1rem;
+  }
+}
+
+@media (max-width: 800px) {
+  .grid-4cols {
+    grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+  }
+  .product-img {
+    height: 150px;
+    width: auto;
+    text-align: center;
+  }
+  .section-gallery {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .cart-specifics {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .cart-specifics label {
+    display: inline-block;
+    margin-top: 3rem;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  /* home page */
+
+  .search {
+    padding-right: 1rem;
+  }
+
+  .header-container {
+    padding-right: 1rem;
+    padding-left: 1rem;
+  }
+
+  .logo {
+    margin: 0;
+    margin-bottom: 1rem;
+  }
+
+  .hero-text-box {
+    max-width: 100%;
+    left: 0;
+    top: 0;
+    bottom: auto;
+  }
+
+  .jacket h3 {
+    font-size: 1.2rem;
+  }
+
+  .grid-2cols {
+    grid-template-columns: 1fr;
+  }
+
+  .product-img {
+    max-height: 300px;
+    max-width: 100%;
+    object-fit: cover;
+    margin: 0 auto;
+  }
+
+  /* Footer */
+  .footer-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+  }
+
+  .footer {
+    text-align: center;
+  }
+
+  /* contact/cart page */
+
+  .section-contact,
+  .section-cart {
+    padding: 4rem 1rem;
+  }
+
+  .section-contact h1,
+  .section-cart h1 {
+    text-align: center;
+  }
+  /* cart */
+  .contact-info {
+    flex-direction: column;
+  }
+
+  .cart-products img {
+    grid-column: 1/-1;
+  }
+
+  .cart-quantity-input {
+    margin-right: 1rem;
+  }
+
+  .btn-delete {
+    margin: 0;
+  }
+
+  /* jacket-specific page */
+  .jacket-specific-img {
+    height: 300px;
+    width: auto;
+    margin: 0 auto;
+  }
+
+  .jacket-description-list {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .text-container {
+    padding: 4rem 1rem;
+  }
+
+  .extra-info,
+  .extra-info i {
+    font-size: 0.8rem;
+    padding-right: 0.3rem;
+  }
+
+  /* success */
+
+  .section-success .btn-cta,
+  .section-success .btn-secondary {
+    text-align: center;
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .section-success .btn-cta {
+    margin-bottom: 1rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .jacket h3 {
+    font-size: 1.4rem;
+  }
+
+  .grid-4cols {
+    gap: 1rem;
+  }
+
+  .form {
+    margin: 0 auto;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 400px) {
+  .search-input {
+    width: 74%;
+  }
+
+  section {
+    padding-right: 1rem;
+    padding-left: 1rem;
+  }
+
+  .cart-products {
+    flex-direction: column;
+  }
+
+  .cart-quantity-input {
+    width: 30px;
+    height: 24px;
+    font-size: 1.5rem;
+  }
+
+  .btn-delete {
+    margin: 0;
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 700px) {
+  .jacket {
+    max-height: 350px;
+  }
+
+  .navigation {
+    display: inline-block;
+    position: static;
+  }
+
+  .hamburger-icon {
+    display: none;
+  }
+
+  .navigation a {
+    display: inline-block;
+    background-color: #1db5c5;
+  }
+}
+
+@media (min-width: 1400px) {
+  section {
+    max-width: 80%;
+    padding: 8rem 4rem;
+  }
+
+  /* home page */
+  .hero-text-box {
+    top: 20%;
+    left: 50%;
+  }
+}
