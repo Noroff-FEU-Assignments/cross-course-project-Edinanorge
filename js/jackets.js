@@ -9,6 +9,7 @@ async function getProduct(url) {
   try {
     const respons = await fetch(url);
     const products = await respons.json();
+    cartIconIndicator();
     displayProduct(products);
   } catch (error) {
     jacketsConatiner.innerHTML = displayMessage("An error has occurred", "error");
@@ -17,12 +18,12 @@ async function getProduct(url) {
 getProduct(url);
 
 categoriBtn.forEach((category) => {
-  category.onclick = (event) => {
+  category.onclick = function (event) {
     changeAvtiveStyle(category);
     const categoryChosen = event.target.value;
 
     jacketsConatiner.innerHTML = "";
-    const newUrl = `https://edinaisztojka.store/rainydays/wp-json/wc/v3/products?category=${categoryChosen}&per_page=${per_page}&consumer_key=ck_f07b7741347d56ee139639a72347557cdc7abcb8&consumer_secret=cs_e18ec68d36df4889d53332ac9359abcd504d98e3`;
+    const newUrl = url + `&category=${categoryChosen}`;
 
     getProduct(newUrl);
   };
@@ -43,11 +44,11 @@ function displayProduct(products) {
     let html = `<a href="jacket-specific.html?id=${products[i].id}" >
                   <figure class="jacket">
                     <img class="product-img" src="${products[i].images[0].src}" alt="${products[i].name}"/>
-                    <figcaption class="jacket-text">
-                      <p class="jacket-nr">${products[i].short_description}</p>
-                      <h2 class="heading-tertiary">${products[i].name}</h2>
-                      <span class="product-rating">&#11088; &#11088; &#11088; &#11088; (${products[i].id}) </span>
-                      <p class="product-price">${products[i].price} kr</p>
+                  <figcaption class="jacket-text">
+                    <p class="jacket-nr">${products[i].short_description}</p>
+                    <h2 class="heading-tertiary">${products[i].name}</h2>
+                    <span class="product-rating">&#11088; &#11088; &#11088; &#11088; (${products[i].id}) </span>
+                    <p class="product-price">${products[i].prices.price} kr</p>
                     </figcaption>
                   </figure>
                 </a>`;

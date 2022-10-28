@@ -31,11 +31,6 @@
   .cart-quantity {
     text-align: center;
   } */
-
-  /* success */
-  .section-success {
-    max-width: 95%;
-  }
 }
 
 @media (max-width: 900px) {
@@ -52,8 +47,8 @@
   /* success */
   .section-success {
     display: block;
-    width: 80%;
-    margin: 0 auto;
+    /* width: 80%;
+    margin: 0 auto; */
   }
 
   .success-icon {
@@ -193,9 +188,6 @@
   }
 
   /* success */
-  .section-success {
-    max-width: 100%;
-  }
 
   .section-success .btn-cta,
   .section-success .btn-secondary {
@@ -281,4 +273,4 @@
     top: 20%;
     left: 50%;
   }
-} 
+}

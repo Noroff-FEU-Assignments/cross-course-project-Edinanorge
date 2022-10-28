@@ -4,8 +4,13 @@ import { displayMessage } from "./components/helperFunctions.js";
 
 const cartProductsContainer = document.querySelector(".cart-product-container");
 
-let cartItems = JSON.parse(localStorage.getItem("cartProducts")) || [];
-
+// geting product from local sorage
+let cartItems = localStorage.getItem("cartProducts");
+if (!cartItems) {
+  cartItems = [];
+} else {
+  cartItems = JSON.parse(cartItems);
+}
 //  if no product in cart
 if (cartItems.length == 0) {
   // display message that the cart is emty
@@ -56,7 +61,6 @@ function displayProductsInCart(product) {
 }
 
 function removeProduct(event) {
-  cartIconIndicator();
   const btnClicked = event.target;
   const clickedItem = btnClicked.parentElement.parentElement;
   clickedItem.remove();
@@ -68,6 +72,7 @@ function removeProduct(event) {
   localStorage.setItem("cartProducts", JSON.stringify(remainingItem));
 
   updateTotalPrice();
+  cartIconIndicator();
 }
 
 function changeQuantity(event) {

@@ -4,7 +4,7 @@ export function cartIconIndicator() {
   let cartContent = JSON.parse(localStorage.getItem("cartProducts"));
   console.log(cartContent);
 
-  if (cartContent.length == 0) {
+  if (!cartContent) {
     indicator.innerHTML = itemsCounter;
   } else {
     indicator.innerHTML = cartContent.length;
