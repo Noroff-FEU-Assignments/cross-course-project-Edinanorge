@@ -1,11 +1,23 @@
 import { formCheckout, checkoutButton, validateFormCheckout } from "./components/formValidation.js";
 import { cartIconIndicator } from "./components/cartItemsCounter.js";
 import { displayMessage } from "./components/helperFunctions.js";
+import { url } from "./config.js";
 
 const cartProductsContainer = document.querySelector(".cart-product-container");
 
 // geting product from local sorage
+async function getProductsFromCart(url) {
+  try {
+    const respons = await fetch(url);
+    const products = await respons.json();
+  } catch {
+    cartProductsContainer.innerHTML = displayMessage("Your cart is currently empty.", "error");
+  }
+}
+getProductsFromCart(url);
+
 let cartItems = localStorage.getItem("cartProducts");
+
 if (!cartItems) {
   cartItems = [];
   // display message that the cart is emty
@@ -16,6 +28,7 @@ if (!cartItems) {
   formCheckout.addEventListener("submit", (e) => e.preventDefault);
 } else {
   cartItems = JSON.parse(cartItems);
+  console.log(cartItems);
   // validat the form
   formCheckout.addEventListener("submit", validateFormCheckout);
   // dispaly products
@@ -37,14 +50,14 @@ if (!cartItems) {
 function displayProductsInCart(product) {
   for (let i = 0; i < product.length; i++) {
     const cartItem = document.querySelector(".cart-item");
-    cartItem.innerHTML = `<div class="cart-column cart-row">
+    cartItem.innerHTML += `<div class="cart-column cart-row">
                 <div class="cart-image">
-                  <img src="${product[i].images.map((image) => image.src)}" 
+                  <img src="${product[i].images.map((image) => image.src)}"
                       alt="${product[i].name}" width=100px height=auto/>
                   <h4 class="cart-item-name">${product[i].name}</h4>
                   <p>${product[i].short_description}</p>
                 </div>
-                <p class="cart-item-price">${product[i].price} kr</p>
+                <p class="cart-item-price">${product[i].prices.price} kr</p>
                 <div class="cart-quantity" >
                   <input class="cart-quantity-input" min="1" type="number" value="1">
                   <button class="btn-delete" type="button">DELETE</button>
@@ -63,9 +76,8 @@ function removeProduct(event) {
   const remainingItem = cartItems.filter((item) => item.name !== clickedItemName);
 
   localStorage.setItem("cartProducts", JSON.stringify(remainingItem));
-
-  updateTotalPrice();
   cartIconIndicator();
+  updateTotalPrice();
 }
 
 function changeQuantity(event) {
@@ -94,6 +106,6 @@ function updateTotalPrice() {
 
     total = total + price * quantity;
   }
-  document.getElementsByClassName("cart-total-price")[0].innerHTML = `<h2>Total</h2> 
+  document.getElementsByClassName("cart-total-price")[0].innerHTML = `<h2>Total</h2>
                                                                         <span class="cart-tolal"><strong>${total}</strong> kr</span>`;
 }

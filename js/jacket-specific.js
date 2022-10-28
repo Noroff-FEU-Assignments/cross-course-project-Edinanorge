@@ -69,7 +69,7 @@ function displayProductDetails(product) {
                 <p><i class="fa-solid fa-truck"></i>Free delivery</p>
                 <p><i class="fa-solid fa-arrow-right-arrow-left"></i>30 days free return</p>
                 <p><i class="fa-solid fa-money-bill-1"></i>Money-back guarantee</p>
-              </div>`;
+            </div>`;
   jacketSpecificContainer.innerHTML = html;
 }
 

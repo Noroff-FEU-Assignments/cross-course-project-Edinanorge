@@ -3,45 +3,46 @@ import { cartIconIndicator } from "./components/cartItemsCounter.js";
 import { url, per_page } from "./config.js";
 
 const jacketsConatiner = document.querySelector(".jackets");
-const categoriBtn = document.querySelectorAll(".btn-category");
+const categories = document.querySelectorAll(".categories");
+console.log(categories);
 
-async function getProduct(url) {
+async function getProducts(url) {
+  const response = await fetch(url);
+  const products = await response.json();
+  console.log(products);
+
+  jacketsConatiner.innerHTML = "";
+
+  cartIconIndicator();
+  displayProducts(products);
   try {
-    const respons = await fetch(url);
-    const products = await respons.json();
-    cartIconIndicator();
-    displayProduct(products);
   } catch (error) {
-    jacketsConatiner.innerHTML = displayMessage("An error has occurred", "error");
+    jacketsConatiner.innerHTML = displayMessage(`An error has occurred: ${error}`, "error");
+    console.error(error);
   }
 }
-getProduct(url);
+getProducts(url);
 
-categoriBtn.forEach((category) => {
+//add event listener to category button
+categories.forEach(function (category) {
   category.onclick = function (event) {
-    changeAvtiveStyle(category);
-    const categoryChosen = event.target.value;
-
+    let newUrl;
+    if (event.target.id === "all") {
+      getProducts(url);
+    } else {
+      const categoryChosen = event.target.value;
+      newUrl = `https://edinaisztojka.store/rainydays/wp-json/wc/store/products?category=${categoryChosen}&per_page=20`;
+    }
     jacketsConatiner.innerHTML = "";
-    const newUrl = url + `&category=${categoryChosen}`;
-
-    getProduct(newUrl);
+    getProducts(newUrl);
   };
 });
 
-function changeAvtiveStyle(activeItem) {
-  const categoriBtn = document.querySelectorAll(".btn-category");
-  for (let i = 0; i < categoriBtn.length; i++) {
-    categoriBtn[i].classList.remove("active");
-  }
-  activeItem.classList.add("active");
-}
-
-function displayProduct(products) {
+function displayProducts(products) {
   jacketsConatiner.innerHTML = "";
 
   for (let i = 0; i < products.length; i++) {
-    let html = `<a href="jacket-specific.html?id=${products[i].id}" >
+    jacketsConatiner.innerHTML += `<a href="jacket-specific.html?id=${products[i].id}" >
                   <figure class="jacket">
                     <img class="product-img" src="${products[i].images[0].src}" alt="${products[i].name}"/>
                   <figcaption class="jacket-text">
@@ -52,6 +53,5 @@ function displayProduct(products) {
                     </figcaption>
                   </figure>
                 </a>`;
-    jacketsConatiner.innerHTML += html;
   }
 }

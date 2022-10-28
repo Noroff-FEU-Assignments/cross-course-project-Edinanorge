@@ -106,7 +106,6 @@ header {
   letter-spacing: 0.5px;
   padding: 1rem 2rem;
   border-radius: 4px;
-  width: fit-content;
 
   transition: all 0.3s ease;
 }

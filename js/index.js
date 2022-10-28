@@ -5,7 +5,7 @@ import { featured, url } from "./config.js";
 const salesContainer = document.querySelector(".products");
 const featuredUrl = url + `&featured=${featured}`;
 
-async function getProducts(url) {
+async function getProductsOnSale(url) {
   try {
     const respons = await fetch(url);
     const products = await respons.json();
@@ -17,7 +17,7 @@ async function getProducts(url) {
     salesContainer.innerHTML = displayMessage(`An error has occurred: ${error}`, "error");
   }
 }
-getProducts(featuredUrl);
+getProductsOnSale(featuredUrl);
 
 function displayProductsOnSale(products) {
   for (let i = 1; i < products.length; i++) {
