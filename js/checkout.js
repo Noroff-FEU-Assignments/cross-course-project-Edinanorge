@@ -8,20 +8,14 @@ const cartProductsContainer = document.querySelector(".cart-product-container");
 let cartItems = localStorage.getItem("cartProducts");
 if (!cartItems) {
   cartItems = [];
-} else {
-  cartItems = JSON.parse(cartItems);
-}
-//  if no product in cart
-if (cartItems.length == 0) {
   // display message that the cart is emty
   cartProductsContainer.innerHTML = displayMessage("Your cart is currently empty.", "error");
   // make the form button diabled
   checkoutButton.disabled = true;
   // stop submiting the form
-  formCheckout.addEventListener("submit", function (e) {
-    e.preventDefault;
-  });
+  formCheckout.addEventListener("submit", (e) => e.preventDefault);
 } else {
+  cartItems = JSON.parse(cartItems);
   // validat the form
   formCheckout.addEventListener("submit", validateFormCheckout);
   // dispaly products
