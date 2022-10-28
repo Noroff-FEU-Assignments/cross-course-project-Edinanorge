@@ -43,7 +43,7 @@ if (cartItems.length == 0) {
 function displayProductsInCart(product) {
   for (let i = 0; i < product.length; i++) {
     const cartItem = document.querySelector(".cart-item");
-    let html = `<div class="cart-column cart-row">
+    cartItem.innerHTML = `<div class="cart-column cart-row">
                 <div class="cart-image">
                   <img src="${product[i].images.map((image) => image.src)}" 
                       alt="${product[i].name}" width=100px height=auto/>
@@ -56,7 +56,6 @@ function displayProductsInCart(product) {
                   <button class="btn-delete" type="button">DELETE</button>
                 </div>
               </div>`;
-    cartItem.innerHTML += html;
   }
 }
 
