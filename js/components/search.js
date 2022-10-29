@@ -13,16 +13,16 @@ async function getSearchedProducts(url) {
     if (searchedProducts.length > 0) {
       searchedProducts.forEach((product) => {
         searchedProductsContainer.innerHTML += `<a href="jacket-specific.html?id=${product.id}"  >
-    <figure class="jacket">
-      <img class="product-img" src="${product.images[0].src}" alt="${product.name}"/>
-      <figcaption class="jacket-text">
-        <p class="jacket-nr">${product.short_description}</p>
-        <h2 class="heading-tertiary">${product.name}</h2>
-        <span class="product-rating">&#11088; &#11088; &#11088; &#11088; (${product.id}) </span>
-        <p class="product-price">${product.price} kr</p>
-      </figcaption>
-    </figure>
-  </a>
+                                                  <figure class="jacket">
+                                                    <img class="product-img" src="${product.images[0].src}" alt="${product.name}"/>
+                                                    <figcaption class="jacket-text">
+                                                      <p class="jacket-nr">${product.short_description}</p>
+                                                      <h2 class="heading-tertiary">${product.name}</h2>
+                                                      <span class="product-rating">&#11088; &#11088; &#11088; &#11088; (${product.id}) </span>
+                                                      <p class="product-price">${product.prices.price} kr</p>
+                                                    </figcaption>
+                                                  </figure>
+                                                </a>
   `;
       });
     } else {
@@ -36,7 +36,7 @@ async function getSearchedProducts(url) {
 searchButton.onclick = () => {
   const searchInput = document.querySelector(".search-input").value;
 
-  const newUrl = url + `&search=${searchInput}`;
+  const newUrl = url + `?search=${searchInput}`;
   searchedProductsContainer.innerHTML = "";
   if (!searchInput) {
     searchedProductsContainer.style.opacity = 0;

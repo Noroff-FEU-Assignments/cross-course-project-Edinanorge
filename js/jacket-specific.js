@@ -26,7 +26,7 @@ async function getProduct(url) {
       cartIconIndicator();
     });
   } catch (error) {
-    jacketSpecificContainer.innerHTML = displayMessage("Something went wrong", "error");
+    jacketSpecificContainer.innerHTML = displayMessage(`Something went wrong: ${error}`, "error");
     console.log(error);
   }
 }
@@ -34,10 +34,10 @@ getProduct(url);
 
 // display HTML
 function displayProductDetails(product) {
-  let html = `<div class="grid-2cols">
+  jacketSpecificContainer.innerHTML = `<div class="grid-2cols">
                 <img  class="jacket-specific-img"src="${product.images[0].src}" alt="${product.name}"/>
                 <div class="text-container">
-                  <a class="back-link" href="index.html"><i class="fa-solid fa-arrow-left back-icon"></i>Back to our products </a>
+                  <a class="back-link" href="jackets.html"><i class="fa-solid fa-arrow-left back-icon"></i>Back to our products </a>
                   <h1 class="heading-primary">${product.name}</h1>
                   <h2 class="product-price">${product.prices.price} kr</h2>
                   <ul class="description-list jacket-description-list">
@@ -70,24 +70,22 @@ function displayProductDetails(product) {
                 <p><i class="fa-solid fa-arrow-right-arrow-left"></i>30 days free return</p>
                 <p><i class="fa-solid fa-money-bill-1"></i>Money-back guarantee</p>
             </div>`;
-  jacketSpecificContainer.innerHTML = html;
 }
 
 //display success page
 function displaySuccess() {
   const successMessageContainer = document.querySelector(".success-message");
-  let html = `<div class="section-success grid-2cols">
-                <div class="success-icon">
-                  <i class="fa-regular fa-circle-check"></i>
-                </div>
-                <div>
-                  <h1 class="heading-primary">Thank you!</h1>
-                  <h2 class="heading-secondary">The item is added to your shopping cart.</h2>
-                  <a class="btn-cta" href="cart.html">Checkout Now </a>
-                  <a class="btn-secondary" href="jackets.html">Continue Shopping </a>
-                </div>
-              </div>`;
-  successMessageContainer.innerHTML = html;
+  successMessageContainer.innerHTML = `<div class="section-success grid-2cols">
+                                        <div class="success-icon">
+                                          <i class="fa-regular fa-circle-check"></i>
+                                        </div>
+                                        <div>
+                                          <h1 class="heading-primary">Thank you!</h1>
+                                          <h2 class="heading-secondary">The item is added to your shopping cart.</h2>
+                                          <a class="btn-cta" href="cart.html">Checkout Now </a>
+                                          <a class="btn-secondary" href="jackets.html">Continue Shopping </a>
+                                        </div>
+                                      </div>`;
 }
 
 // save product to local

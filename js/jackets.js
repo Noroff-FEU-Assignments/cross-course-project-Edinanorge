@@ -3,8 +3,9 @@ import { cartIconIndicator } from "./components/cartItemsCounter.js";
 import { url, per_page } from "./config.js";
 
 const jacketsConatiner = document.querySelector(".jackets");
-const categories = document.querySelectorAll(".categories");
-console.log(categories);
+const categories = document.querySelectorAll(".category");
+
+const urlAll = url + `?${per_page}`;
 
 async function getProducts(url) {
   const response = await fetch(url);
@@ -21,20 +22,22 @@ async function getProducts(url) {
     console.error(error);
   }
 }
-getProducts(url);
+getProducts(urlAll);
 
-//add event listener to category button
-categories.forEach(function (category) {
+// add event listener to category button
+Array.from(categories).forEach(function (category) {
+  console.log(category);
   category.onclick = function (event) {
-    let newUrl;
+    console.log(event);
+    let urlCategory;
     if (event.target.id === "all") {
-      getProducts(url);
+      getProducts(urlAll);
     } else {
       const categoryChosen = event.target.value;
-      newUrl = `https://edinaisztojka.store/rainydays/wp-json/wc/store/products?category=${categoryChosen}&per_page=20`;
+      urlCategory = url + `?category=${categoryChosen}`;
     }
     jacketsConatiner.innerHTML = "";
-    getProducts(newUrl);
+    getProducts(urlCategory);
   };
 });
 
@@ -42,16 +45,16 @@ function displayProducts(products) {
   jacketsConatiner.innerHTML = "";
 
   for (let i = 0; i < products.length; i++) {
-    jacketsConatiner.innerHTML += `<a href="jacket-specific.html?id=${products[i].id}" >
-                  <figure class="jacket">
-                    <img class="product-img" src="${products[i].images[0].src}" alt="${products[i].name}"/>
-                  <figcaption class="jacket-text">
-                    <p class="jacket-nr">${products[i].short_description}</p>
-                    <h2 class="heading-tertiary">${products[i].name}</h2>
-                    <span class="product-rating">&#11088; &#11088; &#11088; &#11088; (${products[i].id}) </span>
-                    <p class="product-price">${products[i].prices.price} kr</p>
-                    </figcaption>
-                  </figure>
-                </a>`;
+    jacketsConatiner.innerHTML += `<a href="jacket-specific.html?id=${products[i].id}">
+                                    <figure class="jacket">
+                                      <img class="product-img" src="${products[i].images[0].src}" alt="${products[i].name}"/>
+                                    <figcaption class="jacket-text">
+                                      <p class="jacket-nr">${products[i].short_description}</p>
+                                      <h2 class="heading-tertiary">${products[i].name}</h2>
+                                      <span class="product-rating">&#11088; &#11088; &#11088; &#11088; (${products[i].id}) </span>
+                                      <p class="product-price">${products[i].prices.price} kr</p>
+                                      </figcaption>
+                                    </figure>
+                                  </a>`;
   }
 }

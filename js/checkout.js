@@ -4,65 +4,95 @@ import { displayMessage } from "./components/helperFunctions.js";
 import { url } from "./config.js";
 
 const cartProductsContainer = document.querySelector(".cart-product-container");
+const btnDelete = document.querySelectorAll(".btn-delete");
+const quantityInputs = document.querySelectorAll(".cart-quantity-input");
 
 // geting product from local sorage
 async function getProductsFromCart(url) {
   try {
     const respons = await fetch(url);
     const products = await respons.json();
+
+    const productsInCart = getExistingProducts();
+
+    if (!productsInCart) {
+      cartProductsContainer.innerHTML = displayMessage("Your cart is currently empty.", "error");
+    } else {
+      displayProductsInCart(productsInCart);
+      formCheckout.addEventListener("submit", validateFormCheckout);
+      updateTotalPrice();
+    }
   } catch {
-    cartProductsContainer.innerHTML = displayMessage("Your cart is currently empty.", "error");
+    cartProductsContainer.innerHTML = displayMessage(`Something went wrong: ${error}`, "error");
   }
 }
 getProductsFromCart(url);
 
-let cartItems = localStorage.getItem("cartProducts");
+function getExistingProducts() {
+  const cartItems = localStorage.getItem("cartProducts");
 
-if (!cartItems) {
-  cartItems = [];
-  // display message that the cart is emty
-  cartProductsContainer.innerHTML = displayMessage("Your cart is currently empty.", "error");
-  // make the form button diabled
-  checkoutButton.disabled = true;
-  // stop submiting the form
-  formCheckout.addEventListener("submit", (e) => e.preventDefault);
-} else {
-  cartItems = JSON.parse(cartItems);
-  console.log(cartItems);
-  // validat the form
-  formCheckout.addEventListener("submit", validateFormCheckout);
-  // dispaly products
-  displayProductsInCart(cartItems);
-  // update the total price
-  updateTotalPrice();
-  // add event listener to delete buttons
-  const btnDelete = document.querySelectorAll(".btn-delete");
-  for (let i = 0; i < btnDelete.length; i++) {
-    btnDelete[i].addEventListener("click", removeProduct);
-  }
-  //add event listener to quantity inputs
-  const quantityInputs = document.querySelectorAll(".cart-quantity-input");
-  for (let i = 0; i < quantityInputs.length; i++) {
-    quantityInputs[i].addEventListener("change", changeQuantity);
+  if (!cartItems) {
+    return [];
+  } else {
+    return JSON.parse(cartItems);
   }
 }
+
+for (let i = 0; i < btnDelete.length; i++) {
+  btnDelete[i].addEventListener("click", removeProduct());
+}
+
+for (let i = 0; i < quantityInputs.length; i++) {
+  quantityInputs[i].addEventListener("change", changeQuantity);
+}
+// let cartItems = localStorage.getItem("cartProducts");
+// console.log(cartItems);
+
+// if (!cartItems) {
+//   cartItems = [];
+//   // display message that the cart is emty
+//   cartProductsContainer.innerHTML = displayMessage("Your cart is currently empty.", "error");
+//   // make the form button diabled
+//   checkoutButton.disabled = true;
+//   // stop submiting the form
+//   formCheckout.addEventListener("submit", (e) => e.preventDefault);
+// } else {
+//   cartItems = JSON.parse(cartItems);
+//   console.log(cartItems);
+//   // validat the form
+//   formCheckout.addEventListener("submit", validateFormCheckout);
+//   // dispaly products
+//   displayProductsInCart(cartItems);
+//   // update the total price
+//   updateTotalPrice();
+//   // add event listener to delete buttons
+
+//   for (let i = 0; i < btnDelete.length; i++) {
+//     btnDelete[i].addEventListener("click", removeProduct());
+//   }
+//   //add event listener to quantity inputs
+//   const quantityInputs = document.querySelectorAll(".cart-quantity-input");
+//   for (let i = 0; i < quantityInputs.length; i++) {
+//     quantityInputs[i].addEventListener("change", changeQuantity);
+//   }
+// }
 
 function displayProductsInCart(product) {
   for (let i = 0; i < product.length; i++) {
     const cartItem = document.querySelector(".cart-item");
     cartItem.innerHTML += `<div class="cart-column cart-row">
-                <div class="cart-image">
-                  <img src="${product[i].images.map((image) => image.src)}"
-                      alt="${product[i].name}" width=100px height=auto/>
-                  <h4 class="cart-item-name">${product[i].name}</h4>
-                  <p>${product[i].short_description}</p>
-                </div>
-                <p class="cart-item-price">${product[i].prices.price} kr</p>
-                <div class="cart-quantity" >
-                  <input class="cart-quantity-input" min="1" type="number" value="1">
-                  <button class="btn-delete" type="button">DELETE</button>
-                </div>
-              </div>`;
+                            <div class="cart-image">
+                              <img src="${product[i].images.map((image) => image.src)}"
+                                  alt="${product[i].name}" width=100px height=auto/>
+                              <h4 class="cart-item-name">${product[i].name}</h4>
+                              <p>${product[i].short_description}</p>
+                            </div>
+                            <p class="cart-item-price">${product[i].prices.price} kr</p>
+                            <div class="cart-quantity" >
+                              <input class="cart-quantity-input" min="1" type="number" value="1">
+                              <button class="btn-delete" type="button">DELETE</button>
+                            </div>
+                          </div>`;
   }
 }
 
