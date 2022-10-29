@@ -26,9 +26,7 @@ getProducts(urlAll);
 
 // add event listener to category button
 Array.from(categories).forEach(function (category) {
-  console.log(category);
   category.onclick = function (event) {
-    console.log(event);
     let urlCategory;
     if (event.target.id === "all") {
       getProducts(urlAll);

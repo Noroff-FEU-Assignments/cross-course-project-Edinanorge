@@ -10,20 +10,13 @@ let cartItems = localStorage.getItem("cartProducts");
 
 if (!cartItems) {
   cartItems = [];
-
   cartProductsContainer.innerHTML = displayMessage("Your cart is currently empty.", "error");
-
   checkoutButton.disabled = true;
-
   formCheckout.addEventListener("submit", (e) => e.preventDefault);
 } else {
   cartItems = JSON.parse(cartItems);
-  console.log(cartItems);
-
   formCheckout.addEventListener("submit", validateFormCheckout);
-
   displayProductsInCart(cartItems);
-
   updateTotalPrice();
 
   const btnDelete = document.querySelectorAll(".btn-delete");
