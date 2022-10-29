@@ -4,78 +4,38 @@ import { displayMessage } from "./components/helperFunctions.js";
 import { url } from "./config.js";
 
 const cartProductsContainer = document.querySelector(".cart-product-container");
-const btnDelete = document.querySelectorAll(".btn-delete");
-const quantityInputs = document.querySelectorAll(".cart-quantity-input");
+let cartItems = localStorage.getItem("cartProducts");
 
 // geting product from local sorage
-async function getProductsFromCart(url) {
-  try {
-    const respons = await fetch(url);
-    const products = await respons.json();
 
-    const productsInCart = getExistingProducts();
+if (!cartItems) {
+  cartItems = [];
 
-    if (!productsInCart) {
-      cartProductsContainer.innerHTML = displayMessage("Your cart is currently empty.", "error");
-    } else {
-      displayProductsInCart(productsInCart);
-      formCheckout.addEventListener("submit", validateFormCheckout);
-      updateTotalPrice();
-    }
-  } catch {
-    cartProductsContainer.innerHTML = displayMessage(`Something went wrong: ${error}`, "error");
+  cartProductsContainer.innerHTML = displayMessage("Your cart is currently empty.", "error");
+
+  checkoutButton.disabled = true;
+
+  formCheckout.addEventListener("submit", (e) => e.preventDefault);
+} else {
+  cartItems = JSON.parse(cartItems);
+  console.log(cartItems);
+
+  formCheckout.addEventListener("submit", validateFormCheckout);
+
+  displayProductsInCart(cartItems);
+
+  updateTotalPrice();
+
+  const btnDelete = document.querySelectorAll(".btn-delete");
+  for (let i = 0; i < btnDelete.length; i++) {
+    btnDelete[i].addEventListener("click", removeProduct);
+  }
+
+  const quantityInputs = document.querySelectorAll(".cart-quantity-input");
+  for (let i = 0; i < quantityInputs.length; i++) {
+    quantityInputs[i].addEventListener("change", changeQuantity);
   }
 }
-getProductsFromCart(url);
-
-function getExistingProducts() {
-  const cartItems = localStorage.getItem("cartProducts");
-
-  if (!cartItems) {
-    return [];
-  } else {
-    return JSON.parse(cartItems);
-  }
-}
-
-for (let i = 0; i < btnDelete.length; i++) {
-  btnDelete[i].addEventListener("click", removeProduct());
-}
-
-for (let i = 0; i < quantityInputs.length; i++) {
-  quantityInputs[i].addEventListener("change", changeQuantity);
-}
-// let cartItems = localStorage.getItem("cartProducts");
-// console.log(cartItems);
-
-// if (!cartItems) {
-//   cartItems = [];
-//   // display message that the cart is emty
-//   cartProductsContainer.innerHTML = displayMessage("Your cart is currently empty.", "error");
-//   // make the form button diabled
-//   checkoutButton.disabled = true;
-//   // stop submiting the form
-//   formCheckout.addEventListener("submit", (e) => e.preventDefault);
-// } else {
-//   cartItems = JSON.parse(cartItems);
-//   console.log(cartItems);
-//   // validat the form
-//   formCheckout.addEventListener("submit", validateFormCheckout);
-//   // dispaly products
-//   displayProductsInCart(cartItems);
-//   // update the total price
-//   updateTotalPrice();
-//   // add event listener to delete buttons
-
-//   for (let i = 0; i < btnDelete.length; i++) {
-//     btnDelete[i].addEventListener("click", removeProduct());
-//   }
-//   //add event listener to quantity inputs
-//   const quantityInputs = document.querySelectorAll(".cart-quantity-input");
-//   for (let i = 0; i < quantityInputs.length; i++) {
-//     quantityInputs[i].addEventListener("change", changeQuantity);
-//   }
-// }
 
 function displayProductsInCart(product) {
   for (let i = 0; i < product.length; i++) {
