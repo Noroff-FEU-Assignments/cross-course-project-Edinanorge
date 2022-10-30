@@ -18,7 +18,7 @@ async function getSearchedProducts(url) {
 
 searchButton.onclick = () => {
   const searchInput = document.querySelector(".search-input").value;
-  const newUrl = url + `?search=${searchInput}`;
+  const newUrl = url + `&search=${searchInput}`;
 
   if (!searchInput) {
     console.log("error");
