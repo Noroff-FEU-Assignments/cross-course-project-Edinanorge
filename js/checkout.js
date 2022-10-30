@@ -5,11 +5,11 @@ import { url } from "./config.js";
 
 const cartProductsContainer = document.querySelector(".cart-product-container");
 let cartItems = localStorage.getItem("cartProducts");
+console.log(cartItems);
 
 // geting product from local sorage
 
-if (!cartItems) {
-  cartItems = [];
+if ((cartItems = [])) {
   cartProductsContainer.innerHTML = displayMessage("Your cart is currently empty.", "error");
   checkoutButton.disabled = true;
   formCheckout.addEventListener("submit", (e) => e.preventDefault);
