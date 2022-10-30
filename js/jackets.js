@@ -12,8 +12,6 @@ async function getProducts(url) {
   const products = await response.json();
   console.log(products);
 
-  jacketsConatiner.innerHTML = "";
-
   cartIconIndicator();
   displayProducts(products);
   try {
@@ -25,8 +23,9 @@ async function getProducts(url) {
 getProducts(urlAll);
 
 // add event listener to category button
-Array.from(categories).forEach(function (category) {
+categories.forEach(function (category) {
   category.onclick = function (event) {
+    changeAvtiveStyle(category);
     let urlCategory;
     if (event.target.id === "all") {
       getProducts(urlAll);
@@ -34,10 +33,19 @@ Array.from(categories).forEach(function (category) {
       const categoryChosen = event.target.value;
       urlCategory = url + `?category=${categoryChosen}`;
     }
+
     jacketsConatiner.innerHTML = "";
     getProducts(urlCategory);
   };
 });
+
+function changeAvtiveStyle(activeItem) {
+  const categoriBtn = document.querySelectorAll(".category-btn");
+  for (let i = 0; i < categoriBtn.length; i++) {
+    categoriBtn[i].classList.remove("active");
+  }
+  activeItem.classList.add("active");
+}
 
 function displayProducts(products) {
   jacketsConatiner.innerHTML = "";
