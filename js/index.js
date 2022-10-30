@@ -26,7 +26,7 @@ function displayProductsOnSale(products) {
                                       <div class="sale">SALE</div>
                                       <img class="product-img" src="${products[i].images[0].src}" alt="${products[i].name}"/>
                                       <figcaption class="jacket-text">
-                                          <p class="jacket-nr">${products[i].short_description}</p>
+                                          <p class="jacket-nr">${products[i].short_description}</p> 
                                           <h2 class="heading-tertiary">${products[i].name}</h2>
                                           <span class="product-rating">&#11088; &#11088; &#11088; &#11088; (${products[i].id}) </span>
                                           <p class="product-price">${products[i].prices.price} kr</p>

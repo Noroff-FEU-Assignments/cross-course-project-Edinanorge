@@ -38,7 +38,7 @@ function displayProductsInCart(product) {
                               <img src="${product[i].images.map((image) => image.src)}"
                                   alt="${product[i].name}" width=100px height=auto/>
                               <h4 class="cart-item-name">${product[i].name}</h4>
-                              <p>${product[i].short_description}</p>
+                              <p>Product id: <span class="product-id">${product[i].id}</span></p>
                             </div>
                             <p class="cart-item-price">${product[i].prices.price} kr</p>
                             <div class="cart-quantity" >
@@ -55,8 +55,9 @@ function removeProduct(event) {
   clickedItem.remove();
 
   //repalcing the local sorage whit the array which don't contains the deleted item
-  const clickedItemName = clickedItem.getElementsByClassName("cart-item-name")[0].innerText;
-  const remainingItem = cartItems.filter((item) => item.name !== clickedItemName);
+  const clickedItemId = clickedItem.getElementsByClassName("product-id")[0].innerText;
+  const remainingItem = cartItems.filter((item) => item.id !== +clickedItemId); // clickedItemId converted to nr.
+  console.log(remainingItem);
 
   localStorage.setItem("cartProducts", JSON.stringify(remainingItem));
   cartIconIndicator();
