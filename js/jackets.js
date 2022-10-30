@@ -5,8 +5,6 @@ import { url, per_page } from "./config.js";
 const jacketsConatiner = document.querySelector(".jackets");
 const categories = document.querySelectorAll(".category");
 
-const urlAll = url + `?${per_page}`;
-
 async function getProducts(url) {
   const response = await fetch(url);
   const products = await response.json();
@@ -20,7 +18,7 @@ async function getProducts(url) {
     console.error(error);
   }
 }
-getProducts(urlAll);
+getProducts(url);
 
 // add event listener to category button
 categories.forEach(function (category) {
@@ -31,7 +29,7 @@ categories.forEach(function (category) {
       getProducts(urlAll);
     } else {
       const categoryChosen = event.target.value;
-      urlCategory = url + `?category=${categoryChosen}`;
+      urlCategory = url + `&category=${categoryChosen}`;
     }
 
     jacketsConatiner.innerHTML = "";

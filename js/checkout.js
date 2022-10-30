@@ -1,7 +1,6 @@
 import { formCheckout, checkoutButton, validateFormCheckout } from "./components/formValidation.js";
 import { cartIconIndicator } from "./components/cartItemsCounter.js";
 import { displayMessage } from "./components/helperFunctions.js";
-import { url } from "./config.js";
 
 const cartProductsContainer = document.querySelector(".cart-product-container");
 let cartItems = localStorage.getItem("cartProducts");
@@ -9,7 +8,8 @@ console.log(cartItems);
 
 // geting product from local sorage
 
-if ((cartItems = [])) {
+if (!cartItems) {
+  cartItems = [];
   cartProductsContainer.innerHTML = displayMessage("Your cart is currently empty.", "error");
   checkoutButton.disabled = true;
   formCheckout.addEventListener("submit", (e) => e.preventDefault);

@@ -3,7 +3,7 @@ import { cartIconIndicator } from "./components/cartItemsCounter.js";
 import { url } from "./config.js";
 
 const salesContainer = document.querySelector(".products");
-const featuredUrl = url + `?featured=true`;
+const featuredUrl = url + `&featured=true`;
 
 async function getProductsOnSale(url) {
   try {

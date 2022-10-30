@@ -91,6 +91,7 @@ function displaySuccess() {
 // save product to local
 function saveProdactsToLocal(product) {
   const existingCartProducts = getExistingProducts();
+  console.log(existingCartProducts);
   const cartProduct = existingCartProducts.find((item) => item.id === product.id);
 
   if (!cartProduct) {
